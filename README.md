@@ -1,3 +1,5 @@
+<p align="center"><img src="docs/brand/logo.svg" width="112" alt="PasskeyVault logo" /></p>
+
 # PasskeyVault
 
 [![CI](https://github.com/Passkey-vault/Passkey-vault/actions/workflows/ci.yml/badge.svg)](https://github.com/Passkey-vault/Passkey-vault/actions/workflows/ci.yml)
