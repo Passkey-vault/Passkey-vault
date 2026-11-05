@@ -90,6 +90,9 @@ stellar contract upload --wasm target/wasm32v1-none/release/passkey_vault.wasm \
 
 Contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md), then pick an issue labeled `good first issue`. Larger items are listed in [docs/ROADMAP.md](docs/ROADMAP.md).
 
+**Live demo (testnet):** https://passkey-vault-orpin.vercel.app
+
+
 Found a security problem? Please follow [SECURITY.md](SECURITY.md). Don't open a public issue for it.
 
 ## License
