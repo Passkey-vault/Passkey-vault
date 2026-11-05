@@ -3,6 +3,8 @@
  * `__check_auth` expects (see contracts/vault/src/webauthn.rs).
  */
 
+import { RP_ID } from "./config";
+
 const P256_ORDER = 0xffffffff00000000ffffffffffffffffbce6faada7179e84f3b9cac2fc632551n;
 const P256_HALF_ORDER = P256_ORDER >> 1n;
 
@@ -20,6 +22,11 @@ export interface Assertion {
   signature: Uint8Array;
 }
 
+/** SHA-256 of a relying party id, as it appears in `authenticatorData[0..32]`. */
+export async function rpIdHash(rpId: string): Promise<Uint8Array> {
+  return new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(rpId)));
+}
+
 export function isPasskeySupported(): boolean {
   return typeof window !== "undefined" && !!window.PublicKeyCredential && !!navigator.credentials;
 }
@@ -28,7 +35,7 @@ export async function createPasskey(userName: string): Promise<Passkey> {
   const credential = (await navigator.credentials.create({
     publicKey: {
       challenge: crypto.getRandomValues(new Uint8Array(32)),
-      rp: { name: "PasskeyVault" },
+      rp: { id: RP_ID, name: "PasskeyVault" },
       user: {
         id: crypto.getRandomValues(new Uint8Array(16)),
         name: userName,
@@ -54,6 +61,7 @@ export async function signWithPasskey(keyId: Uint8Array, challenge: Uint8Array):
   const credential = (await navigator.credentials.get({
     publicKey: {
       challenge: challenge as BufferSource,
+      rpId: RP_ID,
       allowCredentials: [{ type: "public-key", id: keyId as BufferSource }],
       userVerification: "required",
       timeout: 120_000,
@@ -123,6 +131,7 @@ export async function pickPasskey(): Promise<Uint8Array> {
   const credential = (await navigator.credentials.get({
     publicKey: {
       challenge: crypto.getRandomValues(new Uint8Array(32)),
+      rpId: RP_ID,
       userVerification: "required",
       timeout: 120_000,
     },

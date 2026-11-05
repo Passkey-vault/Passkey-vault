@@ -35,8 +35,8 @@ This document explains how PasskeyVault works end to end and what it does and do
 ### 1. Creating a vault
 
 1. `createPasskey()` calls `navigator.credentials.create()` with ES256 (`alg: -7`) and `userVerification: "required"`. The app reads the 65-byte uncompressed public key from `getPublicKey()`.
-2. `deployVault()` has the fee payer submit `createCustomContract` with the uploaded wasm hash and constructor args `(key_id, public_key)`.
-3. The contract stores the passkey as its only signer, with no guardians, a threshold of 0 and the vault unfrozen.
+2. `deployVault()` has the fee payer submit `createCustomContract` with the uploaded wasm hash and constructor args `(key_id, public_key, rp_id_hash)`. `rp_id_hash` is SHA-256 of the WebAuthn relying party id, which is the site's hostname by default or `VITE_RP_ID` if set.
+3. The contract stores the passkey as its only signer and the RP id hash, with no guardians, a threshold of 0 and the vault unfrozen. A vault only accepts passkeys from the site it was created on.
 
 ### 2. Authorizing an action
 
@@ -54,7 +54,7 @@ On chain, Soroban calls the vault's `__check_auth(payload, signature, contexts)`
 
 1. rejects if the vault is **frozen**;
 2. looks up `signature.id` among the registered signers (`UnknownSigner` otherwise);
-3. requires `authenticatorData` to be at least 37 bytes long, with the **User Present** flag set;
+3. requires `authenticatorData` to be at least 37 bytes long, to start with the vault's **rpIdHash** (`RpIdMismatch` otherwise), and to have the **User Present** flag set;
 4. requires `clientDataJSON` (at most 1024 bytes) to contain `"type":"webauthn.get"` and a `"challenge"` equal to `base64url(payload)`, exactly 43 characters followed by a closing quote;
 5. computes `SHA-256(authenticatorData ‖ SHA-256(clientDataJSON))` and calls the host function `secp256r1_verify`, which traps on a bad signature and rejects high-S values;
 6. extends the instance TTL so an active vault doesn't get archived.
@@ -67,7 +67,7 @@ On chain, Soroban calls the vault's `__check_auth(payload, signature, contexts)`
 
 ### Storage
 
-Everything lives in **instance storage**: `Signers` (a map from credential id to public key), `Guardians`, `Threshold` and `Frozen`. The data is small and bounded (at most 10 signers and 5 guardians), so a single entry is fine. The TTL is extended to about 30 days on each successful `__check_auth`.
+Everything lives in **instance storage**: `Signers` (a map from credential id to public key), `Guardians`, `Threshold`, `Frozen` and `RpIdHash`. The data is small and bounded (at most 10 signers and 5 guardians), so a single entry is fine. The TTL is extended to about 30 days on each successful `__check_auth`.
 
 ## Threat model
 
@@ -91,6 +91,7 @@ Everything lives in **instance storage**: `Signers` (a map from credential id to
 | Signature for a different transaction | The challenge must equal the exact payload (`ChallengeMismatch`). |
 | Registration data replayed as an assertion | `type` must be `webauthn.get`. |
 | Signing without the user touching the device | The UP flag is required. |
+| Passkey belonging to another website | `authenticatorData` must carry the vault's rpIdHash (`RpIdMismatch`). |
 | Signature malleability | Only low-S signatures verify (host function). |
 | Unknown or removed passkey | The signer must be registered, which is checked on every call. |
 | Locking yourself out by removing passkeys | The last signer can't be removed. |
@@ -103,7 +104,7 @@ These are **not** vulnerabilities to report. They are tracked and planned:
 
 | Gap | Impact | Tracking |
 | --- | --- | --- |
-| `rpIdHash` and `origin` are not checked | The contract accepts assertions made for any website. If a user is tricked into registering a passkey that belongs to another site, that site can produce valid vault signatures. Domain binding relies only on the browser. | #18 |
+| `origin` in `clientDataJSON` is not checked | rpIdHash already binds assertions to the domain, but subdomains that share the RP id aren't distinguished. | – |
 | UV flag not enforced on chain | The app asks for UV, but the contract only requires UP. | #19 |
 | A single guardian can freeze indefinitely | A malicious guardian can lock funds until a quorum unfreezes them. | #45 |
 | Recovery is instant | A colluding guardian quorum can take over the vault without warning. | #21 |

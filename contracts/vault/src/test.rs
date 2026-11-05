@@ -29,6 +29,7 @@ impl Passkey {
     /// Produce a WebAuthn assertion over `payload`, the way a browser would.
     fn sign(&self, env: &Env, payload: &[u8; 32], opts: SignOpts) -> Signature {
         let mut auth_data = [0u8; 37];
+        auth_data[..32].copy_from_slice(&sha256(opts.rp_id.as_bytes()));
         auth_data[32] = opts.flags;
         let challenge =
             String::from_utf8(base64url_32(&opts.challenge.unwrap_or(*payload)).into()).unwrap();
@@ -51,7 +52,10 @@ impl Passkey {
     }
 }
 
+const RP_ID: &str = "passkeyvault.test";
+
 struct SignOpts {
+    rp_id: &'static str,
     flags: u8,
     kind: &'static str,
     challenge: Option<[u8; 32]>,
@@ -60,6 +64,7 @@ struct SignOpts {
 impl Default for SignOpts {
     fn default() -> Self {
         SignOpts {
+            rp_id: RP_ID,
             flags: 0x05,
             kind: "webauthn.get",
             challenge: None,
@@ -76,7 +81,11 @@ fn sha256(data: &[u8]) -> [u8; 32] {
 
 fn setup(env: &Env) -> (Address, VaultClient<'_>, Passkey) {
     let passkey = Passkey::new(env, 1);
-    let id = env.register(Vault, (passkey.id.clone(), passkey.public_key(env)));
+    let rp_id_hash = BytesN::from_array(env, &sha256(RP_ID.as_bytes()));
+    let id = env.register(
+        Vault,
+        (passkey.id.clone(), passkey.public_key(env), rp_id_hash),
+    );
     (id.clone(), VaultClient::new(env, &id), passkey)
 }
 
@@ -167,6 +176,46 @@ fn user_presence_is_required() {
         check_auth(&env, &vault, &PAYLOAD, sig),
         Err(Error::UserNotPresent)
     );
+}
+
+#[test]
+fn assertion_for_other_site_is_rejected() {
+    let env = Env::default();
+    let (vault, _, passkey) = setup(&env);
+    let sig = passkey.sign(
+        &env,
+        &PAYLOAD,
+        SignOpts {
+            rp_id: "evil.example",
+            ..Default::default()
+        },
+    );
+    assert_eq!(
+        check_auth(&env, &vault, &PAYLOAD, sig),
+        Err(Error::RpIdMismatch)
+    );
+}
+
+#[test]
+fn rp_id_hash_is_checked_before_flags() {
+    // A zeroed rpIdHash (as some test tools emit) must not slip through.
+    let env = Env::default();
+    let (vault, _, passkey) = setup(&env);
+    let mut sig = passkey.sign(&env, &PAYLOAD, SignOpts::default());
+    let mut auth_data = [0u8; 37];
+    auth_data[32] = 0x05;
+    sig.authenticator_data = Bytes::from_slice(&env, &auth_data);
+    assert_eq!(
+        check_auth(&env, &vault, &PAYLOAD, sig),
+        Err(Error::RpIdMismatch)
+    );
+}
+
+#[test]
+fn rp_id_hash_is_readable() {
+    let env = Env::default();
+    let (_, client, _) = setup(&env);
+    assert_eq!(client.rp_id_hash().to_array(), sha256(RP_ID.as_bytes()));
 }
 
 #[test]

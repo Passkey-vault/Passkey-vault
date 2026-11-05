@@ -46,6 +46,8 @@ pub enum Error {
     UserNotPresent = 13,
     InvalidClientData = 14,
     ChallengeMismatch = 15,
+    /// The assertion was made for a different WebAuthn relying party (site).
+    RpIdMismatch = 16,
 }
 
 #[contracttype]
@@ -55,6 +57,7 @@ enum DataKey {
     Guardians,
     Threshold,
     Frozen,
+    RpIdHash,
 }
 
 /// A registered passkey: the WebAuthn credential id and its uncompressed
@@ -125,10 +128,14 @@ pub struct Vault;
 
 #[contractimpl]
 impl Vault {
-    pub fn __constructor(env: Env, key_id: Bytes, public_key: BytesN<65>) {
+    /// Deploy with a first passkey. `rp_id_hash` is SHA-256 of the WebAuthn
+    /// relying party id (the site's domain, e.g. `passkeyvault.app`); every
+    /// assertion must carry it in `authenticatorData`.
+    pub fn __constructor(env: Env, key_id: Bytes, public_key: BytesN<65>, rp_id_hash: BytesN<32>) {
         let mut signers = Map::new(&env);
         signers.set(key_id, public_key);
         let storage = env.storage().instance();
+        storage.set(&DataKey::RpIdHash, &rp_id_hash);
         storage.set(&DataKey::Signers, &signers);
         storage.set(&DataKey::Guardians, &Vec::<Address>::new(&env));
         storage.set(&DataKey::Threshold, &0u32);
@@ -271,6 +278,11 @@ impl Vault {
     pub fn is_frozen(env: Env) -> bool {
         is_frozen(&env)
     }
+
+    /// SHA-256 of the WebAuthn relying party id this vault accepts.
+    pub fn rp_id_hash(env: Env) -> BytesN<32> {
+        get_rp_id_hash(&env)
+    }
 }
 
 #[contractimpl]
@@ -292,7 +304,13 @@ impl CustomAccountInterface for Vault {
             .get(signature.id.clone())
             .ok_or(Error::UnknownSigner)?;
 
-        webauthn::verify(&env, &signature_payload, &public_key, &signature)?;
+        webauthn::verify(
+            &env,
+            &signature_payload,
+            &get_rp_id_hash(&env),
+            &public_key,
+            &signature,
+        )?;
 
         env.storage()
             .instance()
@@ -313,6 +331,13 @@ fn get_guardians(env: &Env) -> Vec<Address> {
         .instance()
         .get(&DataKey::Guardians)
         .unwrap_or_else(|| Vec::new(env))
+}
+
+fn get_rp_id_hash(env: &Env) -> BytesN<32> {
+    env.storage()
+        .instance()
+        .get(&DataKey::RpIdHash)
+        .expect("set in constructor")
 }
 
 fn is_frozen(env: &Env) -> bool {

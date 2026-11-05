@@ -4,7 +4,12 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+### Contract (new wasm upload required)
+- **Breaking:** the constructor takes a third argument, `rp_id_hash: BytesN<32>`. `__check_auth` rejects assertions whose `authenticatorData` doesn't start with it (`Error::RpIdMismatch = 16`). New `rp_id_hash()` getter. (#18)
+- Testnet wasm hash: `13083897d376d4a65ca1f905d4c72d3be57e26de78929ea44b1d289c19360b13`. Vaults deployed from the old wasm keep working but don't check the RP id.
+
 ### Added
+- App: `VITE_RP_ID` to pin the WebAuthn relying party id (defaults to the page's hostname).
 - `docs/ARCHITECTURE.md`: end-to-end architecture and threat model.
 - Unit tests for `encoding.ts`, `stellar.ts`, `vault.ts` and `feePayer.ts`, and a `pnpm test:coverage` script.
 - CI: app typecheck, contract and app coverage summaries, a wasm size check.
