@@ -16,7 +16,7 @@ jobs:
   contract:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32v1-none
@@ -30,7 +30,7 @@ jobs:
           cargo llvm-cov --summary-only | tee coverage.txt
           { echo '### Contract coverage'; echo '```'; cat coverage.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
       # soroban-sdk 29+ only builds wasm through stellar-cli v25.2.0+.
-      - uses: stellar/stellar-cli@v26.1.0
+      - uses: stellar/stellar-cli@v30.0.1
       - run: stellar contract build
       - name: Report wasm size
         run: |
@@ -46,11 +46,11 @@ jobs:
       run:
         working-directory: app
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v5
         with:
           package_json_file: app/package.json
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: pnpm
