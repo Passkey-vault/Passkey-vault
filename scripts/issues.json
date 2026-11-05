@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Generate a QR code on the Receive screen",
+    "labels": ["good first issue", "area:app", "complexity:low"],
+    "body": "The Receive page (`app/src/pages/Receive.tsx`) shows the vault's `C…` address as text with a placeholder icon. Render a scannable QR code of the address instead.\n\n**Acceptance criteria**\n- QR code rendered client-side (no external API), with a small, maintained dependency or a minimal encoder\n- Uses the design tokens (dark background, light modules, adequate quiet zone)\n- Copy button still works\n- Screenshot in the PR"
+  },
+  {
+    "title": "Self-host fonts and subset Material Symbols",
+    "labels": ["good first issue", "area:app", "complexity:low"],
+    "body": "`app/index.html` loads Plus Jakarta Sans, JetBrains Mono and the full Material Symbols font from Google Fonts. On slow connections the page renders blank or shows icon names as text until the fonts arrive.\n\n**Acceptance criteria**\n- Fonts bundled with the app (e.g. `@fontsource` packages)\n- Material Symbols reduced to the icons actually used (list them, or use the `icon_names=` subset URL / a subset build)\n- No layout shift or visible ligature text while loading\n- Note the bundle size difference in the PR"
+  },
+  {
+    "title": "Add ESLint and Prettier to the app and run them in CI",
+    "labels": ["good first issue", "area:app", "complexity:low"],
+    "body": "The app has `tsc` strict mode but no linter or formatter.\n\n**Acceptance criteria**\n- ESLint flat config with `typescript-eslint` and `eslint-plugin-react-hooks`\n- Prettier config matching the existing style (double quotes, 2 spaces, 120 cols)\n- `pnpm lint` and `pnpm format:check` scripts, both run in `.github/workflows/ci.yml`\n- Fix whatever the linter reports in the existing code"
+  },
+  {
+    "title": "Accessibility pass on the passkey bottom sheet",
+    "labels": ["good first issue", "area:app", "complexity:low"],
+    "body": "`app/src/components/PasskeySheet.tsx` is a modal dialog but doesn't trap focus, close on Escape, or return focus to the trigger.\n\n**Acceptance criteria**\n- Focus moves into the sheet when it opens and is trapped there\n- Escape closes it (except while submitting)\n- Focus returns to the button that opened it\n- Status changes (signing, submitting, done) are announced via an `aria-live` region"
+  },
+  {
+    "title": "Retry RPC reads with backoff and show an offline banner",
+    "labels": ["good first issue", "area:app", "complexity:low"],
+    "body": "Soroban RPC calls in `app/src/lib/stellar.ts` fail outright on a single network error. On mobile connections that happens often.\n\n**Acceptance criteria**\n- Read-only calls (`read`, `getLatestLedger`, `getAccount`) retry up to 3 times with exponential backoff\n- Transaction submission is **not** blindly retried (explain why in a comment)\n- A banner appears when `navigator.onLine` is false\n- Unit test for the retry helper"
+  },
+  {
+    "title": "Activity feed from contract events",
+    "labels": ["area:app", "complexity:medium"],
+    "body": "The Activity tab is a placeholder. The contract already emits events (`SignerAdded`, `SignerRemoved`, `GuardiansSet`, `Frozen`, `Unfrozen`, `Recovered`), and native XLM transfers emit SAC `transfer` events.\n\n**Design:** `design/stitch/passkeyvault_wallet_home` (Biometric Activity section)\n\n**Acceptance criteria**\n- Fetch events for the vault with RPC `getEvents` (contract events + SAC transfers to/from the vault)\n- Show type, amount where relevant, relative time and a link to the tx on stellar.expert\n- Handle the RPC retention window gracefully (explain that older history is on the explorer)\n- Show the latest 3 items on the home screen too"
+  },
+  {
+    "title": "Guardian approval flow: unfreeze and recover with a Stellar wallet",
+    "labels": ["area:app", "complexity:high"],
+    "body": "`unfreeze` and `recover` need `threshold` guardians to authorize. Today the app has no way for a guardian to do that.\n\n**Designs:** `design/stitch/passkeyvault_guardian_recovery_approval`, `passkeyvault_unfreeze_ceremony_pin_challenge`, `passkeyvault_vault_restored`\n\n**Proposal**\n- A guardian page (`/guard/:vaultId`) where a guardian connects a wallet via Stellar Wallets Kit (Freighter, xBull, etc.)\n- The first guardian builds the transaction and signs their auth entry; the partially signed XDR is shared (link or copy/paste) with the next guardian; the last one submits\n- Show which guardians have signed so far\n\n**Acceptance criteria**\n- Works end to end on testnet with two G-account guardians at threshold 2\n- Clear errors for expired auth entries (signature expiration ledger)"
+  },
+  {
+    "title": "Account recovery onto a new passkey",
+    "labels": ["area:app", "complexity:high"],
+    "body": "Depends on the guardian approval flow.\n\nA user who lost their device creates a new passkey on a new device, and guardians call `recover(approvers, key_id, public_key)` to replace all signers with it.\n\n**Designs:** `design/stitch/passkeyvault_account_recovery_flow`, `passkeyvault_vault_restored_threshold_reset`\n\n**Acceptance criteria**\n- New device: \"Recover a vault\" on the welcome screen creates a passkey and produces a recovery request (vault id + new public key) to share with guardians\n- Guardian side: review the request, approve, submit\n- After recovery, the new device connects to the vault automatically"
+  },
+  {
+    "title": "Transaction receipt screen with exportable JSON",
+    "labels": ["area:app", "complexity:medium"],
+    "body": "After a passkey-signed transaction succeeds, show a receipt instead of only the tx hash.\n\n**Designs:** `design/stitch/passkeyvault_cryptographic_receipt`, `passkeyvault_transaction_broadcast_finalized`, `passkeyvault_transfer_cryptographic_receipt.json`\n\n**Acceptance criteria**\n- Shows ledger, fee charged, auth payload hash, passkey credential id, and the decoded invocation\n- \"Download JSON\" exports the same data plus the raw `authenticatorData`, `clientDataJSON` and signature, enough for someone to re-verify the signature offline"
+  },
+  {
+    "title": "Support USDC and other Stellar Asset Contract tokens",
+    "labels": ["area:app", "complexity:medium"],
+    "body": "The app only shows and sends native XLM.\n\n**Design:** `design/stitch/passkeyvault_wallet_home` (Vault Assets list)\n\n**Acceptance criteria**\n- Configurable list of token contracts (start with testnet USDC)\n- Asset list on the home screen with balances (respect each token's `decimals()`)\n- Send screen lets the user pick the asset\n- Unit tests for amount formatting with non-7 decimals"
+  },
+  {
+    "title": "Replace the browser fee payer with a relayer",
+    "labels": ["area:app", "complexity:high"],
+    "body": "`app/src/lib/feePayer.ts` keeps a testnet secret key in `localStorage` to pay fees and deploy vaults. That doesn't work on mainnet.\n\n**Proposal:** submit passkey-signed invocations through a relayer (for example OpenZeppelin Relayer or Launchtube) that wraps them in a fee-bump or pays as source. Vault deployment needs a factory contract or a relayer endpoint.\n\n**Acceptance criteria**\n- Relayer URL configurable via env; the local fee payer stays as the testnet fallback\n- Design doc in `docs/` covering trust assumptions (what a malicious relayer can and can't do)"
+  },
+  {
+    "title": "Find a vault from a passkey without the contract id",
+    "labels": ["area:app", "area:contract", "complexity:medium"],
+    "body": "Reconnecting on a new browser needs the vault's contract id. Users won't have it.\n\n**Options to evaluate**\n- Deterministic deployment: a factory contract that deploys with `salt = sha256(credential_id)` so the address can be derived\n- Query an indexer for `SignerAdded` / constructor events matching the credential id\n- Store the vault id in the passkey's `user.id` (`userHandle`) at creation time and read it back on `get()`\n\nPick one with a short write-up in the PR, then implement \"Sign in with passkey\" on the welcome screen."
+  },
+  {
+    "title": "Fallback when PublicKeyCredential.getPublicKey() is unavailable",
+    "labels": ["area:app", "complexity:medium"],
+    "body": "`createPasskey` in `app/src/lib/webauthn.ts` relies on `AuthenticatorAttestationResponse.getPublicKey()`. Some browsers and password-manager extensions don't implement it.\n\n**Acceptance criteria**\n- Parse `attestationObject` (CBOR) → `authData` → attested credential data → COSE_Key, and extract the P-256 x/y\n- No large CBOR dependency (a minimal decoder is fine)\n- Unit tests with a real attestationObject fixture"
+  },
+  {
+    "title": "Code-split the Stellar SDK to cut the initial bundle",
+    "labels": ["area:app", "complexity:low"],
+    "body": "`pnpm build` produces an ~880 KB main chunk, mostly `@stellar/stellar-sdk`.\n\n**Acceptance criteria**\n- Route-level `lazy()` loading and/or dynamic import of the SDK so the welcome screen loads fast\n- Report before/after gzip sizes in the PR"
+  },
+  {
+    "title": "Browser e2e tests with a virtual WebAuthn authenticator",
+    "labels": ["area:app", "complexity:medium"],
+    "body": "`app/e2e` tests the chain logic with a software key, but nothing drives the real UI and the real `navigator.credentials` path.\n\n**Acceptance criteria**\n- Playwright test that uses Chrome DevTools Protocol `WebAuthn.addVirtualAuthenticator` (ctap2, internal, user verification on)\n- Create vault → get test XLM → send → freeze, all through the UI against testnet\n- Runs in CI on manual dispatch (testnet is too flaky for every PR)"
+  },
+  {
+    "title": "Developer inspector: decode a passkey signature",
+    "labels": ["area:app", "complexity:medium"],
+    "body": "Help developers debug passkey auth. Add a `/inspect` page (linked from Security) that decodes the last signature the app produced.\n\n**Designs:** `design/stitch/passkeyvault_clientdatajson_webauthn_flags_inspector`, `passkeyvault_soroban_der_signature_inspector`, `passkeyvault_raw_r_s_scalars_inspector`, `passkeyvault_decoded_transaction_xdr_inspector`\n\n**Acceptance criteria**\n- Shows authenticatorData fields (rpIdHash, flags UP/UV/BE/BS, signCount), parsed clientDataJSON, the DER signature and its r/s scalars (and whether s was normalized), and the decoded Soroban auth entry\n- Also accepts a pasted transaction XDR"
+  },
+  {
+    "title": "Show authenticator details (AAGUID) when enrolling a passkey",
+    "labels": ["area:app", "complexity:medium"],
+    "body": "When a passkey is created, the attestation's authData contains an AAGUID that identifies the authenticator model (e.g. iCloud Keychain, YubiKey 5).\n\n**Designs:** `design/stitch/passkeyvault_enroll_hardware_key`, `passkeyvault_key_registered_successfully`, `passkeyvault_aaguid_diagnostic_log`\n\n**Acceptance criteria**\n- Extract the AAGUID at registration and map it to a name/icon using the community passkey AAGUID list (bundled, not fetched at runtime)\n- Store it locally next to the credential id and show it in the Security list"
+  },
+  {
+    "title": "Contract: verify WebAuthn rpIdHash",
+    "labels": ["area:contract", "complexity:medium", "security"],
+    "body": "`__check_auth` checks the UP flag, the ceremony type and the challenge, but not `authenticatorData.rpIdHash`. Binding the vault to its relying party makes it impossible to reuse a signature produced for another site.\n\n**Acceptance criteria**\n- Store `sha256(rp_id)` at construction (constructor arg) and check `authenticatorData[0..32]` against it\n- Tests for match and mismatch\n- App passes `location.hostname` at deploy time\n- Note the interface change in the PR"
+  },
+  {
+    "title": "Contract: make user verification (UV) configurable",
+    "labels": ["area:contract", "complexity:low"],
+    "body": "The contract requires User Present (UP) but not User Verified (UV, i.e. biometric or PIN). Some users want UV enforced on-chain.\n\n**Acceptance criteria**\n- `set_require_uv(bool)`, vault-authorized, default `false`\n- `__check_auth` checks flag `0x04` when enabled\n- Tests for both settings"
+  },
+  {
+    "title": "Contract: upgrade function",
+    "labels": ["area:contract", "complexity:medium"],
+    "body": "Deployed vaults can't be upgraded, so a bug fix means users have to migrate funds.\n\n**Acceptance criteria**\n- `upgrade(new_wasm_hash)`, vault-authorized, blocked while frozen\n- Test that upgrades to a second build of the contract and that storage survives\n- Discuss in the PR whether guardians should be able to veto or delay an upgrade"
+  },
+  {
+    "title": "Contract: time-locked recovery that the owner can cancel",
+    "labels": ["area:contract", "complexity:high", "security"],
+    "body": "Today a guardian quorum can `recover` instantly. If guardians collude or are compromised, the owner has no chance to react.\n\n**Design:** `design/stitch/passkeyvault_guardian_circle` (\"Institutional Timelock\")\n\n**Proposal**\n- `recover` starts a pending recovery that becomes executable after a delay (e.g. 48h in ledgers)\n- Any current passkey can `cancel_recovery` during the delay\n- `finalize_recovery` after the delay\n\n**Acceptance criteria:** full tests including ledger-time advancement, and an event for each step"
+  },
+  {
+    "title": "Contract: per-signer spending limits",
+    "labels": ["area:contract", "complexity:high"],
+    "body": "Every passkey has full power over the vault. A common smart-wallet pattern is to give some keys (e.g. a phone passkey) a daily spending limit and keep others (a hardware key) unrestricted.\n\n**Acceptance criteria**\n- Per-signer policy: unrestricted, or a limit per token per rolling 24h window\n- `__check_auth` inspects `auth_contexts` for SAC `transfer` calls and enforces the limit\n- Admin functions (`add_signer`, `set_guardians`, …) require an unrestricted signer\n- Thorough tests, including multiple transfers in one transaction"
+  },
+  {
+    "title": "Contract: fuzz the WebAuthn parsing",
+    "labels": ["area:contract", "complexity:medium", "security"],
+    "body": "`contracts/vault/src/webauthn.rs` parses attacker-controlled bytes (`authenticatorData`, `clientDataJSON`).\n\n**Acceptance criteria**\n- `cargo fuzz` target (or `proptest` in tests) that feeds arbitrary `Signature` values to `__check_auth` and asserts it never accepts a signature for a different payload and never panics outside `secp256r1_verify`\n- Document how to run it in CONTRIBUTING.md"
+  },
+  {
+    "title": "Docs: architecture and threat model",
+    "labels": ["area:docs", "complexity:medium"],
+    "body": "Write `docs/ARCHITECTURE.md` covering:\n- how a Soroban auth payload becomes a WebAuthn challenge, and what `__check_auth` verifies\n- who can do what (passkey, guardian, fee payer) and what each can't do\n- known limitations and the path to mainnet\n\nDiagrams welcome (Mermaid renders on GitHub)."
+  }
+]
