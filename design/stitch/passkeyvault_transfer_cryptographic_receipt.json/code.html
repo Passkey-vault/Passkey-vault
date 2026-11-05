@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#10131a;color:#e1e2ec;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed-dim": "#00dce6", "on-primary": "#00373a", "surface-container-low": "#191b23", "background": "#10131a", "on-primary-fixed": "#002022", "secondary": "#c0c1ff", "outline": "#849495", "surface-tint": "#00dce6", "surface": "#10131a", "inverse-surface": "#e1e2ec", "error-container": "#93000a", "error": "#ffb4ab", "surface-container-lowest": "#0b0e15", "tertiary-fixed-dim": "#26dec0", "on-error": "#690005", "on-primary-fixed-variant": "#004f53", "surface-container-high": "#272a32", "on-secondary": "#1000a9", "on-primary-container": "#006a70", "surface-dim": "#10131a", "primary-fixed": "#6ff6ff", "surface-container": "#1d1f27", "outline-variant": "#3a494b", "primary-container": "#00f2fe", "primary": "#e0fdff", "surface-variant": "#32353d", "on-tertiary-fixed": "#00201a", "inverse-primary": "#00696f", "on-secondary-container": "#b0b2ff", "secondary-fixed": "#e1e0ff", "on-surface-variant": "#b9cacb", "tertiary-fixed": "#55fbdc", "on-secondary-fixed": "#07006c", "secondary-container": "#3131c0", "tertiary-container": "#4bf4d5", "tertiary": "ddfff4", "on-tertiary-fixed-variant": "#005144", "surface-bright": "#363941", "on-surface": "#e1e2ec", "inverse-on-surface": "#2d3038", "on-tertiary": "#00382e", "on-background": "#e1e2ec", "secondary-fixed-dim": "#c0c1ff", "surface-container-highest": "#32353d", "on-tertiary-container": "#006d5c", "on-secondary-fixed-variant": "#2f2ebe", "on-error-container": "#ffdad6" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "space-md": "1rem", "margin": "1.5rem", "gutter": "1rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-xl": "2rem", "gutter-mobile": "0.75rem" }, "fontFamily": { "label-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "code-md": ["JetBrains Mono"], "headline-xl-mobile": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "code-sm": ["JetBrains Mono"], "headline-xl": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "code-lg": ["JetBrains Mono"], "body-lg": ["Plus Jakarta Sans"] }, "fontSize": { "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "code-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "code-sm": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "headline-xl": ["38px", { "lineHeight": "46px", "fontWeight": "700" }], "headline-lg-mobile": ["22px", { "lineHeight": "30px", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "code-lg": ["16px", { "lineHeight": "24px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><button aria-label="Dismiss" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface transition-colors focus:outline-none" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">close</span></button><div class="flex flex-col items-center justify-center"><h1 class="font-headline-md text-headline-md text-on-surface tracking-tight leading-none">Transfer Receipt</h1><div class="flex items-center gap-space-xs mt-space-xs"><span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim animate-pulse"></span><span class="font-code-sm text-code-sm text-primary-fixed-dim tracking-wider uppercase">SEP-0043 PROOF</span></div></div><div class="flex items-center justify-end w-11 h-11"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ring-2 ring-primary-container/20"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full px-gutter-mobile space-y-space-md pb-space-xl">
+<!-- Toast Feedback Indicator -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 px-space-md py-space-xs rounded-full bg-surface-bright text-primary-fixed font-code-sm text-code-sm shadow-xl transition-all duration-300 opacity-0 pointer-events-none flex items-center gap-space-xs" id="copyToast">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">verified</span>
+<span id="copyToastText">Hash copied to clipboard</span>
+</div>
+<!-- Section 1: Header Protocol Status & Badges -->
+<div class="flex flex-col space-y-space-sm pt-space-xs">
+<!-- Status Primary Pill -->
+<div class="flex items-center justify-between flex-wrap gap-space-xs">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-high shadow-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+<span class="font-code-sm text-code-sm text-tertiary-fixed font-medium uppercase tracking-wider">● STATUS: SETTLED &amp; FINALIZED</span>
+</div>
+<div class="flex items-center gap-1.5 font-code-sm text-code-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed-dim">timer</span>
+<span>~3.2s finality</span>
+</div>
+</div>
+<!-- Secondary Meta Pills -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-0.5">
+<span class="px-2 py-0.5 rounded-lg bg-surface-container font-code-sm text-code-sm text-primary-fixed-dim whitespace-nowrap">LEDGER #52,891,940</span>
+<span class="px-2 py-0.5 rounded-lg bg-surface-container font-code-sm text-code-sm text-on-surface-variant whitespace-nowrap">PROTOCOL 20</span>
+<span class="px-2 py-0.5 rounded-lg bg-surface-container font-code-sm text-code-sm text-secondary whitespace-nowrap">SEP-0043 SOROBAN AA</span>
+</div>
+<!-- Title Block -->
+<div class="space-y-1">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">Transfer Execution Receipt</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Verifiable cryptographic receipt of outbound <strong class="text-on-surface font-medium">500.00 USDC</strong> transfer to <span class="text-primary-fixed font-medium">Alice Chen</span>. Sovereign passkey &amp; biometric hardware attestation validated via Soroban smart contract.
+      </p>
+</div>
+</div>
+<!-- Visual Proof Shield Banner -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-md shadow-md">
+<div class="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-primary-fixed-dim/10 blur-2xl pointer-events-none"></div>
+<div class="relative flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-fixed-dim shadow-sm">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface">ZK &amp; Passkey Proof Verified</div>
+<div class="font-code-sm text-code-sm text-tertiary-fixed-dim">Hardware TEE Authenticator Signed</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary-fixed-dim">100%</span>
+<div class="font-code-sm text-code-sm text-on-surface-variant">Quorum Met</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Transaction Specification Card -->
+<div class="rounded-xl bg-surface-container-low p-space-md shadow-md space-y-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary-fixed-dim">receipt_long</span>
+<span class="font-label-lg text-label-lg text-on-surface uppercase tracking-wide">Ledger Execution Specs</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Soroban v20</span>
+</div>
+<!-- Grid of Details -->
+<div class="space-y-space-xs divide-y-0 text-body-sm">
+<!-- Origin -->
+<div class="flex items-center justify-between py-1.5 px-space-sm rounded-lg bg-surface-container">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Account Origin</span>
+<div class="flex items-center gap-1">
+<span class="font-code-sm text-code-sm text-on-surface font-medium">GDK2LL...99WP</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(Alexander)</span>
+<button aria-label="Copy origin address" class="p-1 rounded-lg hover:bg-surface-bright text-on-surface-variant hover:text-primary-fixed-dim transition-colors" onclick="navigator.clipboard.writeText('GDK2LLK9X24P9M7Q4L5Z1W8Y6N3R0E1B2C3D4F5G6H7J8K9L99WP'); showToast('Origin address copied');" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Recipient -->
+<div class="flex items-center justify-between py-1.5 px-space-sm rounded-lg bg-surface-container">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Destination</span>
+<div class="flex items-center gap-1">
+<span class="font-code-sm text-code-sm text-primary-fixed font-medium">GBT87...41KQ</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Alice • Guardian</span>
+<button aria-label="Copy recipient address" class="p-1 rounded-lg hover:bg-surface-bright text-on-surface-variant hover:text-primary-fixed-dim transition-colors" onclick="navigator.clipboard.writeText('GBT87XPL90M1N2B3V4C5X6Z7A8S9D0F1G2H3J4K5L6P7O8I941KQ'); showToast('Recipient address copied');" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Amount -->
+<div class="flex items-center justify-between py-1.5 px-space-sm rounded-lg bg-surface-container">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Transferred Asset</span>
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-tertiary-fixed font-bold">500.00 USDC</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">(Native SEP-41)</span>
+</div>
+</div>
+<!-- Tx Hash -->
+<div class="flex items-center justify-between py-1.5 px-space-sm rounded-lg bg-surface-container">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tx Hash</span>
+<div class="flex items-center gap-1">
+<span class="font-code-sm text-code-sm text-on-surface">0x4b7e89...992f01</span>
+<button aria-label="Copy tx hash" class="p-1 rounded-lg hover:bg-surface-bright text-on-surface-variant hover:text-primary-fixed-dim transition-colors" onclick="navigator.clipboard.writeText('0x4b7e89a3f12bc87e91d092fa4b7e89a3f12bc87e91d092fa0024992f01'); showToast('Transaction hash copied');" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+<a aria-label="View on explorer" class="p-1 rounded-lg hover:bg-surface-bright text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#view-stellar-expert" onclick="showToast('Opening Ledger explorer'); return false;">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Block Finality -->
+<div class="flex items-center justify-between py-1.5 px-space-sm rounded-lg bg-surface-container">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Finality &amp; Time</span>
+<div class="text-right">
+<div class="font-code-sm text-code-sm text-on-surface">Ledger #52,891,940</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant">14:41:18 UTC (Just now)</div>
+</div>
+</div>
+<!-- Soroban Invocation -->
+<div class="flex flex-col py-1.5 px-space-sm rounded-lg bg-surface-container space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Smart Contract Invocation</span>
+<span class="font-code-sm text-code-sm text-primary-fixed-dim">WASM Executed</span>
+</div>
+<div class="p-1.5 rounded bg-surface-container-lowest font-code-sm text-code-sm text-on-surface-variant break-all">
+          sep43_execute_transfer(amount=5000000000, recipient=GBT87...41KQ, nonce=8813)
+        </div>
+</div>
+<!-- Network Gas -->
+<div class="flex items-center justify-between py-1.5 px-space-sm rounded-lg bg-surface-container">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Network Gas Fee</span>
+<span class="font-code-sm text-code-sm text-tertiary-fixed font-medium">0.0000000 XLM <span class="text-on-surface-variant">(Sponsored Relay)</span></span>
+</div>
+</div>
+</div>
+<!-- Section 3: Attestation & Signer Quorum Card (4 / 4 Weight) -->
+<div class="rounded-xl bg-surface-container-low p-space-md shadow-md space-y-space-sm">
+<!-- Quorum Header with Bar -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim">lock_person</span>
+<span class="font-label-lg text-label-lg text-on-surface uppercase tracking-wide">Attestation &amp; Signer Quorum</span>
+</div>
+<span class="font-code-sm text-code-sm text-primary-fixed font-bold">4 / 4 Weight (100%)</span>
+</div>
+<!-- Radial / Line Progress Indicator -->
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-gradient-to-r from-tertiary-fixed-dim to-primary-container w-full rounded-full"></div>
+</div>
+</div>
+<!-- Signer 1: iPhone Secure Enclave Passkey -->
+<div class="p-space-sm rounded-xl bg-surface-container space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-[18px]">passkey</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">iPhone Secure Enclave (Passkey PRK)</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant">secp256r1 • WebAuthn</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest font-code-sm text-code-sm text-tertiary-fixed font-medium">+2 Weight (50%)</span>
+</div>
+<div class="grid grid-cols-1 gap-1 pt-1 font-code-sm text-code-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Credential ID</span>
+<span class="text-on-surface font-mono">cred_98fa...33d2</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>ClientDataHash &amp; Sig</span>
+<span class="text-on-surface font-mono">0x7c91...3a4e (DER)</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Authenticator Flags</span>
+<span class="text-tertiary-fixed font-mono font-medium">User Present (UP) • User Verified (UV)</span>
+</div>
+</div>
+</div>
+<!-- Signer 2: Hardware Biometric Liveness -->
+<div class="p-space-sm rounded-xl bg-surface-container space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">face</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Hardware Biometric Liveness</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant">TrueDepth Secure Enclave TEE</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest font-code-sm text-code-sm text-tertiary-fixed font-medium">+2 Weight (50%)</span>
+</div>
+<div class="grid grid-cols-1 gap-1 pt-1 font-code-sm text-code-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Sensor Architecture</span>
+<span class="text-on-surface font-mono">TrueDepth TEE Coprocessor</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Entropy Proof</span>
+<span class="text-tertiary-fixed font-mono font-medium">Valid (Score: 0.9994 &gt;= 0.998)</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Verification Nonce</span>
+<span class="text-on-surface font-mono">sha256:0xd41d...8cd9</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 4: Verifiable Cryptographic Payload Inspector -->
+<div class="rounded-xl bg-surface-container-low p-space-md shadow-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary-fixed-dim">data_object</span>
+<span class="font-label-lg text-label-lg text-on-surface uppercase tracking-wide">Cryptographic JSON Payload</span>
+</div>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container hover:bg-surface-bright text-primary-fixed-dim font-code-sm text-code-sm transition-colors" id="copyPayloadBtn" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>Copy JSON</span>
+</button>
+</div>
+<!-- Inspector Tabs -->
+<div class="flex items-center gap-1 p-1 rounded-lg bg-surface-container">
+<button class="flex-1 py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors text-center" type="button">
+        Formatted
+      </button>
+<button class="flex-1 py-1 rounded bg-surface-bright font-label-md text-label-md text-primary-fixed-dim font-semibold text-center shadow-sm" type="button">
+        Raw JSON (Active)
+      </button>
+<button class="flex-1 py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors text-center" type="button">
+        Digest Proof
+      </button>
+</div>
+<!-- SHA-256 Digest Bar -->
+<div class="flex items-center justify-between px-space-sm py-1 rounded-lg bg-surface-container font-code-sm text-code-sm">
+<span class="text-on-surface-variant">SHA-256 Digest:</span>
+<span class="text-primary-fixed font-mono">0x7a8341b590e841e8</span>
+</div>
+<!-- Syntax Highlighted JSON Code Box -->
+<div class="relative rounded-lg bg-surface-container-lowest p-space-sm overflow-x-auto text-code-sm font-code-sm leading-relaxed max-h-72 overflow-y-auto no-scrollbar shadow-inner">
+<pre class="text-on-surface whitespace-pre"><code><span class="text-outline">{</span>
+  <span class="text-primary-fixed-dim">"protocol"</span><span class="text-outline">:</span> <span class="text-tertiary-fixed">"stellar-protocol-20"</span><span class="text-outline">,</span>
+  <span class="text-primary-fixed-dim">"standard"</span><span class="text-outline">:</span> <span class="text-tertiary-fixed">"SEP-0043-AA"</span><span class="text-outline">,</span>
+  <span class="text-primary-fixed-dim">"receipt_type"</span><span class="text-outline">:</span> <span class="text-tertiary-fixed">"OUTBOUND_TRANSFER_RECEIPT"</span><span class="text-outline">,</span>
+  <span class="text-primary-fixed-dim">"vault"</span><span class="text-outline">:</span> <span class="text-secondary">"GDK2LLK9X24...99WP"</span><span class="text-outline">,</span>
+  <span class="text-primary-fixed-dim">"recipient"</span><span class="text-outline">:</span> <span class="text-secondary">"GBT87XPL90...41KQ"</span><span class="text-outline">,</span>
+  <span class="text-primary-fixed-dim">"asset"</span><span class="text-outline">:</span> <span class="text-outline">{</span>
+    <span class="text-primary-fixed-dim">"code"</span><span class="text-outline">:</span> <span class="text-tertiary-fixed">"USDC"</span><span class="text-outline">,</span>
+    <span class="text-primary-fixed-dim">"issuer"</span><span class="text-outline">:</span> <span class="text-secondary">"GA5ZSEJYB3...USDC"</span><span class="text-outline">,</span>
+    <span class="text-primary-fixed-dim">"amount"</span><span class="text-outline">:</span> <span class="text-tertiary-fixed">"500.0000000"</span>
+  <span class="text-outline">}</span><span class="text-outline">,</span>
+  <span class="text-primary-fixed-dim">"ledger_sequence"</span><span class="text-outline">:</span> <span class="text-primary-fixed">52891940</span><span class="text-outline">,</span>
+  <span class="text-primary-fixed-dim">"settlement_time_ms"</span><span class="text-outline">:</span> <span class="text-primary-fixed">3210</span><span class="text-outline">,</span>
+  <span class="text-primary-fixed-dim">"signing_weights_satisfied"</span><span class="text-outline">:</span> <span class="text-primary-fixed">4</span><span class="text-outline">,</span>
+  <span class="text-primary-fixed-dim">"threshold_required"</span><span class="text-outline">:</span> <span class="text-primary-fixed">4</span><span class="text-outline">,</span>
+  <span class="text-primary-fixed-dim">"hardware_airgap_bypassed"</span><span class="text-outline">:</span> <span class="text-tertiary-fixed">true</span><span class="text-outline">,</span>
+  <span class="text-primary-fixed-dim">"bypassed_reason"</span><span class="text-outline">:</span> <span class="text-tertiary-fixed">"SUB_QUORUM_THRESHOLD_OK"</span><span class="text-outline">,</span>
+  <span class="text-primary-fixed-dim">"witnesses"</span><span class="text-outline">:</span> <span class="text-outline">[</span>
+    <span class="text-outline">{</span>
+      <span class="text-primary-fixed-dim">"slot"</span><span class="text-outline">:</span> <span class="text-tertiary-fixed">"secure_enclave_passkey"</span><span class="text-outline">,</span>
+      <span class="text-primary-fixed-dim">"type"</span><span class="text-outline">:</span> <span class="text-tertiary-fixed">"webauthn_secp256r1"</span><span class="text-outline">,</span>
+      <span class="text-primary-fixed-dim">"flags"</span><span class="text-outline">:</span> <span class="text-outline">[</span><span class="text-tertiary-fixed">"UP"</span><span class="text-outline">,</span> <span class="text-tertiary-fixed">"UV"</span><span class="text-outline">]</span><span class="text-outline">,</span>
+      <span class="text-primary-fixed-dim">"sig"</span><span class="text-outline">:</span> <span class="text-secondary">"MEQCIQD8x1...2c9Q="</span><span class="text-outline">,</span>
+      <span class="text-primary-fixed-dim">"weight"</span><span class="text-outline">:</span> <span class="text-primary-fixed">2</span>
+    <span class="text-outline">}</span><span class="text-outline">,</span>
+    <span class="text-outline">{</span>
+      <span class="text-primary-fixed-dim">"slot"</span><span class="text-outline">:</span> <span class="text-tertiary-fixed">"biometric_liveness"</span><span class="text-outline">,</span>
+      <span class="text-primary-fixed-dim">"type"</span><span class="text-outline">:</span> <span class="text-tertiary-fixed">"truedepth_tee_proof"</span><span class="text-outline">,</span>
+      <span class="text-primary-fixed-dim">"entropy_score"</span><span class="text-outline">:</span> <span class="text-primary-fixed">0.9994</span><span class="text-outline">,</span>
+      <span class="text-primary-fixed-dim">"weight"</span><span class="text-outline">:</span> <span class="text-primary-fixed">2</span>
+    <span class="text-outline">}</span>
+  <span class="text-outline">]</span><span class="text-outline">,</span>
+  <span class="text-primary-fixed-dim">"soroban_proof"</span><span class="text-outline">:</span> <span class="text-outline">{</span>
+    <span class="text-primary-fixed-dim">"tx_hash"</span><span class="text-outline">:</span> <span class="text-secondary">"0x4b7e89a3f12b...992f01"</span><span class="text-outline">,</span>
+    <span class="text-primary-fixed-dim">"contract_id"</span><span class="text-outline">:</span> <span class="text-secondary">"CDLZ...SOROBAN_VAULT"</span><span class="text-outline">,</span>
+    <span class="text-primary-fixed-dim">"execution_status"</span><span class="text-outline">:</span> <span class="text-tertiary-fixed">"SUCCESS"</span>
+  <span class="text-outline">}</span>
+<span class="text-outline">}</span></code></pre>
+</div>
+</div>
+<!-- Section 5: Action Buttons & Verification Controls -->
+<div class="space-y-space-sm pt-space-xs">
+<!-- Primary CTA: Download Receipt -->
+<button class="w-full py-3.5 px-space-md rounded-xl bg-gradient-to-r from-primary-container to-tertiary-container text-on-primary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-space-xs shadow-[0_0_20px_rgba(0,242,254,0.25)] hover:shadow-[0_0_28px_rgba(0,242,254,0.4)] active:scale-[0.99] transition-all" id="downloadReceiptBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Download Receipt (.json)</span>
+</button>
+<!-- Secondary CTA: Verify on Horizon -->
+<button class="w-full py-3 px-space-md rounded-xl bg-surface-container-high hover:bg-surface-bright text-primary-fixed font-label-lg text-label-lg font-medium flex items-center justify-center gap-space-xs transition-colors" id="verifyRpcBtn" type="button">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim">rule</span>
+<span>Verify on Stellar Horizon / Soroban RPC</span>
+</button>
+<!-- Back to Confirmation Link -->
+<div class="text-center pt-space-xs">
+<button class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors py-1" onclick="history.back()" type="button">
+        Close &amp; Return to Vault Home
+      </button>
+</div>
+</div>
+</div>
+<script>
+  function showToast(message) {
+    const toast = document.getElementById('copyToast');
+    const toastText = document.getElementById('copyToastText');
+    if (!toast || !toastText) return;
+    toastText.textContent = message;
+    toast.classList.remove('opacity-0');
+    toast.classList.add('opacity-100');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0');
+    }, 2200);
+  }
+
+  const payloadData = {
+    protocol: "stellar-protocol-20",
+    standard: "SEP-0043-AA",
+    receipt_type: "OUTBOUND_TRANSFER_RECEIPT",
+    vault: "GDK2LLK9X24P9M7Q4L5Z1W8Y6N3R0E1B2C3D4F5G6H7J8K9L99WP",
+    recipient: "GBT87XPL90M1N2B3V4C5X6Z7A8S9D0F1G2H3J4K5L6P7O8I941KQ",
+    asset: {
+      code: "USDC",
+      issuer: "GA5ZSEJYB3USDC...",
+      amount: "500.0000000"
+    },
+    ledger_sequence: 52891940,
+    settlement_time_ms: 3210,
+    signing_weights_satisfied: 4,
+    threshold_required: 4,
+    hardware_airgap_bypassed: true,
+    bypassed_reason: "SUB_QUORUM_THRESHOLD_OK",
+    witnesses: [
+      {
+        slot: "secure_enclave_passkey",
+        type: "webauthn_secp256r1",
+        flags: ["UP", "UV"],
+        sig: "MEQCIQD8x1...2c9Q=",
+        weight: 2
+      },
+      {
+        slot: "biometric_liveness",
+        type: "truedepth_tee_proof",
+        entropy_score: 0.9994,
+        weight: 2
+      }
+    ],
+    soroban_proof: {
+      tx_hash: "0x4b7e89a3f12bc87e91d092fa4b7e89a3f12bc87e91d092fa0024992f01",
+      contract_id: "CDLZ...SOROBAN_VAULT",
+      execution_status: "SUCCESS"
+    }
+  };
+
+  document.getElementById('copyPayloadBtn')?.addEventListener('click', () => {
+    navigator.clipboard.writeText(JSON.stringify(payloadData, null, 2)).then(() => {
+      showToast('JSON payload copied to clipboard');
+    });
+  });
+
+  document.getElementById('downloadReceiptBtn')?.addEventListener('click', () => {
+    const blob = new Blob([JSON.stringify(payloadData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'passkey_receipt_tx52891940.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showToast('Receipt JSON downloaded successfully');
+  });
+
+  document.getElementById('verifyRpcBtn')?.addEventListener('click', () => {
+    showToast('Validated: Soroban node verified consensus proof');
+  });
+</script></main></body></html>
