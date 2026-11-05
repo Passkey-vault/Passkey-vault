@@ -18,7 +18,9 @@ jobs:
       - run: cargo fmt --all --check
       - run: cargo clippy --all-targets -- -D warnings
       - run: cargo test
-      - run: cargo build --release --target wasm32v1-none -p passkey-vault
+      # soroban-sdk 29+ only builds wasm through stellar-cli v25.2.0+.
+      - uses: stellar/stellar-cli@v26.1.0
+      - run: stellar contract build
 
   app:
     runs-on: ubuntu-latest
