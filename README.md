@@ -26,7 +26,8 @@ A Stellar smart wallet secured by **passkeys** (Face ID, Touch ID, Windows Hello
    │  challenge = auth payload hash            __check_auth(payload, sig)
    ▼                                             ├─ vault frozen?          → reject
  WebAuthn assertion (P-256 / ES256)              ├─ signer registered?      → else reject
-   authenticatorData, clientDataJSON, sig        ├─ UP flag, type=webauthn.get
+   authenticatorData, clientDataJSON, sig        ├─ rpIdHash == vault's site → else reject
+   │                                             ├─ UP flag, type=webauthn.get
    │                                             ├─ clientDataJSON.challenge == payload
    ▼                                             └─ secp256r1_verify(pk, sha256(authData‖sha256(cdj)), sig)
  Soroban auth entry ──► fee payer submits tx ──►
@@ -44,19 +45,19 @@ A Stellar smart wallet secured by **passkeys** (Face ID, Touch ID, Windows Hello
 | [`app`](app) | Web app (Vite + React + TypeScript + Tailwind) |
 | [`app/e2e`](app/e2e) | End-to-end tests against testnet, using a software P-256 "passkey" |
 | [`design/stitch`](design/stitch) | Original screen designs (Google Stitch exports, `screen.png` + `code.html`). Many aren't implemented yet; see the issues. |
-| [`docs`](docs) | Roadmap, architecture notes, issue backlog |
+| [`docs`](docs) | [Architecture and threat model](docs/ARCHITECTURE.md), [roadmap](docs/ROADMAP.md), brand assets |
 
 ## Contract API
 
 | Function | Auth | Description |
 | --- | --- | --- |
-| `__constructor(key_id, public_key)` | – | Deploy with a first passkey |
+| `__constructor(key_id, public_key, rp_id_hash)` | – | Deploy with a first passkey, bound to one website (SHA-256 of its WebAuthn RP id) |
 | `add_signer(key_id, public_key)` / `remove_signer(key_id)` | vault | Manage passkeys (max 10, can't remove the last) |
 | `set_guardians(guardians, threshold)` | vault | Up to 5 guardians, `1 ≤ threshold ≤ n` |
 | `freeze(caller)` | vault or a guardian | Reject all vault authorizations |
 | `unfreeze(approvers)` | `threshold` guardians | Lift a freeze |
 | `recover(approvers, key_id, public_key)` | `threshold` guardians | Replace all signers with one new passkey and unfreeze |
-| `signers()`, `guardians()`, `threshold()`, `is_frozen()` | – | Read state |
+| `signers()`, `guardians()`, `threshold()`, `is_frozen()`, `rp_id_hash()` | – | Read state |
 
 ## Quick start
 
@@ -71,7 +72,8 @@ stellar contract build
 cd app
 pnpm install
 pnpm dev          # http://localhost:5173
-pnpm test         # unit tests
+pnpm typecheck
+pnpm test         # unit tests (pnpm test:coverage for a report)
 pnpm test:e2e     # deploys a real vault on testnet; needs network access
 ```
 
@@ -88,14 +90,14 @@ stellar contract upload --wasm target/wasm32v1-none/release/passkey_vault.wasm \
 
 ## Contributing
 
-Contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md), then pick an issue labeled `good first issue`. Larger items are listed in [docs/ROADMAP.md](docs/ROADMAP.md).
+Contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md), then pick an issue labeled `good first issue`. Larger items are listed in [docs/ROADMAP.md](docs/ROADMAP.md), and [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) explains how the pieces fit together and what the threat model is.
+
+Questions and ideas go in [Discussions](https://github.com/Passkey-vault/Passkey-vault/discussions).
 
 **Live demo (testnet):** https://passkey-vault-orpin.vercel.app
-
 
 Found a security problem? Please follow [SECURITY.md](SECURITY.md). Don't open a public issue for it.
 
 ## License
 
 Dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your option.
-# Passkey-vault

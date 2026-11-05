@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: Report a security vulnerability
-    url: https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability
+    url: https://github.com/Passkey-vault/Passkey-vault/security/advisories/new
     about: Please report vulnerabilities privately, not as a public issue.
+  - name: Ask a question or share an idea
+    url: https://github.com/Passkey-vault/Passkey-vault/discussions
+    about: Questions about setup, the contract or the roadmap. Issues are for confirmed bugs and scoped tasks.

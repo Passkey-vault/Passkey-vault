@@ -8,10 +8,12 @@ import { beforeAll, describe, expect, it } from "vitest";
 import { Keypair } from "@stellar/stellar-sdk";
 import { base64url } from "../src/lib/encoding";
 import { preparePasskeyInvocation } from "../src/lib/stellar";
+import { rpIdHash } from "../src/lib/webauthn";
 import { deployVault, fundVaultFromFeePayer, loadVaultState, ops } from "../src/lib/vault";
 import { ensureFeePayerFunded } from "../src/lib/feePayer";
 import type { Assertion, Passkey } from "../src/lib/webauthn";
 
+const RP_ID = "localhost";
 const N = 0xffffffff00000000ffffffffffffffffbce6faada7179e84f3b9cac2fc632551n;
 
 class SoftwarePasskey {
@@ -29,6 +31,7 @@ class SoftwarePasskey {
 
   async sign(challenge: Uint8Array): Promise<Assertion> {
     const authenticatorData = new Uint8Array(37);
+    authenticatorData.set(await rpIdHash(RP_ID));
     authenticatorData[32] = 0x05; // UP | UV
     const clientDataJSON = new TextEncoder().encode(
       JSON.stringify({ type: "webauthn.get", challenge: base64url(challenge), origin: "http://localhost:5173", crossOrigin: false }),
@@ -65,7 +68,7 @@ describe("passkey vault on testnet", () => {
   beforeAll(async () => {
     feePayer = await ensureFeePayerFunded();
     passkey = await SoftwarePasskey.create();
-    vaultId = await deployVault(passkey as Passkey);
+    vaultId = await deployVault(passkey as Passkey, RP_ID);
     console.log("vault", vaultId);
   }, 120_000);
 

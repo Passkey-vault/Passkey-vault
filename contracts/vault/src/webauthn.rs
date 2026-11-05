@@ -23,12 +23,16 @@ const CHALLENGE_LEN: usize = 43;
 pub fn verify(
     env: &Env,
     payload: &Hash<32>,
+    rp_id_hash: &BytesN<32>,
     public_key: &BytesN<65>,
     sig: &Signature,
 ) -> Result<(), Error> {
     let auth_data = &sig.authenticator_data;
     if auth_data.len() < AUTH_DATA_MIN_LEN {
         return Err(Error::InvalidAuthenticatorData);
+    }
+    if auth_data.slice(0..32) != Bytes::from(rp_id_hash) {
+        return Err(Error::RpIdMismatch);
     }
     if auth_data.get_unchecked(32) & FLAG_USER_PRESENT == 0 {
         return Err(Error::UserNotPresent);

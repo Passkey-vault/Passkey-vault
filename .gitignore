@@ -8,3 +8,4 @@ dist/
 .stellar/
 tsconfig.tsbuildinfo
 test_snapshots/
+coverage/

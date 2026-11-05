@@ -60,6 +60,7 @@ const CONTRACT_ERRORS: Record<number, string> = {
   13: "The passkey did not confirm user presence.",
   14: "Invalid WebAuthn client data.",
   15: "The passkey signed a different transaction.",
+  16: "This passkey belongs to a different website than the one this vault was created on.",
 };
 
 /** Simulate a read-only contract call and return its result. */
