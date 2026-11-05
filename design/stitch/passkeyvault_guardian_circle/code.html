@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "inverse-primary": "#00696f", "on-tertiary-fixed": "#00201a", "on-primary": "#00373a", "surface-tint": "#00dce6", "error": "#ffb4ab", "primary": "#e0fdff", "inverse-surface": "#e1e2ec", "secondary-fixed": "#e1e0ff", "inverse-on-surface": "#2d3038", "surface-container-highest": "#32353d", "on-surface": "#e1e2ec", "on-secondary": "#1000a9", "on-background": "#e1e2ec", "surface-container-low": "#191b23", "on-primary-container": "#006a70", "error-container": "#93000a", "secondary-fixed-dim": "#c0c1ff", "tertiary-container": "#4bf4d5", "on-tertiary": "#00382e", "background": "#10131a", "primary-fixed-dim": "#00dce6", "surface-bright": "#363941", "surface-container-lowest": "#0b0e15", "on-secondary-fixed": "#07006c", "tertiary-fixed": "#55fbdc", "outline": "#849495", "on-primary-fixed": "#002022", "secondary-container": "#3131c0", "primary-fixed": "#6ff6ff", "on-tertiary-fixed-variant": "#005144", "surface-dim": "#10131a", "on-secondary-fixed-variant": "#2f2ebe", "on-tertiary-container": "#006d5c", "surface-container-high": "#272a32", "surface": "#10131a", "primary-container": "#00f2fe", "on-error": "#690005", "on-secondary-container": "#b0b2ff", "surface-variant": "#32353d", "on-surface-variant": "#b9cacb", "tertiary": "#ddfff4", "outline-variant": "#3a494b", "surface-container": "#1d1f27", "on-primary-fixed-variant": "#004f53", "tertiary-fixed-dim": "#26dec0", "secondary": "#c0c1ff", "on-error-container": "#ffdad6" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "1.5rem", "gutter": "1rem", "space-xl": "2rem", "margin-mobile": "1rem", "space-md": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "gutter-mobile": "0.75rem" }, fontFamily: { "headline-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "code-sm": ["JetBrains Mono"], "label-lg": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "code-md": ["JetBrains Mono"], "label-md": ["Plus Jakarta Sans"], "code-lg": ["JetBrains Mono"], "body-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"] }, fontSize: { "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }], "headline-lg-mobile": ["22px", { lineHeight: "30px", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-xl-mobile": ["30px", { lineHeight: "38px", fontWeight: "700" }], "code-sm": ["11px", { lineHeight: "14px", fontWeight: "400" }], "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", fontWeight: "600" }], "code-md": ["13px", { lineHeight: "18px", fontWeight: "400" }], "label-md": ["12px", { lineHeight: "16px", fontWeight: "500" }], "code-lg": ["16px", { lineHeight: "24px", fontWeight: "500" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "headline-xl": ["38px", { lineHeight: "46px", fontWeight: "700" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#10131a;color:#e1e2ec;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom, 0px) + 0.5rem);}.pt-safe{padding-top:env(safe-area-inset-top, 0px);}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.12)]"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="PasskeyVault Shield Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1WlR0JsDNbFUYDy670XymprQ_3j6qUVgamB8yEnGsCLwqqKDupYqLyWCnFEhh_7-4NwHZx4anO8itTqmV69WX7GSDfp4LlbyU2aOeUh1lX5XGqORwTXcmTdJKDZAeDQ9053y62cgLSVYgeyyW36NXzWf6S342EKLZ-AsDb7QMz4qz06SSBeHrfPorCSD8W0BidxBCK-u0cOQQM1TtH9ACIlxKrCmEXbuAWM-aRnRXPJ"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-label-lg text-label-lg text-primary tracking-tight truncate">PasskeyVault</span><span class="h-1.5 w-1.5 rounded-full bg-primary-container animate-pulse"></span></div><span class="font-body-sm text-body-sm text-on-surface-variant truncate">Guardians</span></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><div class="hidden xs:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed shadow-[0_0_8px_#26dec0]"></span><span class="font-code-sm text-code-sm text-tertiary-fixed">Mainnet 3/5</span></div><button aria-label="Account Switcher" class="w-11 h-11 flex items-center justify-center rounded-full hover:bg-surface-container-highest transition-colors" type="button"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full px-margin-mobile pb-space-xl gap-space-md">
+<!-- Interactive Quorum Hero Visualization Card -->
+<div class="relative w-full rounded-xl bg-surface-container p-space-md overflow-hidden shadow-xl">
+<!-- Ambient glowing underlay -->
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-primary-container/15 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary-container/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<!-- Shield Status Capsule -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high mb-3">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed shadow-[0_0_10px_#26dec0] animate-pulse"></span>
+<span class="font-code-sm text-code-sm text-tertiary-fixed font-medium tracking-wide uppercase">Hardware-Secured Quorum</span>
+</div>
+<!-- SVG Quorum Orbit / Dynamic Topology -->
+<div class="relative w-48 h-48 my-1 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 160 160">
+<!-- Background track circle -->
+<circle cx="80" cy="80" fill="none" r="62" stroke="#272a32" stroke-dasharray="4 6" stroke-width="7"></circle>
+<!-- Active segment indicating 3/5 achieved (60% coverage) -->
+<circle class="transition-all duration-1000" cx="80" cy="80" fill="none" r="62" stroke="#00dce6" stroke-dasharray="389.5" stroke-dashoffset="155.8" stroke-linecap="round" stroke-width="7"></circle>
+</svg>
+<!-- Center Vault Shield Core -->
+<div class="absolute inset-0 m-auto w-24 h-24 rounded-full bg-surface-container-lowest flex flex-col items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-primary-container text-[28px]" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold leading-none mt-1">3/5</span>
+<span class="font-label-md text-label-md text-on-surface-variant text-[11px] mt-0.5">Threshold</span>
+</div>
+<!-- Node 1: Alice (Top Left) -->
+<div class="absolute top-2 left-6 w-8 h-8 rounded-full bg-primary-container flex items-center justify-center shadow-[0_0_12px_rgba(0,242,254,0.4)]">
+<span class="font-label-md text-label-md text-on-primary-container font-bold">AC</span>
+</div>
+<!-- Node 2: David (Top Right) -->
+<div class="absolute top-2 right-6 w-8 h-8 rounded-full bg-primary-container flex items-center justify-center shadow-[0_0_12px_rgba(0,242,254,0.4)]">
+<span class="material-symbols-outlined text-on-primary-container text-[18px]">terminal</span>
+</div>
+<!-- Node 3: YubiKey (Bottom Right) -->
+<div class="absolute bottom-4 right-8 w-8 h-8 rounded-full bg-tertiary-fixed-dim flex items-center justify-center shadow-[0_0_12px_rgba(38,222,192,0.4)]">
+<span class="material-symbols-outlined text-on-tertiary-fixed text-[18px]">key</span>
+</div>
+<!-- Node 4: Empty Slot (Bottom Left) -->
+<div class="absolute bottom-4 left-8 w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center opacity-70">
+<span class="material-symbols-outlined text-outline text-[16px]">lock_clock</span>
+</div>
+<!-- Node 5: Empty Slot (Bottom Center) -->
+<div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center opacity-70">
+<span class="material-symbols-outlined text-outline text-[16px]">person_add</span>
+</div>
+</div>
+<!-- Quorum Details -->
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mt-2">Social Recovery Threshold: 3 of 5</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs mt-1.5 leading-snug">
+        Any 3 verified guardians can approve account recovery or instantly lock your vault if your primary device is lost. No seed phrases needed.
+      </p>
+<!-- Recovery Health Strip -->
+<div class="w-full mt-4 p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed"></div>
+<span class="font-label-md text-label-md text-on-surface">Vault Defense State: Ready</span>
+</div>
+<span class="font-code-sm text-code-sm text-tertiary-fixed font-semibold">60% QUORUM MET</span>
+</div>
+</div>
+</div>
+<!-- Active Guardians Section Header -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-container text-[18px]">verified_user</span>
+<h3 class="font-label-lg text-label-lg text-primary">Active Guardians (3)</h3>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Min. 3 to sign</span>
+</div>
+<!-- Active Guardians List -->
+<div class="flex flex-col gap-2.5">
+<!-- Guardian 1: Alice Chen -->
+<div class="relative p-space-sm rounded-xl bg-surface-container flex flex-col gap-2.5 hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3 min-w-0">
+<!-- Biometric Ring Avatar -->
+<div class="relative flex-shrink-0">
+<div class="w-11 h-11 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-headline-md font-bold text-[15px]">
+              AC
+            </div>
+<div class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-[11px]" style="font-variation-settings: 'FILL' 1;">fingerprint</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Alice Chen</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex-shrink-0">(Sister)</span>
+</div>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-tertiary-fixed text-[14px]">verified</span>
+<span class="font-label-md text-label-md text-tertiary-fixed">Passkey Attested</span>
+</div>
+</div>
+</div>
+<!-- Manage Dropdown/Action Trigger -->
+<button aria-label="Manage Alice Chen" class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-1 border-t-0 bg-surface-container-lowest/60 rounded-lg px-2.5 py-1.5">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Last ping: 2h ago</span>
+</div>
+<span class="font-code-sm text-code-sm text-primary">WebAuthn PRF Ready</span>
+</div>
+</div>
+<!-- Guardian 2: David K. -->
+<div class="relative p-space-sm rounded-xl bg-surface-container flex flex-col gap-2.5 hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3 min-w-0">
+<!-- Github Dev Avatar -->
+<div class="relative flex-shrink-0">
+<div class="w-11 h-11 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-headline-md font-bold text-[14px]">
+<span class="material-symbols-outlined text-[20px]">code</span>
+</div>
+<div class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-[11px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<span class="font-label-lg text-label-lg text-on-surface truncate">David K.</span>
+<span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary flex-shrink-0">@dk-core</span>
+</div>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-tertiary-fixed text-[14px]">verified</span>
+<span class="font-label-md text-label-md text-tertiary-fixed">Verified &amp; Active</span>
+</div>
+</div>
+</div>
+<button aria-label="Manage David K" class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-1 bg-surface-container-lowest/60 rounded-lg px-2.5 py-1.5">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Last ping: Yesterday</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant truncate">0x9B2a...44C1</span>
+</div>
+</div>
+<!-- Guardian 3: Hardware Key -->
+<div class="relative p-space-sm rounded-xl bg-surface-container flex flex-col gap-2.5 hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3 min-w-0">
+<!-- Hardware Key Icon Avatar -->
+<div class="relative flex-shrink-0">
+<div class="w-11 h-11 rounded-full bg-surface-container-high flex items-center justify-center text-tertiary-fixed">
+<span class="material-symbols-outlined text-[22px]">vpn_key</span>
+</div>
+<div class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed text-[11px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Backup YubiKey 5C NFC</span>
+</div>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-tertiary-fixed text-[14px]">detector</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Hardware Passkey Enrolled</span>
+</div>
+</div>
+</div>
+<button aria-label="Manage YubiKey" class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-1 bg-surface-container-lowest/60 rounded-lg px-2.5 py-1.5">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Cold Storage (Safe deposit)</span>
+</div>
+<span class="font-code-sm text-code-sm text-tertiary-fixed">FIDO2 / U2F Certified</span>
+</div>
+</div>
+</div>
+<!-- Recommended Unfilled Slots -->
+<div class="flex flex-col gap-2.5 mt-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">add_moderator</span>
+<h3 class="font-label-lg text-label-lg text-on-surface">Available Quorum Slots (2 Remaining)</h3>
+</div>
+<span class="font-code-sm text-code-sm text-secondary">Optional Max 5</span>
+</div>
+<!-- Slot 4: Institutional Timelock Guardian -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Institutional Timelock</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">48h delayed autonomous rescue</span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md flex-shrink-0 transition-colors" type="button">
+        Invite
+      </button>
+</div>
+<!-- Slot 5: Trusted Peer / Co-worker -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">group_add</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Trusted Peer / Co-worker</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Share recovery responsibility</span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md flex-shrink-0 shadow-[0_0_12px_rgba(0,242,254,0.3)] transition-transform active:scale-95" type="button">
+        Add Guardian
+      </button>
+</div>
+</div>
+<!-- Trust & Privacy Safety Scrim Banner -->
+<div class="p-space-sm rounded-xl bg-surface-container-highest/60 flex items-start gap-3">
+<div class="w-7 h-7 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary-container flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">visibility_off</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-primary">Zero-Knowledge Social Shield</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">
+        Never share personal secrets. Guardians <strong class="text-on-surface">never see your balances or transactions</strong>; they only co-sign cryptographic ECDSA recovery shards.
+      </p>
+</div>
+</div>
+<!-- Recovery Drill & Emergency Operations -->
+<div class="flex flex-col gap-2.5 mt-2">
+<!-- Drill Status Badge Card -->
+<div class="p-space-sm rounded-xl bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary-fixed flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">published_with_changes</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface">Recovery Drill Simulation</span>
+<span class="font-body-sm text-body-sm text-tertiary-fixed truncate">Last simulated: 14 days ago (Passed)</span>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex-shrink-0" type="button">
+        Run Drill
+      </button>
+</div>
+<!-- Action Buttons -->
+<button class="w-full py-3.5 px-4 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-primary font-headline-md text-headline-md flex items-center justify-center gap-2 shadow-md transition-colors active:scale-[0.99]" type="button">
+<span class="material-symbols-outlined text-[20px]">swap_horizontal_circle</span>
+<span>Assist / Recover a Friend's Vault</span>
+</button>
+</div>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.35)]" data-active-classes="text-primary-container bg-surface-container-high/60"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center gap-0.5 w-16 h-12 rounded-xl text-on-surface-variant hover:text-on-surface transition-all" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">account_balance_wallet</span><span class="font-label-md text-label-md">Wallet</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 w-16 h-12 rounded-xl transition-all text-primary-container bg-surface-container-high/60" data-path="guardians" href="#"><span class="material-symbols-outlined text-[22px]">shield_person</span><span class="font-label-md text-label-md">Guardians</span></a><a class="flex flex-col items-center justify-center gap-0.5 w-16 h-12 rounded-xl text-on-surface-variant hover:text-on-surface transition-all" data-path="passkeys" href="#"><span class="material-symbols-outlined text-[22px]">fingerprint</span><span class="font-label-md text-label-md">Security</span></a><a class="flex flex-col items-center justify-center gap-0.5 w-16 h-12 rounded-xl text-on-surface-variant hover:text-on-surface transition-all" data-path="activity" href="#"><span class="material-symbols-outlined text-[22px]">history</span><span class="font-label-md text-label-md">Activity</span></a></div></nav></body></html>

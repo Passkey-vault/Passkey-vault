@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#10131a;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#e0fdff", "secondary-fixed-dim": "#c0c1ff", "on-error": "#690005", "on-secondary-fixed-variant": "#2f2ebe", "inverse-primary": "#00696f", "background": "#10131a", "inverse-on-surface": "#2d3038", "inverse-surface": "#e1e2ec", "on-primary": "#00373a", "secondary-fixed": "#e1e0ff", "primary-fixed": "#6ff6ff", "on-primary-fixed": "#002022", "secondary": "#c0c1ff", "on-error-container": "#ffdad6", "on-tertiary-fixed-variant": "#005144", "surface-dim": "#10131a", "outline": "#849495", "tertiary-fixed-dim": "#26dec0", "error-container": "#93000a", "on-secondary-fixed": "#07006c", "surface-tint": "#00dce6", "on-secondary": "#1000a9", "on-tertiary": "#00382e", "surface": "#10131a", "on-tertiary-container": "#006d5c", "surface-container": "#1d1f27", "surface-variant": "#32353d", "surface-container-low": "#191b23", "surface-container-highest": "#32353d", "primary-container": "#00f2fe", "on-primary-container": "#006a70", "error": "#ffb4ab", "surface-bright": "#363941", "surface-container-lowest": "#0b0e15", "on-tertiary-fixed": "#00201a", "secondary-container": "#3131c0", "on-background": "#e1e2ec", "tertiary": "#ddfff4", "surface-container-high": "#272a32", "outline-variant": "#3a494b", "on-primary-fixed-variant": "#004f53", "on-secondary-container": "#b0b2ff", "primary-fixed-dim": "#00dce6", "on-surface-variant": "#b9cacb", "on-surface": "#e1e2ec", "tertiary-container": "#4bf4d5", "tertiary-fixed": "#55fbdc" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin-mobile": "1rem", "gutter-mobile": "0.75rem", "space-xl": "2rem", "gutter": "1rem", "space-md": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "margin": "1.5rem" }, fontFamily: { "label-md": ["Plus Jakarta Sans"], "code-md": ["JetBrains Mono"], "body-sm": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "code-sm": ["JetBrains Mono"], "body-md": ["Plus Jakarta Sans"], "code-lg": ["JetBrains Mono"], "body-lg": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"] }, fontSize: { "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "code-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "fontWeight": "700" }], "code-sm": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "code-lg": ["16px", { "lineHeight": "24px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "headline-lg-mobile": ["22px", { "lineHeight": "30px", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-xl": ["38px", { "lineHeight": "46px", "fontWeight": "700" }], "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-16 px-gutter flex items-center justify-between"><button aria-label="Dismiss audit export flow" class="min-w-[44px] min-h-[44px] -ml-2 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors focus:outline-none" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">close</span></button><div class="flex-1 text-center px-space-xs"><h1 class="font-headline-md text-headline-md text-primary tracking-tight truncate">Audit Bundle Export</h1></div><div class="flex items-center justify-end min-w-[44px] min-h-[44px]"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full">
+<div class="w-full max-w-xl mx-auto px-margin-mobile py-space-sm space-y-space-md">
+<!-- Top File Metadata Card -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[20px]">data_object</span>
+<span class="font-headline-md text-headline-md text-on-surface truncate">manifest.json</span>
+<span class="bg-surface-container-highest text-on-surface-variant font-code-sm text-code-sm px-space-xs py-0.5 rounded">2.1 KB</span>
+</div>
+<p class="font-code-sm text-code-sm text-on-surface-variant truncate mt-1">
+            audit_bundle_tx_0x4b7e992f01.zip
+          </p>
+</div>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="inline-flex items-center gap-1 bg-on-tertiary-container/20 text-tertiary-fixed font-label-md text-label-md px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed animate-pulse"></span>
+            VERIFIED INTEGRITY
+          </span>
+<span class="inline-flex items-center gap-1 bg-surface-container text-on-surface-variant font-code-sm text-code-sm px-2 py-0.5 rounded-full">
+            SHA-256 MATCH
+          </span>
+</div>
+</div>
+<!-- Merkle Root Strip -->
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex items-center justify-between gap-space-xs">
+<div class="min-w-0">
+<span class="font-label-md text-label-md text-outline uppercase tracking-wider block">Merkle Root Digest</span>
+<p class="font-code-sm text-code-sm text-primary-container truncate font-medium">0x7d3a91f8c8571ae80922ab4e3e09b1a4</p>
+</div>
+<button class="shrink-0 bg-surface-container text-on-surface-variant hover:text-primary p-1.5 rounded-md transition-colors" id="copyRootBtn" title="Copy Merkle Root">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- View Mode Switches & Quick Actions -->
+<div class="flex flex-col gap-space-xs">
+<div class="bg-surface-container-low p-1 rounded-xl flex items-center justify-between gap-1 shadow-sm">
+<button class="flex-1 py-1.5 px-2 rounded-lg font-label-md text-label-md text-on-surface bg-surface-container-highest shadow-sm transition-all text-center flex items-center justify-center gap-1" id="tabFormatted" onclick="switchView('formatted')">
+<span class="material-symbols-outlined text-[16px] text-primary-container">code</span>
+          Formatted
+        </button>
+<button class="flex-1 py-1.5 px-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all text-center flex items-center justify-center gap-1" id="tabRaw" onclick="switchView('raw')">
+<span class="material-symbols-outlined text-[16px]">data_array</span>
+          Raw
+        </button>
+<button class="flex-1 py-1.5 px-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all text-center flex items-center justify-center gap-1" id="tabMerkle" onclick="switchView('merkle')">
+<span class="material-symbols-outlined text-[16px]">account_tree</span>
+          Tree Proof
+        </button>
+</div>
+<div class="flex items-center justify-between gap-space-xs px-1">
+<button class="flex-1 bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md py-2 px-space-sm rounded-lg flex items-center justify-center gap-1.5 transition-colors shadow-sm" id="copyJsonBtn" onclick="copyActiveJson()">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed-dim">copy_all</span>
+          Copy JSON
+        </button>
+<button class="flex-1 bg-surface-container-low hover:bg-surface-container text-tertiary-fixed font-label-md text-label-md py-2 px-space-sm rounded-lg flex items-center justify-center gap-1.5 transition-colors shadow-sm" id="verifyLeavesBtn" onclick="triggerLeafVerification()">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+          Verify 5 Leaves
+        </button>
+</div>
+</div>
+<!-- VIEW 1: Formatted Interactive JSON Terminal -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-inner overflow-hidden" id="viewFormatted">
+<div class="flex items-center justify-between mb-space-sm pb-space-xs border-b border-surface-variant/20">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-error/70"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container/70"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim/70"></span>
+<span class="font-code-sm text-code-sm text-on-surface-variant ml-2">manifest.json [UTF-8]</span>
+</div>
+<span class="font-code-sm text-code-sm text-primary-container">Schema v1.0</span>
+</div>
+<pre class="font-code-sm text-code-sm text-on-surface overflow-x-auto leading-relaxed select-text font-normal"><code>{
+  <span class="text-primary-container font-medium">"schema_version"</span>: <span class="text-tertiary-fixed">"1.0.0-stellar.audit"</span>,
+  <span class="text-primary-container font-medium">"merkle_tree"</span>: {
+    <span class="text-primary-container">"root"</span>: <span class="text-secondary-fixed">"0x7d3a91f8c8571ae80922ab4e3e09b1a4"</span>,
+    <span class="text-primary-container">"algorithm"</span>: <span class="text-tertiary-fixed">"SHA-256"</span>,
+    <span class="text-primary-container">"leaf_count"</span>: <span class="text-secondary">5</span>
+  },
+  <span class="text-primary-container font-medium">"attestations"</span>: {
+    <span class="text-primary-container">"hardware_signer"</span>: {
+      <span class="text-primary-container">"device"</span>: <span class="text-tertiary-fixed">"Apple Secure Enclave (A17 Pro)"</span>,
+      <span class="text-primary-container">"key_id"</span>: <span class="text-secondary-fixed">"cred_98fa71e0c3...33d2"</span>,
+      <span class="text-primary-container">"aaguid"</span>: <span class="text-on-surface-variant">"00000000-0000-0000-0000-000000000000"</span>
+    },
+    <span class="text-primary-container">"soroban_host_consensus"</span>: {
+      <span class="text-primary-container">"ledger_sequence"</span>: <span class="text-secondary">49810231</span>,
+      <span class="text-primary-container">"protocol_version"</span>: <span class="text-secondary">20</span>
+    }
+  }
+}</code></pre>
+</div>
+<!-- VIEW 2: Raw JSON String Viewport (Hidden initially) -->
+<div class="hidden bg-surface-container-lowest rounded-xl p-space-md shadow-inner overflow-hidden" id="viewRaw">
+<div class="flex items-center justify-between mb-space-sm pb-space-xs border-b border-surface-variant/20">
+<span class="font-code-sm text-code-sm text-on-surface-variant">Minified Payload Raw Stream</span>
+<span class="font-code-sm text-code-sm text-tertiary-fixed">2,148 bytes</span>
+</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant break-all leading-relaxed bg-surface-container-low p-space-sm rounded-lg max-h-60 overflow-y-auto">
+        {"schema_version":"1.0.0-stellar.audit","merkle_tree":{"root":"0x7d3a91f8c8571ae80922ab4e3e09b1a4","algorithm":"SHA-256","leaf_count":5},"attestations":{"hardware_signer":{"device":"Apple Secure Enclave (A17 Pro)","key_id":"cred_98fa71e0c39a82bbfa1143cba33d2","aaguid":"00000000-0000-0000-0000-000000000000"},"soroban_host_consensus":{"ledger_sequence":49810231,"protocol_version":20}}}
+      </div>
+</div>
+<!-- VIEW 3: Merkle Tree Proof Path Visualization (Hidden initially) -->
+<div class="hidden bg-surface-container-lowest rounded-xl p-space-md shadow-inner space-y-space-sm" id="viewMerkle">
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-primary-container">Cryptographic Tree Path</span>
+<span class="font-label-md text-label-md text-tertiary-fixed">Height: 3 Levels</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm space-y-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary-container">hub</span>
+<span class="font-code-sm text-code-sm text-on-surface font-semibold truncate">Root: 0x7d3a...1a4</span>
+</div>
+<div class="ml-4 pl-3 border-l-2 border-surface-variant/40 space-y-2 text-on-surface-variant font-code-sm text-code-sm">
+<div class="flex items-center justify-between">
+<span>Branch L [Leaves 0..2]</span>
+<span class="text-tertiary-fixed">0x91e2...ca01</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Branch R [Leaves 3..4]</span>
+<span class="text-tertiary-fixed">0x3b02...11ff</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Leaf Manifest Cards Section -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[18px]">format_list_bulleted</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Verified Leaves</h2>
+</div>
+<span class="font-code-sm text-code-sm text-tertiary-fixed bg-surface-container-high px-2 py-0.5 rounded-full">5 / 5 Sealed</span>
+</div>
+<!-- Leaf Item 0 -->
+<div class="bg-surface-container-low hover:bg-surface-container rounded-xl p-space-sm transition-colors shadow-sm">
+<div class="flex items-center justify-between gap-space-xs mb-1">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="bg-surface-container-highest text-primary-container font-code-sm text-code-sm w-5 h-5 rounded flex items-center justify-center shrink-0">0</span>
+<span class="font-label-lg text-label-lg text-on-surface truncate">passkey_assertion.json</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant shrink-0">3.4 KB</span>
+</div>
+<div class="flex items-center justify-between gap-space-xs font-code-sm text-code-sm text-on-surface-variant">
+<span class="truncate">sha256: 4f1a0b3...99e2</span>
+<span class="inline-flex items-center gap-1 text-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            Verified
+          </span>
+</div>
+</div>
+<!-- Leaf Item 1 -->
+<div class="bg-surface-container-low hover:bg-surface-container rounded-xl p-space-sm transition-colors shadow-sm">
+<div class="flex items-center justify-between gap-space-xs mb-1">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="bg-surface-container-highest text-primary-container font-code-sm text-code-sm w-5 h-5 rounded flex items-center justify-center shrink-0">1</span>
+<span class="font-label-lg text-label-lg text-on-surface truncate">der_signature.asn1</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant shrink-0">71 B</span>
+</div>
+<div class="flex items-center justify-between gap-space-xs font-code-sm text-code-sm text-on-surface-variant">
+<span class="truncate">sha256: e8712a4...bc40</span>
+<span class="inline-flex items-center gap-1 text-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            Verified
+          </span>
+</div>
+</div>
+<!-- Leaf Item 2 -->
+<div class="bg-surface-container-low hover:bg-surface-container rounded-xl p-space-sm transition-colors shadow-sm">
+<div class="flex items-center justify-between gap-space-xs mb-1">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="bg-surface-container-highest text-primary-container font-code-sm text-code-sm w-5 h-5 rounded flex items-center justify-center shrink-0">2</span>
+<span class="font-label-lg text-label-lg text-on-surface truncate">scalars_p1363.bin</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant shrink-0">64 B</span>
+</div>
+<div class="flex items-center justify-between gap-space-xs font-code-sm text-code-sm text-on-surface-variant">
+<span class="truncate">sha256: 3c9b88e...da11</span>
+<span class="inline-flex items-center gap-1 text-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            Verified
+          </span>
+</div>
+</div>
+<!-- Leaf Item 3 -->
+<div class="bg-surface-container-low hover:bg-surface-container rounded-xl p-space-sm transition-colors shadow-sm">
+<div class="flex items-center justify-between gap-space-xs mb-1">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="bg-surface-container-highest text-primary-container font-code-sm text-code-sm w-5 h-5 rounded flex items-center justify-center shrink-0">3</span>
+<span class="font-label-lg text-label-lg text-on-surface truncate">envelope_soroban.xdr</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant shrink-0">842 B</span>
+</div>
+<div class="flex items-center justify-between gap-space-xs font-code-sm text-code-sm text-on-surface-variant">
+<span class="truncate">sha256: b1043f2...77fa</span>
+<span class="inline-flex items-center gap-1 text-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            Verified
+          </span>
+</div>
+</div>
+<!-- Leaf Item 4 -->
+<div class="bg-surface-container-low hover:bg-surface-container rounded-xl p-space-sm transition-colors shadow-sm">
+<div class="flex items-center justify-between gap-space-xs mb-1">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="bg-surface-container-highest text-primary-container font-code-sm text-code-sm w-5 h-5 rounded flex items-center justify-center shrink-0">4</span>
+<span class="font-label-lg text-label-lg text-on-surface truncate">rfc6979_proof.json</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant shrink-0">4.2 KB</span>
+</div>
+<div class="flex items-center justify-between gap-space-xs font-code-sm text-code-sm text-on-surface-variant">
+<span class="truncate">sha256: 72cc199...801d</span>
+<span class="inline-flex items-center gap-1 text-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            Verified
+          </span>
+</div>
+</div>
+</div>
+<!-- Cryptographic Invariants & Validation Card -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md space-y-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[20px]">security</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Cryptographic Invariants</h3>
+</div>
+<div class="space-y-space-xs font-body-sm text-body-sm">
+<div class="flex items-center gap-space-xs text-on-surface bg-surface-container-lowest p-space-xs rounded-lg">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px]">verified</span>
+<span>Merkle tree root matches header hash</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface bg-surface-container-lowest p-space-xs rounded-lg">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px]">verified</span>
+<span class="truncate">All 5 leaf hashes compute strictly to root 0x7d3a...1a4</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface bg-surface-container-lowest p-space-xs rounded-lg">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px]">verified</span>
+<span>No zero-fill tampering detected</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface bg-surface-container-lowest p-space-xs rounded-lg">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px]">verified</span>
+<span>Hardware enclave signature cryptographically valid</span>
+</div>
+</div>
+</div>
+<!-- Bottom Actions & Flow Navigation -->
+<div class="pt-space-xs pb-space-lg space-y-space-sm">
+<button class="w-full bg-gradient-to-r from-primary-container to-tertiary-fixed text-on-primary-fixed font-label-lg text-label-lg py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg transition-transform active:scale-[0.98]" onclick="exportManifest()">
+<span class="material-symbols-outlined text-[20px]">ios_share</span>
+        Share / Export manifest.json
+      </button>
+<button class="w-full bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-lg text-label-lg py-3 rounded-xl flex items-center justify-center gap-2 transition-colors shadow-sm" onclick="runCliVerifier()">
+<span class="material-symbols-outlined text-[20px] text-primary-container">terminal</span>
+        Run CLI Verifier in Terminal
+      </button>
+<div class="text-center pt-space-xs">
+<button class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" onclick="history.back()">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+          Return to Audit Bundle Export
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function switchView(mode) {
+    const formatted = document.getElementById('viewFormatted');
+    const raw = document.getElementById('viewRaw');
+    const merkle = document.getElementById('viewMerkle');
+    
+    const tabFormatted = document.getElementById('tabFormatted');
+    const tabRaw = document.getElementById('tabRaw');
+    const tabMerkle = document.getElementById('tabMerkle');
+
+    [formatted, raw, merkle].forEach(el => el.classList.add('hidden'));
+    [tabFormatted, tabRaw, tabMerkle].forEach(btn => {
+      btn.className = "flex-1 py-1.5 px-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all text-center flex items-center justify-center gap-1";
+    });
+
+    if (mode === 'formatted') {
+      formatted.classList.remove('hidden');
+      tabFormatted.className = "flex-1 py-1.5 px-2 rounded-lg font-label-md text-label-md text-on-surface bg-surface-container-highest shadow-sm transition-all text-center flex items-center justify-center gap-1";
+    } else if (mode === 'raw') {
+      raw.classList.remove('hidden');
+      tabRaw.className = "flex-1 py-1.5 px-2 rounded-lg font-label-md text-label-md text-on-surface bg-surface-container-highest shadow-sm transition-all text-center flex items-center justify-center gap-1";
+    } else if (mode === 'merkle') {
+      merkle.classList.remove('hidden');
+      tabMerkle.className = "flex-1 py-1.5 px-2 rounded-lg font-label-md text-label-md text-on-surface bg-surface-container-highest shadow-sm transition-all text-center flex items-center justify-center gap-1";
+    }
+  }
+
+  function copyActiveJson() {
+    const content = `{"schema_version":"1.0.0-stellar.audit","merkle_tree":{"root":"0x7d3a91f8c8571ae80922ab4e3e09b1a4","algorithm":"SHA-256","leaf_count":5},"attestations":{"hardware_signer":{"device":"Apple Secure Enclave (A17 Pro)","key_id":"cred_98fa71e0c3...33d2","aaguid":"00000000-0000-0000-0000-000000000000"},"soroban_host_consensus":{"ledger_sequence":49810231,"protocol_version":20}}}`;
+    navigator.clipboard.writeText(content);
+    const btn = document.getElementById('copyJsonBtn');
+    const oldText = btn.innerHTML;
+    btn.innerHTML = `<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">done</span> Copied!`;
+    setTimeout(() => { btn.innerHTML = oldText; }, 1800);
+  }
+
+  document.getElementById('copyRootBtn').addEventListener('click', function() {
+    navigator.clipboard.writeText('0x7d3a91f8c8571ae80922ab4e3e09b1a4');
+    const icon = this.querySelector('span');
+    icon.textContent = 'check';
+    setTimeout(() => { icon.textContent = 'content_copy'; }, 1500);
+  });
+
+  function triggerLeafVerification() {
+    const btn = document.getElementById('verifyLeavesBtn');
+    const oldHTML = btn.innerHTML;
+    btn.innerHTML = `<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span> Verifying...`;
+    setTimeout(() => {
+      btn.innerHTML = `<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">verified</span> 5/5 Validated`;
+      setTimeout(() => { btn.innerHTML = oldHTML; }, 2000);
+    }, 800);
+  }
+
+  function exportManifest() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'manifest.json',
+        text: 'Decrypted manifest.json from Soroban Passkey Audit Bundle',
+      }).catch(() => {});
+    } else {
+      copyActiveJson();
+    }
+  }
+
+  function runCliVerifier() {
+    alert('stellar-audit-cli verify --manifest manifest.json --root 0x7d3a91f8c8571ae80922ab4e3e09b1a4');
+  }
+</script></main></body></html>

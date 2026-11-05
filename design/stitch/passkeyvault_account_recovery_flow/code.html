@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "inverse-primary": "#00696f", "on-tertiary-fixed": "#00201a", "on-primary": "#00373a", "surface-tint": "#00dce6", "error": "#ffb4ab", "primary": "#e0fdff", "inverse-surface": "#e1e2ec", "secondary-fixed": "#e1e0ff", "inverse-on-surface": "#2d3038", "surface-container-highest": "#32353d", "on-surface": "#e1e2ec", "on-secondary": "#1000a9", "on-background": "#e1e2ec", "surface-container-low": "#191b23", "on-primary-container": "#006a70", "error-container": "#93000a", "secondary-fixed-dim": "#c0c1ff", "tertiary-container": "#4bf4d5", "on-tertiary": "#00382e", "background": "#10131a", "primary-fixed-dim": "#00dce6", "surface-bright": "#363941", "surface-container-lowest": "#0b0e15", "on-secondary-fixed": "#07006c", "tertiary-fixed": "#55fbdc", "outline": "#849495", "on-primary-fixed": "#002022", "secondary-container": "#3131c0", "primary-fixed": "#6ff6ff", "on-tertiary-fixed-variant": "#005144", "surface-dim": "#10131a", "on-secondary-fixed-variant": "#2f2ebe", "on-tertiary-container": "#006d5c", "surface-container-high": "#272a32", "surface": "#10131a", "primary-container": "#00f2fe", "on-error": "#690005", "on-secondary-container": "#b0b2ff", "surface-variant": "#32353d", "on-surface-variant": "#b9cacb", "tertiary": "#ddfff4", "outline-variant": "#3a494b", "surface-container": "#1d1f27", "on-primary-fixed-variant": "#004f53", "tertiary-fixed-dim": "#26dec0", "secondary": "#c0c1ff", "on-error-container": "#ffdad6" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "1.5rem", "gutter": "1rem", "space-xl": "2rem", "margin-mobile": "1rem", "space-md": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "gutter-mobile": "0.75rem" }, fontFamily: { "headline-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "code-sm": ["JetBrains Mono"], "label-lg": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "code-md": ["JetBrains Mono"], "label-md": ["Plus Jakarta Sans"], "code-lg": ["JetBrains Mono"], "body-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"] }, fontSize: { "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }], "headline-lg-mobile": ["22px", { lineHeight: "30px", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-xl-mobile": ["30px", { lineHeight: "38px", fontWeight: "700" }], "code-sm": ["11px", { lineHeight: "14px", fontWeight: "400" }], "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", fontWeight: "600" }], "code-md": ["13px", { lineHeight: "18px", fontWeight: "400" }], "label-md": ["12px", { lineHeight: "16px", fontWeight: "500" }], "code-lg": ["16px", { lineHeight: "24px", fontWeight: "500" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "headline-xl": ["38px", { lineHeight: "46px", fontWeight: "700" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#10131a;color:#e1e2ec;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom, 0px);}.pt-safe{padding-top:env(safe-area-inset-top, 0px);}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.12)]"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Go Back" class="w-11 h-11 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[20px] text-on-surface">arrow_back_ios_new</span></button><img alt="PasskeyVault Shield Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1WlR0JsDNbFUYDy670XymprQ_3j6qUVgamB8yEnGsCLwqqKDupYqLyWCnFEhh_7-4NwHZx4anO8itTqmV69WX7GSDfp4LlbyU2aOeUh1lX5XGqORwTXcmTdJKDZAeDQ9053y62cgLSVYgeyyW36NXzWf6S342EKLZ-AsDb7QMz4qz06SSBeHrfPorCSD8W0BidxBCK-u0cOQQM1TtH9ACIlxKrCmEXbuAWM-aRnRXPJ"/><div class="flex flex-col min-w-0"><span class="font-label-lg text-label-lg text-primary tracking-tight truncate">PasskeyVault</span><h1 class="font-body-sm text-body-sm text-on-surface-variant truncate">Passkeyvault   Recovery Quorum</h1></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-lg px-margin-mobile pb-space-xl">
+<div class="flex flex-col gap-space-xs mt-space-sm">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-code-sm text-code-sm text-primary tracking-wider uppercase">Session #REC-8842</span>
+</div>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container">
+<span class="material-symbols-outlined text-[14px] text-tertiary-container">schedule</span>
+<span class="font-code-sm text-code-sm text-tertiary-container">24h Timelock Active</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm mt-space-xs">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center flex-shrink-0 relative overflow-hidden shadow-lg">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/20 to-transparent"></div>
+<span class="material-symbols-outlined text-primary-container text-[26px]" style="font-variation-settings: 'FILL' 1;">shield_lock</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Recovering Vault</h2>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-code-sm text-code-sm text-on-surface-variant truncate">alexander*stellar.org</span>
+<span class="font-code-sm text-code-sm text-outline">•</span>
+<button class="font-code-sm text-code-sm text-primary-container hover:text-primary transition-colors flex items-center gap-0.5" onclick="navigator.clipboard?.writeText('0x71C0F4299b867c4E28a5202613d949A2')">
+<span>0x71C0...49A2</span>
+<span class="material-symbols-outlined text-[12px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+        Lost device migration initiated. Collect 3 guardian cryptographic attestations to bind this phone to your sovereign vault.
+      </p>
+</div>
+<div class="rounded-xl bg-surface-container-high p-space-md shadow-xl relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-44 h-44 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
+<div class="flex items-center justify-between gap-space-sm mb-space-md relative">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-code-sm text-code-sm uppercase tracking-wider text-primary-container font-semibold">Quorum Consensus</span>
+<span class="px-1.5 py-0.2 rounded bg-tertiary-container/15 text-tertiary-container font-code-sm text-code-sm font-semibold">66% Complete</span>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mt-0.5">2 of 3 Signatures</span>
+</div>
+<div class="relative w-16 h-16 flex-shrink-0 flex items-center justify-center">
+<svg class="w-16 h-16 transform -rotate-90" viewbox="0 0 48 48">
+<circle class="text-surface-container-highest" cx="24" cy="24" fill="none" r="20" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-primary-container" cx="24" cy="24" fill="none" r="20" stroke="currentColor" stroke-dasharray="125.6" stroke-dashoffset="41.8" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-md text-headline-md text-primary font-bold leading-none">2<span class="font-code-sm text-code-sm text-outline-variant font-normal">/3</span></span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-1.5 mb-space-sm relative">
+<div class="h-2 rounded-full bg-primary-container shadow-[0_0_8px_rgba(0,242,254,0.4)]"></div>
+<div class="h-2 rounded-full bg-primary-container shadow-[0_0_8px_rgba(0,242,254,0.4)]"></div>
+<div class="h-2 rounded-full bg-surface-container-highest relative overflow-hidden">
+<div class="absolute inset-0 bg-primary-container/40 animate-pulse"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm relative">
+<span class="flex items-center gap-1.5 text-tertiary-container">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-ping"></span>
+          1 signature needed to finalize key migration
+        </span>
+<span class="font-code-sm text-code-sm text-outline">T-Threshold: M-of-N</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between px-1">
+<h3 class="font-label-lg text-label-lg text-primary tracking-tight">Designated Guardians</h3>
+<span class="font-code-sm text-code-sm text-on-surface-variant">3 Active • 1 Fallback</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="rounded-xl bg-surface-container p-space-sm flex items-center justify-between gap-space-sm shadow-sm transition-all hover:bg-surface-container-high">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative flex-shrink-0">
+<div class="w-11 h-11 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold overflow-hidden shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Close up photographic portrait of a female guardian with calm secure smile, soft ambient studio lighting, deep charcoal obsidian background with gentle cyan rim light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC2tuRWhYsAz1wP-YDP7h4fEz9DEs0G0m--EssQjfYaj8FH0stykjBzYRs0yvIcfbloUoCHVt-Hf8_mB80OS7G-oXLAzNveY-i7-vFaQwxmlWxufRG-Hvan8-DjA0TSPb5IGCoybYceWOlCd2l0WxpIP6F9SvfoKjGSEyANQLJU15XiukDvOOn-m2e-8-Mm9JESCfjQJOmjr1A62ERjo4y7XxOI6LGznvDKWI9KXA"/>
+</div>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-tertiary-container flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-on-tertiary text-[13px] font-bold">check</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Alice Chen</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest font-code-sm text-code-sm text-outline">Sister</span>
+</div>
+<span class="font-code-sm text-code-sm text-tertiary-container truncate">Signed • ECDSA shard attestation verified</span>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="font-code-sm text-code-sm text-outline">12m ago</span>
+<span class="font-code-sm text-code-sm text-outline-variant font-mono">#0x9d2a</span>
+</div>
+</div>
+<div class="rounded-xl bg-surface-container p-space-sm flex items-center justify-between gap-space-sm shadow-sm transition-all hover:bg-surface-container-high">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative flex-shrink-0">
+<div class="w-11 h-11 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold overflow-hidden shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of a technical male crypto security collaborator with glasses, dramatic cool cyber lighting, obsidian dark background with subtle blue edge highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMvCevU1KCyzUv1t7fdBgE3NkQ7kQBk0VEkXAJ5bAPfsEJ-Y8FLnxTNzQ7hlTSHPxpUpiQZCkP5XaiGSSOY2zjI5iR523eqQSeqSmk0P0beb63rvbXre1JVkxvdfMzyE5XVy8keYBvgll9nkaXknG30N3n_x7zPe9BAjvaszSdIOUHtlQC4LytsCmCLVvp7SYZAQXjERR-oK7npEsSv2LvCj8tW6DAw7MjBs21iAQ"/>
+</div>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-tertiary-container flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-on-tertiary text-[13px] font-bold">check</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface truncate">David K.</span>
+<span class="font-code-sm text-code-sm text-primary-container truncate">@dk-core</span>
+</div>
+<span class="font-code-sm text-code-sm text-tertiary-container truncate">Signed • WebAuthn PRF challenge OK</span>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="font-code-sm text-code-sm text-outline">4m ago</span>
+<span class="font-code-sm text-code-sm text-outline-variant font-mono">#0x3fe1</span>
+</div>
+</div>
+<div class="rounded-xl bg-surface-container-high p-space-sm flex flex-col gap-space-xs shadow-md">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative flex-shrink-0">
+<div class="w-11 h-11 rounded-full bg-surface-container-highest flex items-center justify-center text-primary shadow-inner">
+<span class="material-symbols-outlined text-[22px] text-primary-container">contactless</span>
+</div>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-primary-container flex items-center justify-center shadow-md">
+<span class="w-2 h-2 rounded-full bg-on-primary-container animate-ping"></span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface truncate">YubiKey 5C NFC</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary-container/15 font-code-sm text-code-sm text-primary-container font-semibold">Active Key</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Awaiting Hardware Security Tap</span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-highest hover:bg-surface-bright text-primary font-label-md text-label-md flex items-center gap-1 transition-all flex-shrink-0 shadow-sm" onclick="this.innerHTML='&lt;span class=\'material-symbols-outlined text-[14px] animate-spin\'&gt;refresh&lt;/span&gt; Sent'">
+<span class="material-symbols-outlined text-[14px]">notifications_active</span>
+<span>Ping</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-1 px-1">
+<span class="font-code-sm text-code-sm text-outline">FIDO2 WebAuthn Slot #01</span>
+<span class="font-code-sm text-code-sm text-primary-container font-medium">Ready for NFC Tap</span>
+</div>
+</div>
+<div class="rounded-xl bg-surface-container-lowest/60 p-space-sm flex items-center justify-between gap-space-sm opacity-70">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-11 h-11 rounded-full bg-surface-container flex items-center justify-center text-outline flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface-variant truncate">Institutional Timelock</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container font-code-sm text-code-sm text-outline">Fallback</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline truncate">Inactive unless quorum stalled (48h)</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[18px]">lock_clock</span>
+</div>
+</div>
+</div>
+<div class="rounded-xl bg-surface-container p-space-md flex flex-col gap-space-sm shadow-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center flex-shrink-0 text-primary-container">
+<span class="material-symbols-outlined text-[22px]">smartphone</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate">New Device Passkey Prepared</span>
+<span class="font-code-sm text-code-sm text-tertiary-container truncate">iPhone 16 Pro • Secure Enclave Key #0x51A</span>
+</div>
+</div>
+<div class="rounded-lg bg-surface-container-low p-space-sm flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[18px] flex-shrink-0 mt-0.5">verified_user</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span class="text-primary font-medium">Zero-Knowledge Handshake:</span> Guardians never view your balances or transaction history. They merely attest to re-assigning the cryptographic root passkey to this hardware.
+        </p>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<button class="w-full py-4 px-space-md rounded-xl bg-gradient-to-r from-primary-container to-tertiary-container text-on-primary-container font-label-lg text-label-lg font-bold flex items-center justify-center gap-space-xs shadow-[0_4px_24px_rgba(0,242,254,0.3)] hover:opacity-95 active:scale-[0.99] transition-all" id="nfcTriggerBtn" onclick="const b=this; b.innerHTML='&lt;span class=\'material-symbols-outlined animate-spin text-[20px]\'&gt;sync&lt;/span&gt; Scanning NFC Enclave...'; setTimeout(()=&gt;{ b.innerHTML='&lt;span class=\'material-symbols-outlined text-[20px]\'&gt;check_circle&lt;/span&gt; Hardware Authenticated (3/3)'; b.className='w-full py-4 px-space-md rounded-xl bg-tertiary-container text-on-tertiary font-label-lg text-label-lg font-bold flex items-center justify-center gap-space-xs shadow-lg'; }, 1600);">
+<span class="material-symbols-outlined text-[20px]">contactless</span>
+<span>Tap NFC Key to Complete Quorum (3/3)</span>
+</button>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="py-3 px-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors shadow-sm" onclick="navigator.clipboard?.writeText('https://passkeyvault.app/recover/REC-8842'); alert('Recovery link copied to clipboard.');">
+<span class="material-symbols-outlined text-[16px] text-primary-container">share</span>
+<span>Share Link</span>
+</button>
+<button class="py-3 px-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors shadow-sm" onclick="document.getElementById('qrModal').classList.toggle('hidden')">
+<span class="material-symbols-outlined text-[16px] text-primary-container">qr_code_2</span>
+<span>Show QR Code</span>
+</button>
+</div>
+<div class="flex justify-center pt-space-xs">
+<button class="text-error hover:text-on-surface transition-colors font-body-sm text-body-sm flex items-center gap-1 py-1" onclick="if(confirm('Cancel this active recovery attempt and preserve the existing key configurations?')){ history.back(); }">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+<span>Cancel Recovery (Found Original Device)</span>
+</button>
+</div>
+</div>
+<div class="hidden fixed inset-0 z-50 bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center p-space-md" id="qrModal" onclick="this.classList.add('hidden')">
+<div class="rounded-xl bg-surface-container-high p-space-lg flex flex-col items-center gap-space-md max-w-xs w-full shadow-2xl" onclick="event.stopPropagation()">
+<div class="flex items-center justify-between w-full">
+<span class="font-label-lg text-label-lg text-primary">Peer Guardian QR</span>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface" onclick="document.getElementById('qrModal').classList.add('hidden')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="w-48 h-48 bg-white rounded-lg p-2.5 flex items-center justify-center shadow-inner">
+<svg class="w-full h-full text-black" fill="currentColor" viewbox="0 0 100 100">
+<rect height="30" rx="4" width="30" x="0" y="0"></rect>
+<rect height="30" rx="4" width="30" x="70" y="0"></rect>
+<rect height="30" rx="4" width="30" x="0" y="70"></rect>
+<rect fill="white" height="18" width="18" x="6" y="6"></rect>
+<rect fill="white" height="18" width="18" x="76" y="6"></rect>
+<rect fill="white" height="18" width="18" x="6" y="76"></rect>
+<rect height="10" width="10" x="10" y="10"></rect>
+<rect height="10" width="10" x="80" y="10"></rect>
+<rect height="10" width="10" x="10" y="80"></rect>
+<rect height="10" width="20" x="40" y="10"></rect>
+<rect height="40" width="10" x="40" y="30"></rect>
+<rect height="10" width="30" x="60" y="40"></rect>
+<rect height="20" width="20" x="70" y="70"></rect>
+<rect height="10" width="10" x="50" y="80"></rect>
+</svg>
+</div>
+<p class="font-code-sm text-code-sm text-center text-on-surface-variant">Scan with any guardian PasskeyVault app to sign ECDSA migration payload</p>
+</div>
+</div>
+</div>
+</div></main></body></html>
