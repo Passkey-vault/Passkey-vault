@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { derToLowSRaw, publicKeyFromSpki } from "./webauthn";
+import { derToLowSRaw, publicKeyFromSpki, rpIdHash } from "./webauthn";
 import { base64url, formatAmount, fromBase64url, fromHex, parseAmount, toHex } from "./encoding";
 
 const N = 0xffffffff00000000ffffffffffffffffbce6faada7179e84f3b9cac2fc632551n;
@@ -58,5 +58,14 @@ describe("encoding", () => {
     expect(formatAmount(1_234_000_0000000n)).toBe("1,234,000");
     expect(() => parseAmount("1.12345678")).toThrow();
     expect(() => parseAmount("-1")).toThrow();
+  });
+});
+
+describe("rpIdHash", () => {
+  it("is SHA-256 of the relying party id", async () => {
+    // The well-known rpIdHash browsers put in authenticatorData on localhost.
+    expect(toHex(await rpIdHash("localhost"))).toBe(
+      "49960de5880e8c687434170f6476605b8fe4aeb9a28632c7995cf3ba831d9763",
+    );
   });
 });

@@ -26,7 +26,8 @@ A Stellar smart wallet secured by **passkeys** (Face ID, Touch ID, Windows Hello
    │  challenge = auth payload hash            __check_auth(payload, sig)
    ▼                                             ├─ vault frozen?          → reject
  WebAuthn assertion (P-256 / ES256)              ├─ signer registered?      → else reject
-   authenticatorData, clientDataJSON, sig        ├─ UP flag, type=webauthn.get
+   authenticatorData, clientDataJSON, sig        ├─ rpIdHash == vault's site → else reject
+   │                                             ├─ UP flag, type=webauthn.get
    │                                             ├─ clientDataJSON.challenge == payload
    ▼                                             └─ secp256r1_verify(pk, sha256(authData‖sha256(cdj)), sig)
  Soroban auth entry ──► fee payer submits tx ──►
@@ -50,13 +51,13 @@ A Stellar smart wallet secured by **passkeys** (Face ID, Touch ID, Windows Hello
 
 | Function | Auth | Description |
 | --- | --- | --- |
-| `__constructor(key_id, public_key)` | – | Deploy with a first passkey |
+| `__constructor(key_id, public_key, rp_id_hash)` | – | Deploy with a first passkey, bound to one website (SHA-256 of its WebAuthn RP id) |
 | `add_signer(key_id, public_key)` / `remove_signer(key_id)` | vault | Manage passkeys (max 10, can't remove the last) |
 | `set_guardians(guardians, threshold)` | vault | Up to 5 guardians, `1 ≤ threshold ≤ n` |
 | `freeze(caller)` | vault or a guardian | Reject all vault authorizations |
 | `unfreeze(approvers)` | `threshold` guardians | Lift a freeze |
 | `recover(approvers, key_id, public_key)` | `threshold` guardians | Replace all signers with one new passkey and unfreeze |
-| `signers()`, `guardians()`, `threshold()`, `is_frozen()` | – | Read state |
+| `signers()`, `guardians()`, `threshold()`, `is_frozen()`, `rp_id_hash()` | – | Read state |
 
 ## Quick start
 

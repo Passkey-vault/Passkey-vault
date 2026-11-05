@@ -19,7 +19,7 @@ Every item below is a GitHub issue. Designs live in [`design/stitch`](../design/
 
 ## v0.3: hardening
 
-- Verify WebAuthn `rpIdHash` (#18); configurable UV (#19)
+- ~~Verify WebAuthn `rpIdHash` (#18)~~ done; configurable UV (#19)
 - Fuzz the WebAuthn parsing (#23)
 - Time-locked, cancellable recovery (#21); freezes that expire (#45)
 - Contract upgrade path (#20) and `version()` getter (#31)

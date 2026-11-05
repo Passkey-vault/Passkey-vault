@@ -19,4 +19,4 @@ In scope: `contracts/vault` (authorization bypass, freeze/recovery bypass, signa
 
 Known limitations, not vulnerabilities:
 - The browser fee-payer key is stored in `localStorage`. It only pays testnet fees and cannot move vault funds.
-- The contract does not yet check the WebAuthn `rpIdHash` or origin. Tracked as a hardening issue.
+- The contract checks the WebAuthn `rpIdHash` but not the `origin` field of `clientDataJSON`.

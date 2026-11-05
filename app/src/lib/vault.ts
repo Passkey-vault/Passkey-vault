@@ -8,11 +8,11 @@ import {
   scValToNative,
   xdr,
 } from "@stellar/stellar-sdk";
-import { NATIVE_ASSET_CONTRACT, VAULT_WASM_HASH } from "./config";
+import { NATIVE_ASSET_CONTRACT, RP_ID, VAULT_WASM_HASH } from "./config";
 import { ensureFeePayerFunded, getFeePayer } from "./feePayer";
 import { read, submit } from "./stellar";
 import { fromHex } from "./encoding";
-import type { Passkey } from "./webauthn";
+import { rpIdHash, type Passkey } from "./webauthn";
 
 export interface VaultSigner {
   keyId: Uint8Array;
@@ -30,14 +30,17 @@ export interface VaultState {
 const addr = (id: string) => Address.fromString(id).toScVal();
 const bytes = (b: Uint8Array) => xdr.ScVal.scvBytes(Buffer.from(b));
 
-/** Deploy a new vault whose first signer is `passkey`. Returns its contract id. */
-export async function deployVault(passkey: Passkey): Promise<string> {
+/**
+ * Deploy a new vault whose first signer is `passkey`, bound to the relying
+ * party `rpId` (defaults to this site). Returns its contract id.
+ */
+export async function deployVault(passkey: Passkey, rpId: string = RP_ID): Promise<string> {
   const feePayer = await ensureFeePayerFunded();
   const op = Operation.createCustomContract({
     address: Address.fromString(feePayer.publicKey()),
     wasmHash: Buffer.from(fromHex(VAULT_WASM_HASH)),
     salt: Buffer.from(crypto.getRandomValues(new Uint8Array(32))),
-    constructorArgs: [bytes(passkey.keyId), bytes(passkey.publicKey)],
+    constructorArgs: [bytes(passkey.keyId), bytes(passkey.publicKey), bytes(await rpIdHash(rpId))],
   });
   const { returnValue } = await submit(op, feePayer);
   if (!returnValue) throw new Error("Deployment returned no contract id");

@@ -8,7 +8,7 @@ describe("humanizeError", () => {
   });
 
   it("has a message for every contract error code", () => {
-    for (let code = 1; code <= 15; code++) {
+    for (let code = 1; code <= 16; code++) {
       expect(humanizeError(`Error(Contract, #${code})`)).not.toMatch(/^Contract error #/);
     }
   });
