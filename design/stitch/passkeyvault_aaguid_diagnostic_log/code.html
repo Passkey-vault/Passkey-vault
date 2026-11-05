@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#10131a;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed": "#6ff6ff", "surface-bright": "#363941", "on-primary-fixed-variant": "#004f53", "error-container": "#93000a", "tertiary-container": "#4bf4d5", "surface-variant": "#32353d", "tertiary": "#ddfff4", "tertiary-fixed": "#55fbdc", "surface-container-lowest": "#0b0e15", "on-primary-fixed": "#002022", "on-background": "#e1e2ec", "primary-fixed-dim": "#00dce6", "outline": "#849495", "on-error": "#690005", "on-tertiary": "#00382e", "secondary-fixed-dim": "#c0c1ff", "error": "#ffb4ab", "secondary-container": "#3131c0", "primary-container": "#00f2fe", "background": "#10131a", "on-tertiary-fixed-variant": "#005144", "inverse-primary": "#00696f", "on-secondary": "#1000a9", "outline-variant": "#3a494b", "surface-container-high": "#272a32", "on-surface-variant": "#b9cacb", "surface-container-highest": "#32353d", "on-error-container": "#ffdad6", "inverse-surface": "#e1e2ec", "on-tertiary-fixed": "#00201a", "secondary-fixed": "#e1e0ff", "surface": "#10131a", "on-secondary-container": "#b0b2ff", "on-secondary-fixed-variant": "#2f2ebe", "tertiary-fixed-dim": "#26dec0", "on-secondary-fixed": "#07006c", "inverse-on-surface": "#2d3038", "on-tertiary-container": "#006d5c", "primary": "#e0fdff", "surface-container-low": "#191b23", "on-primary": "#00373a", "surface-container": "#1d1f27", "secondary": "#c0c1ff", "surface-dim": "#10131a", "on-surface": "#e1e2ec", "on-primary-container": "#006a70", "surface-tint": "#00dce6" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin-mobile": "1rem", "space-xs": "0.25rem", "gutter-mobile": "0.75rem", "space-lg": "1.5rem", "space-md": "1rem", "gutter": "1rem", "margin": "1.5rem", "space-sm": "0.5rem", "space-xl": "2rem" }, fontFamily: { "headline-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "code-sm": ["JetBrains Mono"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "code-lg": ["JetBrains Mono"], "headline-xl-mobile": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "code-md": ["JetBrains Mono"] }, fontSize: { "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "code-sm": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "headline-lg-mobile": ["22px", { "lineHeight": "30px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "code-lg": ["16px", { "lineHeight": "24px", "fontWeight": "500" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-xl": ["38px", { "lineHeight": "46px", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "code-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Go Back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/50 transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span></button><h1 class="font-headline-md text-headline-md text-on-surface tracking-tight truncate max-w-[200px]">Key Management</h1></div><div class="flex items-center gap-space-xs"><button aria-label="Security Audit Shield" class="w-11 h-11 flex items-center justify-center rounded-full text-primary-fixed hover:text-primary hover:bg-surface-container-high/50 transition-colors" type="button"><span class="material-symbols-outlined text-[24px]">verified_user</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-safe">
+<!-- Backdrop Simulation & Modal Shell Wrapper -->
+<div class="w-full max-w-[540px] mx-auto px-margin-mobile pt-space-xs flex flex-col gap-space-md">
+<!-- Modal Container Sheet (Tactile Machined Obsidian Plate) -->
+<div class="w-full bg-surface-container-low rounded-xl shadow-2xl overflow-hidden flex flex-col">
+<!-- Top Grab Handle & Utility Bar -->
+<div class="pt-space-sm pb-space-xs px-margin-mobile flex flex-col items-center gap-space-xs bg-surface-container-low">
+<div class="w-12 h-1 bg-surface-variant rounded-full opacity-60"></div>
+<div class="w-full flex items-center justify-between pt-space-xs">
+<!-- CTAP2 Telemetry Tag -->
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container/30 text-error">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+<span class="font-code-sm text-code-sm uppercase tracking-wider font-semibold">CTAP2 / WEBAUTHN • ERR-4A12</span>
+</div>
+<!-- Close Action -->
+<button aria-label="Dismiss Modal" class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" onclick="this.closest('.flex-col').remove()" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Sheet Header -->
+<div class="px-margin-mobile pb-space-md pt-space-xs bg-surface-container-low">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[20px]">fingerprint</span>
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">AAGUID Diagnostic Log</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Detailed breakdown of the rejected NFC authenticator handshake and raw cryptographic attestation assertion.
+        </p>
+</div>
+<!-- Main Inspection Canvas -->
+<div class="px-margin-mobile pb-space-lg flex flex-col gap-space-md">
+<!-- Visual Verification Radar Badge -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center gap-3">
+<div class="relative w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error text-[22px]">contactless_off</span>
+<div class="absolute inset-0 rounded-full bg-error/10 animate-pulse"></div>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-error font-medium">Authenticator Identity Mismatch</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant px-1.5 py-0.5 rounded bg-surface-container-highest">0x403_REJECT</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">NFC Payload contains unwhitelisted AAGUID signature.</p>
+</div>
+</div>
+<!-- Matrix: Expected Signer vs Presented Device -->
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Verification Matrix</span>
+<!-- Expected Signer Card -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
+<span class="font-label-lg text-label-lg text-primary-fixed">Slot #03 • Enrolled Primary Key</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-highest font-code-sm text-code-sm text-primary-fixed-dim">
+<span class="material-symbols-outlined text-[13px]">verified</span> MDS-v3
+              </span>
+</div>
+<div class="grid grid-cols-1 gap-2 pt-1">
+<div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Hardware Model</span>
+<span class="font-label-md text-label-md text-on-surface">Yubico YubiKey 5Ci (NFC / Lightning)</span>
+</div>
+<div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Expected AAGUID</span>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-lowest mt-0.5">
+<span class="font-code-sm text-code-sm text-primary-fixed truncate">ee882879-721c-4916-2481-645851480021</span>
+<span class="material-symbols-outlined text-primary-fixed-dim text-[16px] shrink-0 ml-1">check_circle</span>
+</div>
+</div>
+<div class="flex items-center justify-between gap-2 pt-1">
+<div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Curve / Alg</span>
+<span class="font-code-sm text-code-sm text-on-surface">secp256r1 (ES256 : -7)</span>
+</div>
+<div class="text-right">
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Enrolled PubKey</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">GBR772...321M</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Presented Authenticator (Rejected) Card -->
+<div class="p-space-md rounded-xl bg-surface-container-high flex flex-col gap-space-sm relative overflow-hidden">
+<!-- Subtle accent edge -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error"></div>
+<div class="flex items-center justify-between pb-space-xs pl-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-label-lg text-label-lg text-error">Unregistered Device Presented</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container/40 font-code-sm text-code-sm text-error">
+<span class="material-symbols-outlined text-[13px]">gpp_maybe</span> Quorum Blocked
+              </span>
+</div>
+<div class="grid grid-cols-1 gap-2 pt-1 pl-1">
+<div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Detected Hardware / OEM</span>
+<span class="font-label-md text-label-md text-on-surface">Generic FIDO2 USB/NFC (Unknown Secondary Token)</span>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-error block font-medium">Presented AAGUID (Mismatch)</span>
+<span class="font-code-sm text-code-sm text-error underline cursor-pointer" onclick="navigator.clipboard?.writeText('fa829014-b102-4f32-0000-7c2a11b84920')">Copy</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-lowest mt-0.5">
+<span class="font-code-sm text-code-sm text-error font-medium truncate">fa829014-b102-4f32-0000-7c2a11b84920</span>
+<span class="material-symbols-outlined text-error text-[16px] shrink-0 ml-1">cancel</span>
+</div>
+</div>
+<div class="flex items-center justify-between gap-2 pt-1">
+<div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">UV Flag Status</span>
+<span class="font-code-sm text-code-sm text-secondary">0x01 (Touch UP, No PIN)</span>
+</div>
+<div class="text-right">
+<span class="font-body-sm text-body-sm text-on-surface-variant block">MDS Registry</span>
+<span class="font-code-sm text-code-sm text-error">Untrusted / Foreign</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Raw CTAP2 Attestation Payload Terminal -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed-dim">terminal</span>
+              Raw Attestation Assertion (JSON)
+            </span>
+<button class="font-code-sm text-code-sm text-primary-fixed hover:text-primary transition-colors flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container hover:bg-surface-container-high" id="copyPayloadBtn" onclick="const p = document.getElementById('jsonCodeBlock').innerText; navigator.clipboard.writeText(p); this.innerText='COPIED ✓'; setTimeout(()=&gt;this.innerText='COPY JSON', 1800);" type="button">
+              COPY JSON
+            </button>
+</div>
+<div class="w-full rounded-xl bg-surface-container-lowest p-space-sm font-code-sm text-code-sm overflow-x-auto shadow-inner text-on-surface">
+<pre class="leading-relaxed" id="jsonCodeBlock"><code>{
+  <span class="text-on-surface-variant">"fmt"</span>: <span class="text-primary-fixed">"packed"</span>,
+  <span class="text-on-surface-variant">"authData"</span>: {
+    <span class="text-on-surface-variant">"rpIdHash"</span>: <span class="text-secondary">"85a4982a170b...92e1"</span>,
+    <span class="text-on-surface-variant">"flags"</span>: <span class="text-primary-fixed-dim">"0x45 (UP|UV|AT)"</span>,
+    <span class="text-on-surface-variant">"signCount"</span>: <span class="text-tertiary-fixed">142</span>,
+    <span class="text-on-surface-variant">"aaguid"</span>: <span class="text-error font-medium">"fa829014-b102-4f32-0000-7c2a11b84920"</span>
+  },
+  <span class="text-on-surface-variant">"attStmt"</span>: {
+    <span class="text-on-surface-variant">"alg"</span>: <span class="text-tertiary-fixed">-7</span>,
+    <span class="text-on-surface-variant">"sig"</span>: <span class="text-secondary">"3045022100e4b8...c1022079"</span>
+  },
+  <span class="text-on-surface-variant">"clientDataJSON"</span>: {
+    <span class="text-on-surface-variant">"type"</span>: <span class="text-primary-fixed">"webauthn.get"</span>,
+    <span class="text-on-surface-variant">"challenge"</span>: <span class="text-secondary">"7f8b92d0...soroban_hash"</span>,
+    <span class="text-on-surface-variant">"origin"</span>: <span class="text-primary-fixed">"stellar://passkeyvault.app"</span>
+  }
+}</code></pre>
+</div>
+</div>
+<!-- Soroban Account Security Assertion Callout -->
+<div class="p-space-md rounded-xl bg-surface-container flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[20px]">shield_lock</span>
+</div>
+<div class="flex-1 flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Stellar Soroban Invariant Protected</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong class="text-primary font-medium">Zero Ledger Footprint:</strong> No execution transaction was submitted to Stellar Protocol 20. Smart contract quorum threshold remains anchored at <span class="font-code-sm text-code-sm text-on-surface bg-surface-container-highest px-1 py-0.5 rounded">Weight 3 / 4</span>.
+            </p>
+<div class="mt-1 flex items-center gap-1.5 font-code-sm text-code-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed-dim">lock</span>
+<span>Enclave Log Fingerprint: <span class="text-tertiary-fixed">seq_audit_9842</span></span>
+</div>
+</div>
+</div>
+<!-- Action Quadrant (Thumb Ergonomics) -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<!-- Primary CTA: Dismiss & Retry Target Signer -->
+<button class="w-full py-3.5 px-space-md rounded-xl bg-gradient-to-r from-primary-container to-tertiary-container text-on-primary-fixed font-label-lg text-label-lg flex items-center justify-center gap-2 active:opacity-90 shadow-lg shadow-primary-container/20" type="button">
+<span class="material-symbols-outlined text-[20px]">contactless</span>
+<span>Dismiss &amp; Retry with Slot #03 Key</span>
+</button>
+<!-- Enroll Alternative Key Trigger -->
+<button class="w-full py-3 px-space-md rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-primary-fixed font-label-lg text-label-lg flex items-center justify-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">add_moderator</span>
+<span>Enroll This Key as Secondary (Slot #04)</span>
+</button>
+<!-- Export Diagnostic Dump -->
+<button class="w-full py-2.5 px-space-md rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Export Telemetry Report (.log)</span>
+</button>
+<!-- Blacklist Emergency Trigger -->
+<div class="pt-space-xs flex justify-center">
+<button class="px-space-md py-1.5 rounded-full text-error hover:bg-error-container/20 transition-colors font-label-md text-label-md flex items-center gap-1.5 opacity-90" type="button">
+<span class="material-symbols-outlined text-[16px]">block</span>
+<span>Report Unknown Device &amp; Blacklist AAGUID</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></body></html>

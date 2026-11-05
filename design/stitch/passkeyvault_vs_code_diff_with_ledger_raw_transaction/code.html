@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-error": "#690005",
+          "surface-container-high": "#272a32",
+          "tertiary-fixed-dim": "#26dec0",
+          "inverse-on-surface": "#2d3038",
+          "secondary-fixed-dim": "#c0c1ff",
+          "surface-container-low": "#191b23",
+          "primary": "#e0fdff",
+          "on-secondary": "#1000a9",
+          "surface-variant": "#32353d",
+          "tertiary-fixed": "#55fbdc",
+          "on-secondary-fixed": "#07006c",
+          "on-background": "#e1e2ec",
+          "error": "#ffb4ab",
+          "on-surface": "#e1e2ec",
+          "on-tertiary-container": "#006d5c",
+          "surface-bright": "#363941",
+          "on-secondary-container": "#b0b2ff",
+          "on-primary-fixed": "#002022",
+          "outline": "#849495",
+          "tertiary-container": "#4bf4d5",
+          "primary-fixed": "#6ff6ff",
+          "on-tertiary-fixed-variant": "#005144",
+          "surface-tint": "#00dce6",
+          "primary-container": "#00f2fe",
+          "outline-variant": "#3a494b",
+          "on-error-container": "#ffdad6",
+          "on-secondary-fixed-variant": "#2f2ebe",
+          "secondary": "#c0c1ff",
+          "surface-container-lowest": "#0b0e15",
+          "primary-fixed-dim": "#00dce6",
+          "on-tertiary": "#00382e",
+          "surface": "#10131a",
+          "on-primary-container": "#006a70",
+          "inverse-surface": "#e1e2ec",
+          "on-surface-variant": "#b9cacb",
+          "error-container": "#93000a",
+          "on-primary": "#00373a",
+          "surface-dim": "#10131a",
+          "inverse-primary": "#00696f",
+          "secondary-container": "#3131c0",
+          "secondary-fixed": "#e1e0ff",
+          "surface-container": "#1d1f27",
+          "tertiary": "#ddfff4",
+          "on-primary-fixed-variant": "#004f53",
+          "on-tertiary-fixed": "#00201a",
+          "background": "#10131a",
+          "surface-container-highest": "#32353d"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter": "1rem",
+          "space-xs": "0.25rem",
+          "space-md": "1rem",
+          "margin-mobile": "1rem",
+          "space-xl": "2rem",
+          "margin": "1.5rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "gutter-mobile": "0.75rem"
+        },
+        "fontFamily": {
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "code-md": [
+            "JetBrains Mono"
+          ],
+          "body-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl": [
+            "Plus Jakarta Sans"
+          ],
+          "body-md": [
+            "Plus Jakarta Sans"
+          ],
+          "code-sm": [
+            "JetBrains Mono"
+          ],
+          "body-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "label-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ],
+          "label-md": [
+            "Plus Jakarta Sans"
+          ],
+          "code-lg": [
+            "JetBrains Mono"
+          ]
+        },
+        "fontSize": {
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl-mobile": [
+            "30px",
+            {
+              "lineHeight": "38px",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg-mobile": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "600"
+            }
+          ],
+          "code-md": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-xl": [
+            "38px",
+            {
+              "lineHeight": "46px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "code-sm": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "600"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "code-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "500"
+            }
+          ]
+        }
+      },
+    },
+  };</script></head><body class="bg-surface text-on-surface font-body-md text-body-md select-none"><header class="fixed top-0 left-0 right-0 z-50 h-9 bg-surface-container-lowest/90 backdrop-blur-xl flex items-center justify-between px-3"><div class="flex items-center gap-3"><div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-error"></div><div class="w-3 h-3 rounded-full bg-tertiary-container"></div><div class="w-3 h-3 rounded-full bg-tertiary-fixed-dim"></div></div><div class="h-3.5 w-px bg-surface-variant/40 ml-1"></div><span class="font-code-sm text-code-sm text-on-surface-variant tracking-tight">VS Code — audit_airdrop_Alexander-iPhone [Stellar PasskeyVault]</span></div><div class="flex-1 max-w-md mx-auto hidden md:flex items-center justify-center"><div class="w-full flex items-center justify-between px-3 py-1 bg-surface-container/60 rounded-lg text-on-surface-variant"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px]">search</span><span class="font-code-sm text-code-sm">audit_airdrop_Alexander-iPhone</span></div><span class="font-code-sm text-code-sm text-outline">¯P</span></div></div><div class="flex items-center gap-2"><div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container text-on-surface-variant"><span class="material-symbols-outlined text-[14px] text-tertiary-fixed-dim">verified_user</span><span class="font-code-sm text-code-sm">M3 Max • Secure Enclave</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><aside class="fixed left-0 top-9 bottom-6 w-12 bg-surface-container-lowest flex flex-col justify-between items-center py-2 z-40"><div class="flex flex-col items-center gap-3 w-full"><button class="w-9 h-9 rounded flex items-center justify-center text-primary-fixed bg-surface-container-high transition-colors" title="Explorer (Shift+Cmd+E)"><span class="material-symbols-outlined text-[20px]">folder</span></button><button class="w-9 h-9 rounded flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Search (Shift+Cmd+F)"><span class="material-symbols-outlined text-[20px]">search</span></button><button class="w-9 h-9 rounded flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors relative" title="Source Control (Ctrl+Shift+G)"><span class="material-symbols-outlined text-[20px]">account_tree</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary-container"></span></button><button class="w-9 h-9 rounded flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Run and Debug (Shift+Cmd+D)"><span class="material-symbols-outlined text-[20px]">play_circle</span></button><button class="w-9 h-9 rounded flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Extensions (Shift+Cmd+X)"><span class="material-symbols-outlined text-[20px]">grid_view</span></button><div class="w-6 h-px bg-surface-variant/40 my-1"></div><button class="w-9 h-9 rounded flex items-center justify-center text-tertiary-fixed-dim bg-surface-container transition-colors relative" title="Stellar PasskeyVault"><span class="material-symbols-outlined text-[20px]">vpn_key</span><span class="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-tertiary-fixed animate-pulse"></span></button></div><div class="flex flex-col items-center gap-2 w-full"><button class="w-9 h-9 rounded flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Accounts"><span class="material-symbols-outlined text-[20px]">account_circle</span></button><button class="w-9 h-9 rounded flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Settings"><span class="material-symbols-outlined text-[20px]">settings</span></button></div></aside><aside class="fixed left-12 top-9 bottom-6 w-60 bg-surface-container-low flex flex-col z-30"><div class="h-8 px-3 flex items-center justify-between text-on-surface-variant font-label-md text-label-md uppercase tracking-wider"><div class="flex items-center gap-1 font-headline-md text-body-sm text-on-surface"><span class="material-symbols-outlined text-[14px]">expand_more</span><span>Explorer</span></div><div class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] hover:text-on-surface cursor-pointer">create_new_folder</span><span class="material-symbols-outlined text-[14px] hover:text-on-surface cursor-pointer">refresh</span><span class="material-symbols-outlined text-[14px] hover:text-on-surface cursor-pointer">unfold_less</span></div></div><div class="flex-1 overflow-y-auto px-1 py-1"><div class="flex items-center gap-1.5 px-2 py-1 text-on-surface font-label-md text-label-md"><span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">folder_open</span><span class="truncate font-code-sm text-code-sm">audit_airdrop_Alexander-iPhone</span></div><nav class="flex flex-col gap-0.5 pl-3 mt-1" data-active-classes="bg-surface-container-high text-primary-fixed"><a class="flex items-center gap-2 px-2 py-1 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="rfc6979-proof" href="#"><span class="material-symbols-outlined text-[16px] text-primary-container">data_object</span><span class="font-code-sm text-code-sm truncate">rfc6979_step3_proof.json</span></a><a class="flex items-center gap-2 px-2 py-1 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="manifest" href="#"><span class="material-symbols-outlined text-[16px] text-secondary-fixed-dim">description</span><span class="font-code-sm text-code-sm truncate">manifest.json</span></a><a class="flex items-center gap-2 px-2 py-1 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="merkle-proof" href="#"><span class="material-symbols-outlined text-[16px] text-tertiary-fixed">token</span><span class="font-code-sm text-code-sm truncate">merkle_proof.hex</span></a><a class="flex items-center gap-2 px-2 py-1 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="attestation-receipt" href="#"><span class="material-symbols-outlined text-[16px] text-primary-container">verified</span><span class="font-code-sm text-code-sm truncate">attestation_receipt.json</span></a><a class="flex items-center gap-2 px-2 py-1 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="vault-inspector" href="#"><span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">shield</span><span class="font-code-sm text-code-sm truncate">stellar_quorum.state</span></a></nav><div class="mt-4 pt-2"><div class="flex items-center gap-1 px-2 py-1 text-on-surface-variant font-label-md text-label-md uppercase"><span class="material-symbols-outlined text-[14px]">chevron_right</span><span>Outline</span></div><div class="flex items-center gap-1 px-2 py-1 text-on-surface-variant font-label-md text-label-md uppercase"><span class="material-symbols-outlined text-[14px]">chevron_right</span><span>Timeline</span></div><div class="flex items-center gap-1 px-2 py-1 text-on-surface-variant font-label-md text-label-md uppercase"><span class="material-symbols-outlined text-[14px]">expand_more</span><span>AirDrop Security Metas</span></div><div class="px-4 py-1 text-on-surface-variant font-code-sm text-code-sm flex flex-col gap-1"><span class="text-tertiary-fixed-dim">• SHA-256 Validated</span><span class="text-outline">• Device: iPhone 16 Pro</span><span class="text-outline">• Enclave: T2 / Secure Core</span></div></div></div></aside><div class="pl-72"><header class="fixed top-9 left-72 right-0 h-9 bg-surface-container-lowest/80 backdrop-blur-md z-20 flex items-center justify-between px-2"><nav class="flex items-center gap-1 overflow-x-auto h-full" data-active-classes="bg-surface text-primary border-t-2 border-primary-container"><a class="h-full px-3 flex items-center gap-2 bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-colors font-code-sm text-code-sm" data-path="rfc6979-proof" href="#"><span class="material-symbols-outlined text-[14px] text-primary-container">data_object</span><span>rfc6979_step3_proof.json</span><span class="material-symbols-outlined text-[12px] hover:text-error">close</span></a><a class="h-full px-3 flex items-center gap-2 bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-colors font-code-sm text-code-sm" data-path="manifest" href="#"><span class="material-symbols-outlined text-[14px] text-secondary-fixed-dim">description</span><span>manifest.json</span><span class="material-symbols-outlined text-[12px] hover:text-error">close</span></a><a class="h-full px-3 flex items-center gap-2 bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-colors font-code-sm text-code-sm" data-path="merkle-proof" href="#"><span class="material-symbols-outlined text-[14px] text-tertiary-fixed">token</span><span>merkle_proof.hex</span><span class="material-symbols-outlined text-[12px] hover:text-error">close</span></a><a class="h-full px-3 flex items-center gap-2 bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-colors font-code-sm text-code-sm" data-path="attestation-receipt" href="#"><span class="material-symbols-outlined text-[14px] text-primary-container">verified</span><span>attestation_receipt.json</span><span class="material-symbols-outlined text-[12px] hover:text-error">close</span></a><a class="h-full px-3 flex items-center gap-2 bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-colors font-code-sm text-code-sm" data-path="vault-inspector" href="#"><span class="material-symbols-outlined text-[14px] text-tertiary-fixed-dim">shield</span><span>stellar_quorum.state</span><span class="material-symbols-outlined text-[12px] hover:text-error">close</span></a></nav><div class="flex items-center gap-2 text-on-surface-variant"><button class="p-1 rounded hover:bg-surface-container hover:text-on-surface"><span class="material-symbols-outlined text-[16px]">splitscreen</span></button><button class="p-1 rounded hover:bg-surface-container hover:text-on-surface"><span class="material-symbols-outlined text-[16px]">more_horiz</span></button></div></header><main class="w-full pt-18 pb-6 bg-surface min-h-screen"><div class="flex flex-col w-full text-on-surface">
+<!-- Diff Action Header Bar -->
+<div class="w-full bg-surface-container-low px-4 py-2.5 flex flex-wrap items-center justify-between gap-3 shadow-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="flex items-center gap-2 px-2.5 py-1 rounded bg-surface-container-highest/80 text-primary-fixed">
+<span class="material-symbols-outlined text-[16px] text-primary-container">compare_arrows</span>
+<span class="font-code-sm text-code-sm font-medium">Split Diff Mode</span>
+</div>
+<div class="h-4 w-px bg-surface-variant"></div>
+<div class="flex items-center gap-2 text-on-surface-variant min-w-0">
+<span class="font-label-md text-label-md truncate text-on-surface">
+          AirDrop Enclave Proof <span class="text-on-surface-variant font-code-sm">(Local A17 Pro TEE)</span>
+</span>
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed-dim">sync_alt</span>
+<span class="font-label-md text-label-md truncate text-on-surface">
+          On-Chain Horizon Payload <span class="text-tertiary-fixed font-code-sm">(Ledger #51829410)</span>
+</span>
+</div>
+<div class="hidden xl:flex items-center gap-1.5 px-2 py-0.5 rounded bg-tertiary-container/15 text-tertiary-fixed">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed animate-ping"></span>
+<span class="font-code-sm text-code-sm font-medium">256-bit Exact Deterministic Match</span>
+</div>
+</div>
+<!-- Quick Tool Actions -->
+<div class="flex items-center gap-1.5">
+<button class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Toggle Unified / Inline View">
+<span class="material-symbols-outlined text-[15px]">splitscreen</span>
+<span class="font-label-md text-label-md hidden sm:inline">Inline</span>
+</button>
+<button class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Previous Delta">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+</button>
+<button class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Next Delta">
+<span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+</button>
+<div class="h-4 w-px bg-surface-variant mx-1"></div>
+<button class="flex items-center gap-1.5 px-3 py-1 rounded bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-fixed transition-all shadow-sm" id="wasm-reverify-btn">
+<span class="material-symbols-outlined text-[15px] animate-spin" id="wasm-icon" style="animation-duration: 3s;">memory</span>
+<span>Re-verify WASM</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1 rounded bg-surface-container-high hover:bg-surface-bright text-tertiary-fixed font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[15px]">task_alt</span>
+<span class="hidden md:inline">Accept Parity</span>
+</button>
+</div>
+</div>
+<!-- Primary Working Canvas: Split Code Diff + Right Inspector -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-0 w-full">
+<!-- Left + Center: Dual Code Diff Panes (col-span-9) -->
+<div class="lg:col-span-9 flex flex-col bg-surface-container-lowest">
+<!-- Diff Column Titles / Metadata Header -->
+<div class="grid grid-cols-1 md:grid-cols-2 bg-surface-container-low/70">
+<!-- Left Title -->
+<div class="px-4 py-2 flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-primary-container">phonelink_lock</span>
+<span class="font-code-sm text-code-sm text-on-surface font-medium truncate">rfc6979_step3_proof.json</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface-variant font-code-sm text-code-sm">Local TEE</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline">Apple Secure Enclave</span>
+</div>
+<!-- Right Title -->
+<div class="px-4 py-2 flex items-center justify-between bg-surface-container-low">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">cloud_done</span>
+<span class="font-code-sm text-code-sm text-on-surface font-medium truncate">ledger_tx_51829410_raw.json</span>
+<span class="px-1.5 py-0.2 rounded bg-tertiary-container/20 text-tertiary-fixed font-code-sm text-code-sm">Horizon RPC</span>
+</div>
+<span class="font-code-sm text-code-sm text-tertiary-fixed">Block #51829410</span>
+</div>
+</div>
+<!-- Side-by-Side Line Code Viewport -->
+<div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 text-code-sm font-code-sm overflow-x-auto">
+<!-- LEFT CODE PANE (Local TEE Payload) -->
+<div class="flex flex-col bg-surface-container-lowest/80 text-on-surface-variant selection:bg-primary-container selection:text-on-primary">
+<!-- Line 1 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">1</span>
+<span class="text-on-surface">{</span>
+</div>
+<!-- Line 2 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">2</span>
+<span class="pl-4 text-secondary-fixed-dim">"$schema"</span><span class="text-on-surface">:</span> <span class="text-tertiary">"https://stellar.org/schemas/sep-0043/audit-proof-v1.json"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 3 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">3</span>
+<span class="pl-4 text-secondary-fixed-dim">"version"</span><span class="text-on-surface">:</span> <span class="text-tertiary">"1.0.0-stellar.rfc6979"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 4 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">4</span>
+<span class="pl-4 text-secondary-fixed-dim">"origin_device"</span><span class="text-on-surface">:</span> <span class="text-tertiary">"Apple A17 Pro TEE (Alexander's iPhone)"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 5 -->
+<div class="flex items-start px-2 py-0.5 bg-surface-container-low/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">5</span>
+<span class="pl-4 text-secondary-fixed-dim">"tx_hash"</span><span class="text-on-surface">:</span> <span class="text-primary font-medium">"0x4b7e992f01a88b71d99c43e0621482f5671192fa023e1"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 6 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">6</span>
+<span class="pl-4 text-secondary-fixed-dim">"curve_standard"</span><span class="text-on-surface">:</span> <span class="text-tertiary">"RFC 6979 / NIST P-256 (secp256r1)"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 7 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">7</span>
+<span class="pl-4 text-secondary-fixed-dim">"k_nonce_deterministic"</span><span class="text-on-surface">:</span> <span class="text-primary-container">"0x88f2e91a073f1d82b4cc1930e118ba9942a70420fe29bc119b94019a84e2c491"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 8 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">8</span>
+<span class="pl-4 text-secondary-fixed-dim">"ephemeral_point_R"</span><span class="text-on-surface">: {</span>
+</div>
+<!-- Line 9 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">9</span>
+<span class="pl-8 text-secondary-fixed-dim">"x"</span><span class="text-on-surface">:</span> <span class="text-tertiary">"0xa4f19982ce38419bf472ef910403328e19b"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 10 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">10</span>
+<span class="pl-8 text-secondary-fixed-dim">"y"</span><span class="text-on-surface">:</span> <span class="text-tertiary">"0x39c81b94e77218af88301ec9462820a01fa"</span>
+</div>
+<!-- Line 11 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">11</span>
+<span class="pl-4 text-on-surface">},</span>
+</div>
+<!-- Line 12 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">12</span>
+<span class="pl-4 text-secondary-fixed-dim">"signature_low_s"</span><span class="text-on-surface">:</span> <span class="text-tertiary-fixed-dim">"0x14da2e8b610c144e39b70cae8031..."</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 13 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">13</span>
+<span class="pl-4 text-secondary-fixed-dim">"canonical_bip62"</span><span class="text-on-surface">:</span> <span class="text-primary-container">true</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 14 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">14</span>
+<span class="pl-4 text-secondary-fixed-dim">"merkle_root"</span><span class="text-on-surface">:</span> <span class="text-primary">"0x7d3a91c0e8124b890918e907b8a74130f14a822086e3f421b1a4"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 15 (DELTA LINE - Local Pending) -->
+<div class="flex items-start px-2 py-0.5 bg-error-container/20 text-on-error-container">
+<span class="w-8 shrink-0 text-right pr-3 text-error select-none font-bold">15 -</span>
+<span class="pl-4 text-error">"ledger_status"</span><span class="text-on-surface">:</span> <span class="text-error font-medium">"PENDING_HORIZON_CONFIRMATION"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 16 (Empty spacer matching right added property) -->
+<div class="flex items-start px-2 py-0.5 bg-surface-container-high/20 opacity-30">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none">~</span>
+<span class="pl-4 text-outline font-italic">// field unassigned until ledger seal</span>
+</div>
+<!-- Line 17 (Empty spacer matching right added property) -->
+<div class="flex items-start px-2 py-0.5 bg-surface-container-high/20 opacity-30">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none">~</span>
+<span class="pl-4 text-outline font-italic">// consensus close timestamp pending</span>
+</div>
+<!-- Line 18 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">16</span>
+<span class="pl-4 text-secondary-fixed-dim">"airdrop_recipient"</span><span class="text-on-surface">:</span> <span class="text-tertiary">"GA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA64P7TV5AOG"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 19 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">17</span>
+<span class="pl-4 text-secondary-fixed-dim">"amount_allocated"</span><span class="text-on-surface">:</span> <span class="text-primary-fixed">"12500.0000000 XLM"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 20 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">18</span>
+<span class="pl-4 text-secondary-fixed-dim">"passkey_credential_id"</span><span class="text-on-surface">:</span> <span class="text-tertiary">"fido2:apple:user_enclave_m3_alexander"</span>
+</div>
+<!-- Line 21 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">19</span>
+<span class="text-on-surface">}</span>
+</div>
+<!-- Remaining Pad lines -->
+<div class="h-28 bg-surface-container-lowest/40"></div>
+</div>
+<!-- RIGHT CODE PANE (Stellar Horizon Ledger Tx) -->
+<div class="flex flex-col bg-surface-container-lowest text-on-surface-variant selection:bg-tertiary-container selection:text-on-tertiary">
+<!-- Line 1 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">1</span>
+<span class="text-on-surface">{</span>
+</div>
+<!-- Line 2 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">2</span>
+<span class="pl-4 text-secondary-fixed-dim">"$schema"</span><span class="text-on-surface">:</span> <span class="text-tertiary">"https://stellar.org/schemas/sep-0043/audit-proof-v1.json"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 3 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">3</span>
+<span class="pl-4 text-secondary-fixed-dim">"version"</span><span class="text-on-surface">:</span> <span class="text-tertiary">"1.0.0-stellar.rfc6979"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 4 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">4</span>
+<span class="pl-4 text-secondary-fixed-dim">"origin_device"</span><span class="text-on-surface">:</span> <span class="text-tertiary">"Apple A17 Pro TEE (Alexander's iPhone)"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 5 -->
+<div class="flex items-start px-2 py-0.5 bg-tertiary-container/10">
+<span class="w-8 shrink-0 text-right pr-3 text-tertiary-fixed select-none opacity-70">5</span>
+<span class="pl-4 text-secondary-fixed-dim">"tx_hash"</span><span class="text-on-surface">:</span> <span class="text-primary font-medium">"0x4b7e992f01a88b71d99c43e0621482f5671192fa023e1"</span><span class="text-on-surface">,</span>
+<span class="ml-2 px-1 rounded bg-tertiary-container text-on-tertiary-container font-code-sm text-code-sm text-[10px]">IDENTICAL MATCH</span>
+</div>
+<!-- Line 6 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">6</span>
+<span class="pl-4 text-secondary-fixed-dim">"curve_standard"</span><span class="text-on-surface">:</span> <span class="text-tertiary">"RFC 6979 / NIST P-256 (secp256r1)"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 7 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">7</span>
+<span class="pl-4 text-secondary-fixed-dim">"k_nonce_deterministic"</span><span class="text-on-surface">:</span> <span class="text-primary-container">"0x88f2e91a073f1d82b4cc1930e118ba9942a70420fe29bc119b94019a84e2c491"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 8 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">8</span>
+<span class="pl-4 text-secondary-fixed-dim">"ephemeral_point_R"</span><span class="text-on-surface">: {</span>
+</div>
+<!-- Line 9 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">9</span>
+<span class="pl-8 text-secondary-fixed-dim">"x"</span><span class="text-on-surface">:</span> <span class="text-tertiary">"0xa4f19982ce38419bf472ef910403328e19b"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 10 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">10</span>
+<span class="pl-8 text-secondary-fixed-dim">"y"</span><span class="text-on-surface">:</span> <span class="text-tertiary">"0x39c81b94e77218af88301ec9462820a01fa"</span>
+</div>
+<!-- Line 11 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">11</span>
+<span class="pl-4 text-on-surface">},</span>
+</div>
+<!-- Line 12 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">12</span>
+<span class="pl-4 text-secondary-fixed-dim">"signature_low_s"</span><span class="text-on-surface">:</span> <span class="text-tertiary-fixed-dim">"0x14da2e8b610c144e39b70cae8031..."</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 13 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">13</span>
+<span class="pl-4 text-secondary-fixed-dim">"canonical_bip62"</span><span class="text-on-surface">:</span> <span class="text-primary-container">true</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 14 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">14</span>
+<span class="pl-4 text-secondary-fixed-dim">"merkle_root"</span><span class="text-on-surface">:</span> <span class="text-primary">"0x7d3a91c0e8124b890918e907b8a74130f14a822086e3f421b1a4"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 15 (DELTA LINE - Right Confirmed) -->
+<div class="flex items-start px-2 py-0.5 bg-tertiary-container/20 text-on-tertiary-container">
+<span class="w-8 shrink-0 text-right pr-3 text-tertiary-fixed select-none font-bold">15 +</span>
+<span class="pl-4 text-tertiary-fixed font-semibold">"ledger_status"</span><span class="text-on-surface">:</span> <span class="text-tertiary-fixed font-bold">"SUCCESS_FINALIZED_IN_LEDGER"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 16 (DELTA LINE - Added Sequence) -->
+<div class="flex items-start px-2 py-0.5 bg-tertiary-container/20 text-on-tertiary-container">
+<span class="w-8 shrink-0 text-right pr-3 text-tertiary-fixed select-none font-bold">16 +</span>
+<span class="pl-4 text-tertiary-fixed font-semibold">"ledger_sequence"</span><span class="text-on-surface">:</span> <span class="text-primary-fixed font-bold">51829410</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 17 (DELTA LINE - Added Timestamp) -->
+<div class="flex items-start px-2 py-0.5 bg-tertiary-container/20 text-on-tertiary-container">
+<span class="w-8 shrink-0 text-right pr-3 text-tertiary-fixed select-none font-bold">17 +</span>
+<span class="pl-4 text-tertiary-fixed font-semibold">"ledger_close_time"</span><span class="text-on-surface">:</span> <span class="text-tertiary">"2025-05-18T10:42:04.281Z"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 18 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">18</span>
+<span class="pl-4 text-secondary-fixed-dim">"airdrop_recipient"</span><span class="text-on-surface">:</span> <span class="text-tertiary">"GA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA64P7TV5AOG"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 19 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">19</span>
+<span class="pl-4 text-secondary-fixed-dim">"amount_allocated"</span><span class="text-on-surface">:</span> <span class="text-primary-fixed">"12500.0000000 XLM"</span><span class="text-on-surface">,</span>
+</div>
+<!-- Line 20 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">20</span>
+<span class="pl-4 text-secondary-fixed-dim">"passkey_credential_id"</span><span class="text-on-surface">:</span> <span class="text-tertiary">"fido2:apple:user_enclave_m3_alexander"</span>
+</div>
+<!-- Line 21 -->
+<div class="flex items-start px-2 py-0.5 hover:bg-surface-container/40">
+<span class="w-8 shrink-0 text-right pr-3 text-outline select-none opacity-40">21</span>
+<span class="text-on-surface">}</span>
+</div>
+<!-- Remaining Pad lines -->
+<div class="h-28 bg-surface-container-lowest"></div>
+</div>
+</div>
+</div>
+<!-- Right: Soroban Diff Inspector & Verifier Panel (col-span-3) -->
+<div class="lg:col-span-3 bg-surface-container-low flex flex-col p-4 space-y-4">
+<!-- Inspector Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim">verified</span>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Diff Inspector</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary-fixed font-code-sm text-code-sm font-semibold tracking-wide">
+          100% PARITY
+        </span>
+</div>
+<!-- Radial Consensus Invariant Ring SVG Visualizer -->
+<div class="p-3 rounded-lg bg-surface-container flex flex-col items-center justify-center relative overflow-hidden shadow-sm">
+<div class="flex items-center justify-center w-full py-1">
+<svg class="w-32 h-32 transform -rotate-90" viewbox="0 0 100 100">
+<!-- Background Ring -->
+<circle class="text-surface-container-high" cx="50" cy="50" fill="transparent" r="42" stroke="currentColor" stroke-width="7"></circle>
+<!-- Verified Cryptographic Quorum (Full 100%) -->
+<circle class="text-primary-container" cx="50" cy="50" fill="transparent" r="42" stroke="currentColor" stroke-dasharray="263.89" stroke-dashoffset="0" stroke-linecap="round" stroke-width="7"></circle>
+</svg>
+<div class="absolute flex flex-col items-center justify-center">
+<span class="font-headline-lg text-headline-lg font-bold text-primary">23/23</span>
+<span class="font-code-sm text-code-sm text-tertiary-fixed uppercase">Validators</span>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant text-center mt-1">
+          Zero scalar bias detected across Apple TEE &amp; Stellar Horizon validator ledger.
+        </p>
+</div>
+<!-- Invariant Matching Checklist -->
+<div class="space-y-2">
+<span class="font-label-md text-label-md uppercase tracking-wider text-outline">Cryptographic Invariants</span>
+<!-- Invariant 1 -->
+<div class="p-2.5 rounded bg-surface-container flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] mt-0.5">check_circle</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium">Tx Hash (SHA-256)</span>
+<span class="font-code-sm text-code-sm text-tertiary-fixed">Match</span>
+</div>
+<p class="font-code-sm text-code-sm text-outline truncate">0x4b7e99...023e1</p>
+</div>
+</div>
+<!-- Invariant 2 -->
+<div class="p-2.5 rounded bg-surface-container flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] mt-0.5">check_circle</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium">RFC 6979 k-Nonce</span>
+<span class="font-code-sm text-code-sm text-tertiary-fixed">256/256b</span>
+</div>
+<p class="font-code-sm text-code-sm text-outline truncate">HMAC-DRBG Deterministic</p>
+</div>
+</div>
+<!-- Invariant 3 -->
+<div class="p-2.5 rounded bg-surface-container flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] mt-0.5">check_circle</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium">BIP-62 Low-S Guard</span>
+<span class="font-code-sm text-code-sm text-tertiary-fixed">Canonical</span>
+</div>
+<p class="font-code-sm text-code-sm text-outline truncate">s &lt; (n/2) Non-malleable</p>
+</div>
+</div>
+<!-- Invariant 4 -->
+<div class="p-2.5 rounded bg-surface-container flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] mt-0.5">check_circle</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium">Merkle AirDrop Root</span>
+<span class="font-code-sm text-code-sm text-tertiary-fixed">Verified</span>
+</div>
+<p class="font-code-sm text-code-sm text-outline truncate">Leaves aligned to SEP-0043</p>
+</div>
+</div>
+</div>
+<!-- Action Panel Buttons -->
+<div class="pt-2 flex flex-col gap-2">
+<a class="w-full flex items-center justify-center gap-2 py-2 px-3 rounded bg-secondary-container text-secondary-fixed hover:bg-surface-variant font-label-md text-label-md transition-colors" href="#">
+<span>Stellar.Expert Ledger #51829410</span>
+<span class="material-symbols-outlined text-[15px]">open_in_new</span>
+</a>
+<button class="w-full flex items-center justify-center gap-2 py-2 px-3 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export Diff Audit (.json / .html)</span>
+</button>
+</div>
+<!-- Hardware Node Metadata Capsule -->
+<div class="mt-auto pt-3 text-on-surface-variant/80 font-code-sm text-code-sm space-y-1">
+<div class="flex items-center justify-between">
+<span class="text-outline">Execution Host:</span>
+<span class="text-on-surface">Mac M3 Max (Enclave T2)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-outline">Target Network:</span>
+<span class="text-tertiary-fixed">Horizon Testnet</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-outline">Roundtrip Latency:</span>
+<span class="text-primary-fixed">498 ms (0 dropped)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Panel: Integrated Terminal & RPC Audit Logs -->
+<div class="w-full bg-surface-container-low flex flex-col mt-4">
+<!-- Panel Tab Strip -->
+<div class="flex items-center justify-between px-3 bg-surface-container-lowest">
+<div class="flex items-center gap-1">
+<button class="px-3 py-1.5 font-code-sm text-code-sm text-on-surface-variant hover:text-on-surface transition-colors">OUTPUT</button>
+<button class="px-3 py-1.5 font-code-sm text-code-sm text-on-surface-variant hover:text-on-surface transition-colors">TERMINAL</button>
+<button class="px-3 py-1.5 font-code-sm text-code-sm text-primary font-semibold bg-surface-container flex items-center gap-1.5">
+<span>DIFF DIAGNOSTICS</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+</button>
+<button class="px-3 py-1.5 font-code-sm text-code-sm text-on-surface-variant hover:text-on-surface transition-colors">SOROBAN RPC</button>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<button class="p-1 hover:text-on-surface" title="Clear Console"><span class="material-symbols-outlined text-[14px]">block</span></button>
+<button class="p-1 hover:text-on-surface" title="Maximize Panel"><span class="material-symbols-outlined text-[14px]">expand_less</span></button>
+</div>
+</div>
+<!-- Log Console Output -->
+<div class="p-3 font-code-sm text-code-sm space-y-1 bg-surface-container-lowest/90 overflow-x-auto text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="text-outline">[10:42:01.012]</span>
+<span class="text-primary-container font-semibold">[diff-engine]</span>
+<span>Parsing AST for local payload <span class="text-on-surface">rfc6979_step3_proof.json</span> against Horizon state...</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-outline">[10:42:01.198]</span>
+<span class="text-tertiary-fixed-dim font-semibold">[crypto-secp256r1]</span>
+<span>Computing deterministic scalar k = HMAC-SHA256(V || K || M)... Value verified against Apple A17 Pro Secure Enclave.</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-outline">[10:42:02.430]</span>
+<span class="text-primary-container font-semibold">[diff-engine]</span>
+<span>Cryptographic scalars: <span class="text-tertiary-fixed font-bold">0 diffs</span>. Signature bytes: <span class="text-tertiary-fixed font-bold">EXACT MATCH (100.00%)</span>.</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-outline">[10:42:03.882]</span>
+<span class="text-tertiary-fixed font-semibold">[stellar-horizon]</span>
+<span>Ledger consensus reached at block sequence <span class="text-primary font-bold">#51829410</span>. 23/23 validators signed state root.</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-outline">[10:42:04.281]</span>
+<span class="text-tertiary-fixed-dim font-semibold">[audit-complete]</span>
+<span class="text-tertiary-fixed">AirDrop allocation valid. Local receipt and On-Chain Horizon ledger are in cryptographic synchrony.</span>
+</div>
+</div>
+</div>
+<!-- Interactive JavaScript for Re-verification micro-action -->
+<script>
+    const reverifyBtn = document.getElementById('wasm-reverify-btn');
+    const wasmIcon = document.getElementById('wasm-icon');
+    if (reverifyBtn && wasmIcon) {
+      reverifyBtn.addEventListener('click', () => {
+        wasmIcon.classList.remove('animate-spin');
+        void wasmIcon.offsetWidth; // trigger reflow
+        wasmIcon.classList.add('animate-spin');
+        const originalText = reverifyBtn.querySelector('span:last-child').textContent;
+        reverifyBtn.querySelector('span:last-child').textContent = 'Computing...';
+        setTimeout(() => {
+          reverifyBtn.querySelector('span:last-child').textContent = 'Verified (0 Diff)';
+          setTimeout(() => {
+            reverifyBtn.querySelector('span:last-child').textContent = originalText;
+          }, 2000);
+        }, 800);
+      });
+    }
+  </script>
+</div></main></div><footer class="fixed bottom-0 left-0 right-0 h-6 bg-surface-container-lowest text-on-surface-variant flex items-center justify-between px-3 text-body-sm z-50"><div class="flex items-center gap-4 font-code-sm text-code-sm"><div class="flex items-center gap-1 text-on-surface hover:text-primary transition-colors cursor-pointer"><span class="material-symbols-outlined text-[14px]">account_tree</span><span>audit/airdrop-validation*</span></div><div class="flex items-center gap-1.5 hover:text-on-surface cursor-pointer"><span class="material-symbols-outlined text-[14px] text-tertiary-fixed-dim">sync</span><span>0↓ 1↑</span></div><div class="flex items-center gap-1 text-error hover:text-error-container cursor-pointer"><span class="material-symbols-outlined text-[14px]">error</span><span>0</span></div><div class="flex items-center gap-1 text-tertiary-container hover:text-tertiary cursor-pointer"><span class="material-symbols-outlined text-[14px]">warning</span><span>0</span></div></div><div class="flex items-center gap-4 font-code-sm text-code-sm"><div class="flex items-center gap-1.5 text-tertiary-fixed hover:text-on-surface cursor-pointer"><span class="material-symbols-outlined text-[14px]">hub</span><span>Horizon: Testnet (Synced 498ms)</span></div><span class="hover:text-on-surface cursor-pointer">Spaces: 2</span><span class="hover:text-on-surface cursor-pointer">UTF-8</span><span class="hover:text-on-surface cursor-pointer">LF</span><span class="hover:text-on-surface cursor-pointer text-primary-fixed">JSON (RFC 6979 Strict)</span><div class="flex items-center gap-1 hover:text-on-surface cursor-pointer"><span class="material-symbols-outlined text-[14px]">notifications</span></div></div></footer></body></html>

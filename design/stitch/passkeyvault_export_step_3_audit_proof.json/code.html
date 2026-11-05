@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "background": "#10131a", "surface-bright": "#363941", "surface-container-low": "#191b23", "primary": "#e0fdff", "error-container": "#93000a", "on-primary-container": "#006a70", "on-secondary-fixed-variant": "#2f2ebe", "error": "#ffb4ab", "surface": "#10131a", "on-surface-variant": "#b9cacb", "inverse-on-surface": "#2d3038", "secondary": "#c0c1ff", "on-tertiary-fixed-variant": "#005144", "primary-container": "#00f2fe", "on-tertiary": "#00382e", "on-primary-fixed-variant": "#004f53", "surface-container-lowest": "#0b0e15", "surface-container-high": "#272a32", "tertiary-fixed-dim": "#26dec0", "on-background": "#e1e2ec", "on-secondary": "#1000a9", "outline": "#849495", "tertiary": "#ddfff4", "primary-fixed": "#6ff6ff", "outline-variant": "#3a494b", "tertiary-container": "#4bf4d5", "on-tertiary-container": "#006d5c", "on-primary-fixed": "#002022", "on-surface": "#e1e2ec", "on-error-container": "#ffdad6", "tertiary-fixed": "#55fbdc", "secondary-fixed": "#e1e0ff", "on-primary": "#00373a", "surface-container-highest": "#32353d", "surface-dim": "#10131a", "surface-tint": "#00dce6", "inverse-surface": "#e1e2ec", "on-error": "#690005", "secondary-container": "#3131c0", "inverse-primary": "#00696f", "on-secondary-fixed": "#07006c", "secondary-fixed-dim": "#c0c1ff", "on-tertiary-fixed": "#00201a", "surface-container": "#1d1f27", "primary-fixed-dim": "#00dce6", "surface-variant": "#32353d", "on-secondary-container": "#b0b2ff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter-mobile": "0.75rem", "margin": "1.5rem", "space-sm": "0.5rem", "gutter": "1rem", "margin-mobile": "1rem", "space-md": "1rem", "space-xl": "2rem" }, fontFamily: { "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "code-md": ["JetBrains Mono"], "body-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "code-sm": ["JetBrains Mono"], "code-lg": ["JetBrains Mono"] }, fontSize: { "headline-lg-mobile": ["22px", { lineHeight: "30px", fontWeight: "600" }], "headline-xl": ["38px", { lineHeight: "46px", fontWeight: "700" }], "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", fontWeight: "600" }], "headline-xl-mobile": ["30px", { lineHeight: "38px", fontWeight: "700" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", fontWeight: "500" }], "code-md": ["13px", { lineHeight: "18px", fontWeight: "400" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "code-sm": ["11px", { lineHeight: "14px", fontWeight: "400" }], "code-lg": ["16px", { lineHeight: "24px", fontWeight: "500" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#10131a;color:#e1e2ec;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><button aria-label="Go Back" class="w-11 h-11 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary-container transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><div class="flex items-center gap-space-xs min-w-0"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span><h1 class="font-label-lg text-label-lg text-on-surface truncate tracking-tight">Audit Bundle Debug Trace</h1></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high"><span class="font-code-sm text-code-sm text-primary-container">--debug</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full px-margin-mobile pb-space-xl">
+<!-- Subtle Ambient Glow Orbs -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
+<div class="absolute top-40 -left-12 w-40 h-40 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none"></div>
+<!-- Header / Modal Chrome -->
+<div class="flex flex-col gap-space-xs pt-space-md mb-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-container">shield_with_heart</span>
+<span class="font-code-sm text-code-sm tracking-wider text-primary-container uppercase font-semibold">Cryptographic Attestation • RFC 6979</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse"></span>
+<span class="font-code-sm text-code-sm text-tertiary-container font-medium tracking-tight">READY</span>
+</div>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight mt-1">Step 3 Audit Proof Export</h2>
+<!-- File Details Chip Strip -->
+<div class="flex flex-wrap items-center gap-1.5 p-2 rounded-lg bg-surface-container-low text-on-surface-variant shadow-sm mt-1">
+<div class="flex items-center gap-1 text-on-surface font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[15px] text-primary-container">data_object</span>
+<span class="font-medium text-primary">rfc6979_step3_proof.json</span>
+</div>
+<span class="text-outline-variant">•</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">3.8 KB</span>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1 font-code-sm text-code-sm text-on-surface-variant">
+<span>SHA:</span>
+<span class="text-secondary font-mono">72cc199...801d</span>
+</div>
+</div>
+</div>
+<!-- Quick Invariant Verification Bento -->
+<div class="flex flex-col gap-2 mb-space-md">
+<div class="grid grid-cols-3 gap-2">
+<!-- Metric 1 -->
+<div class="flex flex-col p-2.5 rounded-xl bg-surface-container-low shadow-sm justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-code-sm text-code-sm text-on-surface-variant">k-Parity</span>
+<span class="material-symbols-outlined text-[14px] text-tertiary-container">verified</span>
+</div>
+<span class="font-code-md text-code-md font-semibold text-primary">256 bits</span>
+<span class="font-code-sm text-code-sm text-tertiary-fixed-dim text-[10px] leading-3 mt-0.5">Uniform Entropy</span>
+</div>
+<!-- Metric 2 -->
+<div class="flex flex-col p-2.5 rounded-xl bg-surface-container-low shadow-sm justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-code-sm text-code-sm text-on-surface-variant">RFC 6979</span>
+<span class="material-symbols-outlined text-[14px] text-primary-container">chevron_forward</span>
+</div>
+<span class="font-code-md text-code-md font-semibold text-primary">CANONICAL</span>
+<span class="font-code-sm text-code-sm text-primary-fixed-dim text-[10px] leading-3 mt-0.5">HMAC-DRBG</span>
+</div>
+<!-- Metric 3 -->
+<div class="flex flex-col p-2.5 rounded-xl bg-surface-container-low shadow-sm justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-code-sm text-code-sm text-on-surface-variant">Leakage</span>
+<span class="material-symbols-outlined text-[14px] text-tertiary-container">lock</span>
+</div>
+<span class="font-code-md text-code-md font-semibold text-tertiary-container">0.000%</span>
+<span class="font-code-sm text-code-sm text-tertiary-fixed-dim text-[10px] leading-3 mt-0.5">Zero Side-Channel</span>
+</div>
+</div>
+<!-- Enclave Attestation Seal Banner -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-high/80 backdrop-blur-md shadow-sm">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary text-[18px]">memory</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Apple Secure Enclave</span>
+<span class="px-1.5 py-0.2 rounded bg-tertiary-container/20 text-tertiary-container font-code-sm text-code-sm text-[10px]">A17 Pro TEE</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant truncate">Hardware Binding • FIPS 140-3 Level 3 Validated</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-tertiary-container flex-shrink-0 pl-1">
+<span class="material-symbols-outlined text-[18px]">gpp_good</span>
+</div>
+</div>
+</div>
+<!-- Interactive JSON Payload Inspector -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest overflow-hidden shadow-xl mb-space-md">
+<!-- Terminal Header -->
+<div class="flex items-center justify-between px-3 py-2 bg-surface-container-high/90">
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-variant"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-surface-variant"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-surface-variant"></span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant ml-1 font-medium">rfc6979_step3_proof.json</span>
+</div>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container hover:bg-surface-bright active:scale-95 transition-all text-on-surface text-label-md font-label-md" id="copyJsonBtn" type="button">
+<span class="material-symbols-outlined text-[15px] text-primary-container" id="copyIcon">content_copy</span>
+<span class="font-code-sm text-code-sm text-on-surface font-medium" id="copyLabel">Copy</span>
+</button>
+</div>
+<!-- Monospace Code Body with Line Numbers -->
+<div class="p-3 overflow-x-auto max-h-72 select-text font-code-sm text-code-sm leading-5">
+<table class="w-full border-collapse">
+<tbody>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">01</td>
+<td class="text-on-surface font-mono whitespace-pre"><span class="text-on-surface-variant">{</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">02</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-primary-container">"version"</span><span class="text-on-surface-variant">:</span> <span class="text-tertiary-container">"1.0.0-stellar.rfc6979"</span><span class="text-on-surface-variant">,</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">03</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-primary-container">"standard"</span><span class="text-on-surface-variant">:</span> <span class="text-tertiary-container">"RFC 6979 / NIST P-256 (secp256r1)"</span><span class="text-on-surface-variant">,</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">04</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-primary-container">"tx_hash"</span><span class="text-on-surface-variant">:</span> <span class="text-tertiary-container">"0x4b7e992f01a88b71d99c43e0621482f5"</span><span class="text-on-surface-variant">,</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">05</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-primary-container">"hash_function"</span><span class="text-on-surface-variant">:</span> <span class="text-tertiary-container">"SHA-256"</span><span class="text-on-surface-variant">,</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">06</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-primary-container">"message_digest_e"</span><span class="text-on-surface-variant">:</span> <span class="text-tertiary-container">"0xd4a7f0128913b827e8a1099e2bc8"</span><span class="text-on-surface-variant">,</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">07</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-primary-container">"k_derivation"</span><span class="text-on-surface-variant">: {</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">08</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-primary-container">"k_nonce_hex"</span><span class="text-on-surface-variant">:</span> <span class="text-tertiary-container">"0x88f2e91a073f1d82b4cc1930..."</span><span class="text-on-surface-variant">,</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">09</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-primary-container">"v_final"</span><span class="text-on-surface-variant">:</span> <span class="text-tertiary-container">"0x1b4e99f018a14b901a88"</span><span class="text-on-surface-variant">,</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">10</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-primary-container">"iterations"</span><span class="text-on-surface-variant">:</span> <span class="text-tertiary-fixed-dim">1</span><span class="text-on-surface-variant">,</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">11</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-primary-container">"ephemeral_point_R"</span><span class="text-on-surface-variant">: {</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">12</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-primary-container">"x"</span><span class="text-on-surface-variant">:</span> <span class="text-tertiary-container">"0xa4f19982ce38419bf209881d72..."</span><span class="text-on-surface-variant">,</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">13</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-primary-container">"y"</span><span class="text-on-surface-variant">:</span> <span class="text-tertiary-container">"0x39c81b94e77218af4081c702"</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">14</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-on-surface-variant">},</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">15</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-primary-container">"r_scalar_match"</span><span class="text-on-surface-variant">:</span> <span class="text-secondary">true</span><span class="text-on-surface-variant">,</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">16</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-primary-container">"zero_bias_guarantee"</span><span class="text-on-surface-variant">:</span> <span class="text-secondary">true</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">17</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-on-surface-variant">},</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">18</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-primary-container">"attestation"</span><span class="text-on-surface-variant">: {</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">19</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-primary-container">"tee_type"</span><span class="text-on-surface-variant">:</span> <span class="text-tertiary-container">"Apple Secure Enclave"</span><span class="text-on-surface-variant">,</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">20</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-primary-container">"fips_140_3_level"</span><span class="text-on-surface-variant">:</span> <span class="text-tertiary-fixed-dim">3</span><span class="text-on-surface-variant">,</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">21</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-primary-container">"timestamp"</span><span class="text-on-surface-variant">:</span> <span class="text-tertiary-fixed-dim">1714578120</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">22</td>
+<td class="text-on-surface font-mono whitespace-pre"> <span class="text-on-surface-variant">}</span></td>
+</tr>
+<tr>
+<td class="text-outline-variant pr-3 text-right select-none align-top w-5">23</td>
+<td class="text-on-surface font-mono whitespace-pre"><span class="text-on-surface-variant">}</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Checksum & Merkle Binding Card -->
+<div class="flex flex-col gap-2 p-3.5 rounded-xl bg-surface-container-low shadow-sm mb-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-container">fingerprint</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">SHA-256 Attestation Checksum</span>
+</div>
+<button class="text-primary-container hover:text-primary active:scale-95 transition-transform flex items-center gap-1 font-code-sm text-code-sm" id="copyHashBtn" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>Copy</span>
+</button>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-lowest font-code-sm text-code-sm text-secondary break-all select-all font-mono leading-relaxed">
+        72cc199a0efb320875e533c36192d2940248a31e1388ec4c259838f71295801d
+      </div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[15px] text-tertiary-container">hub</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant truncate">Merkle Tree Inclusion:</span>
+</div>
+<span class="font-code-sm text-code-sm text-primary font-medium truncate max-w-[190px] text-right">Leaf L4 • 0x7d3a91...b1a4</span>
+</div>
+</div>
+<!-- Export Action Zone (Thumb Quadrant Ergonomics) -->
+<div class="flex flex-col gap-2.5">
+<!-- Primary Action: Glowing Cyan Download -->
+<button class="relative group flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-primary-container to-tertiary-container text-on-primary-container font-headline-md text-headline-md tracking-tight font-semibold shadow-lg shadow-primary-container/20 active:scale-[0.98] transition-all" id="downloadFileBtn" type="button">
+<span class="material-symbols-outlined text-[20px] text-on-primary-container group-hover:translate-y-0.5 transition-transform">download</span>
+<span>Download .json Proof</span>
+</button>
+<!-- Secondary: AirDrop / Share -->
+<button class="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-surface-container-high hover:bg-surface-bright active:scale-[0.98] transition-all text-on-surface font-label-lg text-label-lg font-semibold" id="shareFileBtn" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary-container">ios_share</span>
+<span>Share / AirDrop Proof (.json)</span>
+</button>
+<!-- Return Navigation Link -->
+<button class="flex items-center justify-center gap-1.5 w-full py-2.5 text-on-surface-variant hover:text-primary active:scale-95 transition-colors font-body-md text-body-md" onclick="history.back()" type="button">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<span>Return to Filtered Trace (Step 3)</span>
+</button>
+</div>
+<!-- Toast Notification for Micro-Delight Feedback -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-surface-container-highest/95 backdrop-blur-md text-primary font-label-md text-label-md flex items-center gap-2 shadow-2xl transition-all duration-300 opacity-0 pointer-events-none translate-y-4 z-50" id="actionToast">
+<span class="material-symbols-outlined text-[18px] text-tertiary-container">check_circle</span>
+<span id="toastMessage">Proof payload copied</span>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    const rawPayload = JSON.stringify({
+      "version": "1.0.0-stellar.rfc6979",
+      "standard": "RFC 6979 / NIST P-256 (secp256r1)",
+      "tx_hash": "0x4b7e992f01a88b71d99c43e0621482f5",
+      "hash_function": "SHA-256",
+      "message_digest_e": "0xd4a7f0128913b827e8a1099e2bc8",
+      "k_derivation": {
+        "k_nonce_hex": "0x88f2e91a073f1d82b4cc1930e118ba9942a70420fe29bc119b94019a84e2c491",
+        "v_final": "0x1b4e99f018a14b901a88",
+        "iterations": 1,
+        "ephemeral_point_R": {
+          "x": "0xa4f19982ce38419bf209881d72c14e02",
+          "y": "0x39c81b94e77218af4081c702"
+        },
+        "r_scalar_match": true,
+        "zero_bias_guarantee": true
+      },
+      "attestation": {
+        "tee_type": "Apple Secure Enclave",
+        "fips_140_3_level": 3,
+        "timestamp": 1714578120
+      }
+    }, null, 2);
+
+    const toast = document.getElementById('actionToast');
+    const toastMessage = document.getElementById('toastMessage');
+
+    function showToast(msg) {
+      if (!toast) return;
+      toastMessage.textContent = msg;
+      toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 2200);
+    }
+
+    const copyJsonBtn = document.getElementById('copyJsonBtn');
+    if (copyJsonBtn) {
+      copyJsonBtn.addEventListener('click', () => {
+        navigator.clipboard?.writeText(rawPayload);
+        const icon = document.getElementById('copyIcon');
+        const label = document.getElementById('copyLabel');
+        if (icon && label) {
+          icon.textContent = 'done';
+          label.textContent = 'Copied';
+          setTimeout(() => {
+            icon.textContent = 'content_copy';
+            label.textContent = 'Copy';
+          }, 1800);
+        }
+        showToast('JSON payload copied to clipboard');
+      });
+    }
+
+    const copyHashBtn = document.getElementById('copyHashBtn');
+    if (copyHashBtn) {
+      copyHashBtn.addEventListener('click', () => {
+        navigator.clipboard?.writeText('72cc199a0efb320875e533c36192d2940248a31e1388ec4c259838f71295801d');
+        showToast('Attestation SHA-256 copied');
+      });
+    }
+
+    const downloadFileBtn = document.getElementById('downloadFileBtn');
+    if (downloadFileBtn) {
+      downloadFileBtn.addEventListener('click', () => {
+        const blob = new Blob([rawPayload], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'rfc6979_step3_proof.json';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showToast('Exported rfc6979_step3_proof.json');
+      });
+    }
+
+    const shareFileBtn = document.getElementById('shareFileBtn');
+    if (shareFileBtn) {
+      shareFileBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            const file = new File([rawPayload], 'rfc6979_step3_proof.json', { type: 'application/json' });
+            await navigator.share({
+              title: 'RFC 6979 Step 3 Audit Proof',
+              text: 'Deterministic Attestation Proof for PasskeyVault Audit Trace',
+              files: [file]
+            });
+          } catch (e) {
+            showToast('Sharing cancelled or not supported');
+          }
+        } else {
+          navigator.clipboard?.writeText(rawPayload);
+          showToast('Share API unavailable; JSON copied');
+        }
+      });
+    }
+  })();
+</script></main></body></html>

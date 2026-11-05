@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-fixed-dim":"#c0c1ff","surface-tint":"#00dce6","on-tertiary":"#00382e","on-surface-variant":"#b9cacb","surface-bright":"#363941","surface-container-high":"#272a32","on-primary-container":"#006a70","error":"#ffb4ab","surface-variant":"#32353d","error-container":"#93000a","primary-fixed-dim":"#00dce6","tertiary-fixed":"#55fbdc","on-secondary-fixed-variant":"#2f2ebe","surface-container-lowest":"#0b0e15","surface":"#10131a","on-primary-fixed":"#002022","outline-variant":"#3a494b","on-error":"#690005","primary-container":"#00f2fe","inverse-primary":"#00696f","on-primary":"#00373a","on-primary-fixed-variant":"#004f53","primary":"#e0fdff","secondary-container":"#3131c0","tertiary-container":"#4bf4d5","tertiary":"#ddfff4","on-surface":"#e1e2ec","on-tertiary-fixed":"#00201a","secondary":"#c0c1ff","on-secondary":"#1000a9","surface-container-low":"#191b23","secondary-fixed":"#e1e0ff","inverse-surface":"#e1e2ec","surface-container-highest":"#32353d","surface-container":"#1d1f27","inverse-on-surface":"#2d3038","on-secondary-fixed":"#07006c","tertiary-fixed-dim":"#26dec0","on-background":"#e1e2ec","on-tertiary-container":"#006d5c","on-error-container":"#ffdad6","outline":"#849495","on-tertiary-fixed-variant":"#005144","surface-dim":"#10131a","background":"#10131a","primary-fixed":"#6ff6ff","on-secondary-container":"#b0b2ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-mobile":"1rem","space-md":"1rem","space-lg":"1.5rem","space-sm":"0.5rem","space-xl":"2rem","gutter-mobile":"0.75rem","margin":"1.5rem","gutter":"1rem","space-xs":"0.25rem"},"fontFamily":{"headline-xl":["Plus Jakarta Sans"],"code-sm":["JetBrains Mono"],"headline-xl-mobile":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"code-lg":["JetBrains Mono"],"body-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"code-md":["JetBrains Mono"],"headline-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"]},"fontSize":{"headline-xl":["38px",{"lineHeight":"46px","fontWeight":"700"}],"code-sm":["11px",{"lineHeight":"14px","fontWeight":"400"}],"headline-xl-mobile":["30px",{"lineHeight":"38px","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"headline-lg-mobile":["22px",{"lineHeight":"30px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"code-lg":["16px",{"lineHeight":"24px","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"code-md":["13px",{"lineHeight":"18px","fontWeight":"400"}],"headline-lg":["28px",{"lineHeight":"36px","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-28 w-full px-space-lg flex flex-col justify-between pt-space-sm"><div class="flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center"><span class="material-symbols-outlined text-primary-container text-[18px]">shield_lock</span></div><div class="flex items-center gap-space-xs font-headline-md text-headline-md"><span class="text-on-surface-variant font-label-lg text-label-lg">PasskeyVault</span><span class="text-outline font-label-md text-label-md">/</span><span class="text-primary font-headline-md text-headline-md font-semibold">soroban</span><span class="ml-space-xs px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md border-0">Public</span></div><div class="hidden xl:flex items-center gap-space-xs ml-space-md"><span class="px-space-xs py-0.5 rounded bg-surface-container-high text-primary-fixed-dim font-code-sm text-code-sm">v0.2.1</span><span class="px-space-xs py-0.5 rounded bg-surface-container-high text-tertiary-fixed font-code-sm text-code-sm">Protocol 21</span><span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-code-sm text-code-sm">7f8a93c</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center bg-surface-container rounded-lg p-0.5"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-high text-on-surface font-label-md text-label-md"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">visibility</span><span>Watch</span><span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface font-code-sm text-code-sm">42</span></div></div><div class="flex items-center bg-surface-container rounded-lg p-0.5"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-high text-on-surface font-label-md text-label-md"><span class="material-symbols-outlined text-[16px] text-tertiary-container">star</span><span>Star</span><span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface font-code-sm text-code-sm">1.4k</span></div></div><div class="flex items-center bg-surface-container rounded-lg p-0.5"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-high text-on-surface font-label-md text-label-md"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">call_split</span><span>Fork</span><span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface font-code-sm text-code-sm">238</span></div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><nav class="flex items-center gap-space-xs overflow-x-auto pb-space-xs" data-active-classes="bg-surface-container-highest text-primary font-label-md text-label-md rounded"><a aria-current="page" class="px-space-sm py-1 transition-colors bg-surface-container-highest text-primary font-label-md text-label-md rounded" data-path="code" href="#">Code</a><a class="text-on-surface-variant hover:text-on-surface px-space-sm py-1 font-label-md text-label-md transition-colors" data-path="issues" href="#">Issues</a><a class="text-on-surface-variant hover:text-on-surface px-space-sm py-1 font-label-md text-label-md transition-colors" data-path="pull-requests" href="#">Pull Requests</a><a class="text-on-surface-variant hover:text-on-surface px-space-sm py-1 font-label-md text-label-md transition-colors" data-path="actions" href="#">Actions</a><a class="text-on-surface-variant hover:text-on-surface px-space-sm py-1 font-label-md text-label-md transition-colors" data-path="projects" href="#">Projects</a><a class="text-on-surface-variant hover:text-on-surface px-space-sm py-1 font-label-md text-label-md transition-colors" data-path="wiki" href="#">Wiki</a><a class="text-on-surface-variant hover:text-on-surface px-space-sm py-1 font-label-md text-label-md transition-colors" data-path="security" href="#">Security</a><a class="text-on-surface-variant hover:text-on-surface px-space-sm py-1 font-label-md text-label-md transition-colors" data-path="insights" href="#">Insights</a></nav></div></header><main class="w-full pt-28 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- Subtle ambient glow background decoration -->
+<div class="relative w-full max-w-[1440px] mx-auto px-space-md lg:px-space-xl py-space-lg">
+<div class="absolute -top-24 left-1/3 w-96 h-96 bg-primary-container/5 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-96 right-10 w-80 h-80 bg-secondary-container/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<!-- 1. Top Meta Summary & Header Breadcrumb Section -->
+<div class="flex flex-col gap-space-md mb-space-xl">
+<!-- Breadcrumb Bar & Top Badges Row -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-sm">
+<div class="flex items-center gap-space-xs font-label-md text-label-md">
+<span class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer">stellar-open-source</span>
+<span class="text-outline">/</span>
+<span class="text-primary font-headline-md text-headline-md tracking-tight">passkey-vault-stellar</span>
+<span class="ml-space-xs px-2 py-0.5 rounded-full bg-surface-container-high text-primary-fixed-dim font-code-sm text-code-sm">sep-0043-ready</span>
+</div>
+<!-- System Status & Quick Links -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-tertiary-fixed font-code-sm text-code-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+<span>Testnet Protocol 21 Live</span>
+</div>
+<a class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1" href="#benchmark-table">
+<span class="material-symbols-outlined text-[15px] text-primary-container">speed</span>
+<span>Benchmarks</span>
+</a>
+<a class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1" href="#security-sla">
+<span class="material-symbols-outlined text-[15px] text-tertiary-fixed">verified_user</span>
+<span>Audit: Tier-1</span>
+</a>
+</div>
+</div>
+<!-- Repo Short Tagline / Description -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-4xl leading-relaxed">
+        Production-ready <span class="text-on-surface font-label-lg text-label-lg">Smart Contract Account Abstraction</span> &amp; Passkey Multi-Guardian Vault for Stellar Soroban with Native <code class="px-1.5 py-0.5 rounded bg-surface-container font-code-sm text-code-sm text-primary-fixed">secp256r1</code> Syscall Verification, WebAuthn PRF Derivation, and Cryptographic Merkle AirDrop Distribution.
+      </p>
+<!-- Badge Strip (Engineered high-density layout) -->
+<div class="flex flex-wrap items-center gap-2 pt-space-xs">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-code-sm text-code-sm">
+<span class="text-outline">license:</span>
+<span class="text-primary-fixed-dim">Apache-2.0 / MIT</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-code-sm text-code-sm">
+<span class="text-outline">soroban-sdk:</span>
+<span class="text-tertiary-fixed">v21.4.0</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-code-sm text-code-sm">
+<span class="text-outline">stellar-core:</span>
+<span class="text-primary-fixed">Protocol 21</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-code-sm text-code-sm">
+<span class="text-outline">wasm-footprint:</span>
+<span class="text-primary-fixed-dim">28.4 KB (opt)</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[13px] text-tertiary-fixed-dim">check_circle</span>
+<span class="text-tertiary-fixed">cargo test: 4 passed</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[13px] text-primary-container">shield</span>
+<span class="text-on-surface">Audit: Tier-1 Verified</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-code-sm text-code-sm">
+<span class="text-outline">standard:</span>
+<span class="text-secondary-fixed">SEP-0043 Full</span>
+</span>
+</div>
+<!-- Quick Action Controls & Clone Box Bar -->
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md pt-space-sm p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<!-- Quick Install / CLI Command Preview with Copy Micro-interaction -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm flex-1 min-w-0">
+<div class="flex items-center gap-space-xs px-space-sm py-2 rounded-lg bg-surface-container-lowest font-code-sm text-code-sm text-on-surface flex-1 min-w-0 overflow-hidden shadow-inner">
+<span class="text-primary-container select-none">$</span>
+<span class="truncate text-on-surface-variant" id="cli-cmd">stellar contract build --target wasm32-unknown-unknown</span>
+<button class="ml-auto text-outline hover:text-primary transition-colors flex items-center p-1 rounded" id="copy-btn" onclick="navigator.clipboard.writeText('stellar contract build --target wasm32-unknown-unknown'); this.innerText='Copied!'; setTimeout(()=&gt;this.innerText='content_copy', 1500);" title="Copy command">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+<div class="flex items-center gap-1">
+<div class="relative group">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed-dim">download</span>
+<span>Code</span>
+<span class="material-symbols-outlined text-[14px] text-outline">arrow_drop_down</span>
+</button>
+<div class="absolute right-0 top-full mt-1 w-64 p-space-sm rounded-lg bg-surface-container-highest shadow-xl hidden group-hover:flex flex-col gap-2 z-20">
+<span class="font-label-md text-label-md text-on-surface-variant">Clone Repository</span>
+<div class="p-2 rounded bg-surface-container-lowest font-code-sm text-code-sm text-primary break-all select-all">
+                  https://github.com/stellar-open-source/passkey-vault-stellar.git
+                </div>
+<div class="p-2 rounded bg-surface-container-lowest font-code-sm text-code-sm text-on-surface-variant break-all select-all">
+                  git@github.com:stellar-open-source/passkey-vault-stellar.git
+                </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action CTAs -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<a class="px-space-md py-2 rounded-lg bg-primary-container text-on-primary-fixed font-label-lg text-label-lg font-semibold hover:opacity-95 transition-opacity flex items-center gap-1.5 shadow-md" href="https://stellar.org/developers" target="_blank">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+<span>Open in Soroban Studio</span>
+</a>
+<a class="px-space-md py-2 rounded-lg bg-surface-container-highest text-on-surface hover:bg-surface-variant font-label-md text-label-md transition-colors flex items-center gap-1.5 shadow-sm" href="#maintainer-matrix">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">handshake</span>
+<span>Maintainer Application</span>
+</a>
+</div>
+</div>
+</div>
+<!-- MAIN TWO-COLUMN SPLIT: README Content (Left 70%) & Metadata Sidebar (Right 30%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- LEFT 8 COLUMNS: Specification Capstone & README Document -->
+<article class="lg:col-span-8 flex flex-col gap-space-xl">
+<!-- Visual Schematic Hero Box (Obsidian Hardware Plate aesthetic) -->
+<div class="relative overflow-hidden rounded-2xl bg-surface-container p-space-lg shadow-xl">
+<div class="absolute -right-20 -bottom-20 w-72 h-72 bg-primary-container/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md mb-space-md pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary-container shadow-inner">
+<span class="material-symbols-outlined text-[24px]">fingerprint</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">passkeyvault-core v0.2.1</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">Stellar Soroban SECP256R1 Hardware-Enclave Account Abstraction Engine</p>
+</div>
+</div>
+<div class="px-space-sm py-1 rounded bg-secondary-container/40 text-secondary font-code-sm text-code-sm">
+              RFC 6979 • IEEE P1363
+            </div>
+</div>
+<!-- Cryptographic Data Flow Schematic SVG -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md my-space-xs overflow-x-auto shadow-inner">
+<svg class="w-full min-w-[640px] h-auto text-on-surface" fill="none" viewbox="0 0 740 180" xmlns="http://www.w3.org/2000/svg">
+<!-- Client Enclave Node -->
+<rect fill="#161C2E" height="130" rx="8" width="160" x="10" y="25"></rect>
+<text class="font-label-md text-label-md font-semibold" fill="#00f2fe" x="25" y="50">WebAuthn / Passkey</text>
+<text class="font-code-sm text-code-sm" fill="#b9cacb" x="25" y="72">Apple Secure Enclave</text>
+<text class="font-code-sm text-code-sm" fill="#b9cacb" x="25" y="90">Android Keystore StrongBox</text>
+<text class="font-code-sm text-code-sm" fill="#ddfff4" x="25" y="112">→ (r,s) 64B IEEE P1363</text>
+<circle cx="90" cy="135" fill="#4bf4d5" r="5"></circle>
+<text class="font-code-sm text-code-sm" fill="#849495" x="102" y="139">Client Signature</text>
+<!-- Arrow 1: WebAuthn to Paymaster -->
+<path d="M 170 90 L 250 90" stroke="#00f2fe" stroke-dasharray="4 4" stroke-width="2"></path>
+<polygon fill="#00f2fe" points="250,90 242,85 242,95"></polygon>
+<text class="font-code-sm text-code-sm" fill="#00dce6" x="180" y="80">Auth Envelope</text>
+<!-- Paymaster Fee-Bump Node -->
+<rect fill="#161C2E" height="130" rx="8" width="170" x="255" y="25"></rect>
+<text class="font-label-md text-label-md font-semibold" fill="#c0c1ff" x="270" y="50">Stellar Fee-Bump</text>
+<text class="font-code-sm text-code-sm" fill="#b9cacb" x="270" y="72">Relay / Sponsoring Node</text>
+<text class="font-code-sm text-code-sm" fill="#b9cacb" x="270" y="90">Gasless UX Subsidies</text>
+<text class="font-code-sm text-code-sm" fill="#e1e0ff" x="270" y="112">→ Wraps Soroban Invoke</text>
+<circle cx="340" cy="135" fill="#c0c1ff" r="5"></circle>
+<text class="font-code-sm text-code-sm" fill="#849495" x="352" y="139">Paymaster Nonce</text>
+<!-- Arrow 2: Paymaster to Soroban Host Syscall -->
+<path d="M 425 90 L 510 90" stroke="#c0c1ff" stroke-width="2"></path>
+<polygon fill="#c0c1ff" points="510,90 502,85 502,95"></polygon>
+<text class="font-code-sm text-code-sm" fill="#c0c1ff" x="435" y="80">RPC Broadcast</text>
+<!-- Soroban Protocol 21 Syscall Node -->
+<rect fill="#161C2E" height="130" rx="8" width="215" x="515" y="25"></rect>
+<text class="font-label-md text-label-md font-semibold" fill="#4bf4d5" x="530" y="50">Soroban Host P21</text>
+<text class="font-code-sm text-code-sm" fill="#b9cacb" x="530" y="72">secp256r1_verify Syscall</text>
+<text class="font-code-sm text-code-sm" fill="#ddfff4" x="530" y="90">Cost: 45,000 CPU instructions</text>
+<text class="font-code-sm text-code-sm" fill="#00dce6" x="530" y="112">Execution Latency: 0.12 ms</text>
+<circle cx="620" cy="135" fill="#00f2fe" r="5"></circle>
+<text class="font-code-sm text-code-sm" fill="#4bf4d5" x="632" y="139">State Mutation OK</text>
+</svg>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-code-sm text-code-sm mt-space-xs">
+<span>Fig 1.1: Cryptographic execution flow for WebAuthn passkey state assertion on Stellar Soroban P21</span>
+<span class="text-tertiary-fixed">Latency: ~0.12ms on-chain verify</span>
+</div>
+</div>
+<!-- 2. Executive Summary & Maintainer Architecture Overview -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="font-code-sm text-code-sm text-primary-container px-2 py-0.5 rounded bg-surface-container-high">01 // OVERVIEW</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Executive Summary &amp; Architecture</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            The <code class="text-primary font-code-sm text-code-sm">passkeyvault-core</code> reference implementation delivers institutional-grade keyless account abstraction on Stellar, bridging hardware biometrics (Face ID, Touch ID, Windows Hello, and YubiKeys) directly to Soroban smart contracts. By leveraging the Protocol 21 native host syscall for <code class="text-primary-fixed-dim font-code-sm text-code-sm">secp256r1</code>, the contract removes the requirement for slow, expensive WASM-level elliptic curve curve computations.
+          </p>
+<!-- 3-Pillar Architecture Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-xs">
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-xs shadow-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">key_off</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Zero Seed Phrases</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Keys remain isolated inside device secure chips. Users authorize transactions using WebAuthn without exposing raw private keys to memory or browser storage.
+              </p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-xs shadow-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-tertiary-fixed">
+<span class="material-symbols-outlined text-[18px]">local_gas_station</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Zero-Gas UX Paymasters</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Native compatibility with Stellar fee-bump transactions allows dApps or sponsoring guardians to subsidize resource fees seamlessly without friction.
+              </p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-xs shadow-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">group_work</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-on-surface">M-of-N Quorum Recovery</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Social guardians with time-locked thresholds ensure non-custodial wallet recovery in the event of hardware loss or broken device enrollment.
+              </p>
+</div>
+</div>
+</section>
+<!-- 3. Key Specifications Table -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="font-code-sm text-code-sm text-primary-container px-2 py-0.5 rounded bg-surface-container-high">02 // SPECS</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Key Cryptographic Specifications</h3>
+</div>
+<div class="overflow-x-auto rounded-xl bg-surface-container-low shadow-sm">
+<table class="w-full text-left font-body-sm text-body-sm border-collapse">
+<thead>
+<tr class="bg-surface-container-high text-on-surface">
+<th class="p-space-md font-label-md text-label-md">Domain</th>
+<th class="p-space-md font-label-md text-label-md">Specification Standard</th>
+<th class="p-space-md font-label-md text-label-md">Technical Detail / Host Binding</th>
+<th class="p-space-md font-label-md text-label-md">Verification SLA</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface-variant">
+<tr class="hover:bg-surface-container/60 transition-colors">
+<td class="p-space-md font-code-sm text-code-sm text-primary-fixed-dim">Standards</td>
+<td class="p-space-md text-on-surface font-label-md text-label-md">SEP-0043, RFC 6979</td>
+<td class="p-space-md font-code-sm text-code-sm">Smart Contract Accounts • Deterministic Nonce K</td>
+<td class="p-space-md"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-tertiary-fixed font-code-sm text-code-sm">Strict Conformance</span></td>
+</tr>
+<tr class="bg-surface-container/30 hover:bg-surface-container/60 transition-colors">
+<td class="p-space-md font-code-sm text-code-sm text-primary-fixed-dim">Curve &amp; Scalar</td>
+<td class="p-space-md text-on-surface font-label-md text-label-md">IEEE P1363 (Raw r,s)</td>
+<td class="p-space-md font-code-sm text-code-sm">64-byte scalar representation • ASN.1 DER parser stripped</td>
+<td class="p-space-md"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary-container font-code-sm text-code-sm">Zero ASN Overheads</span></td>
+</tr>
+<tr class="hover:bg-surface-container/60 transition-colors">
+<td class="p-space-md font-code-sm text-code-sm text-primary-fixed-dim">Host Syscalls</td>
+<td class="p-space-md text-on-surface font-label-md text-label-md">Protocol 21 Native</td>
+<td class="p-space-md font-code-sm text-code-sm">env.crypto().secp256r1_verify(&amp;hash, &amp;sig, &amp;pubkey)</td>
+<td class="p-space-md"><span class="text-tertiary-fixed font-code-sm text-code-sm">0.12 ms • 45k CPU</span></td>
+</tr>
+<tr class="bg-surface-container/30 hover:bg-surface-container/60 transition-colors">
+<td class="p-space-md font-code-sm text-code-sm text-primary-fixed-dim">Storage Footprint</td>
+<td class="p-space-md text-on-surface font-label-md text-label-md">RFC 4506 XDR</td>
+<td class="p-space-md font-code-sm text-code-sm">DataKey::VaultState, DataKey::AirdropRoot, DataKey::HasClaimed</td>
+<td class="p-space-md"><span class="text-on-surface font-code-sm text-code-sm">Instance + Persist</span></td>
+</tr>
+<tr class="hover:bg-surface-container/60 transition-colors">
+<td class="p-space-md font-code-sm text-code-sm text-primary-fixed-dim">TTL Rent Policy</td>
+<td class="p-space-md text-on-surface font-label-md text-label-md">Auto-Bump Extension</td>
+<td class="p-space-md font-code-sm text-code-sm">+535,679 ledgers (~31 days) on every authenticated call</td>
+<td class="p-space-md"><span class="text-primary font-code-sm text-code-sm">Zero Eviction Risk</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- 4. Quickstart & Developer Workflow Guide -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="font-code-sm text-code-sm text-primary-container px-2 py-0.5 rounded bg-surface-container-high">03 // GETTING STARTED</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Developer Toolchain &amp; Workflow</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Set up the Soroban environment, execute test harnesses, compile optimized WASM, and deploy the account contract to Stellar Testnet.
+          </p>
+<!-- Shell Commands Snippet Box -->
+<div class="rounded-xl bg-surface-container-lowest overflow-hidden shadow-lg">
+<div class="flex items-center justify-between px-space-md py-space-xs bg-surface-container-high text-on-surface-variant font-code-sm text-code-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-error"></span>
+<span class="w-3 h-3 rounded-full bg-secondary-fixed"></span>
+<span class="w-3 h-3 rounded-full bg-tertiary-fixed"></span>
+<span class="ml-2 text-on-surface">terminal — bash</span>
+</div>
+<span>stellar-cli 21.1.0</span>
+</div>
+<pre class="p-space-md font-code-sm text-code-sm text-on-surface overflow-x-auto leading-relaxed"><code><span class="text-outline"># 1. Install prerequisites &amp; toolchain target</span>
+<span class="text-primary-container">rustup</span> target add wasm32-unknown-unknown
+<span class="text-primary-container">cargo</span> install --locked stellar-cli --version 21.1.0
+
+<span class="text-outline"># 2. Run unit &amp; integration test harness (secp256r1 mock vectors)</span>
+<span class="text-primary-container">cargo</span> test --package passkeyvault-core -- --nocapture
+
+<span class="text-outline"># 3. Compile optimized WASM bytecode</span>
+<span class="text-primary-container">stellar</span> contract build --target wasm32-unknown-unknown
+<span class="text-primary-container">stellar</span> contract optimize \
+  --wasm target/wasm32-unknown-unknown/release/passkeyvault_core.wasm</code></pre>
+</div>
+<!-- Code Walkthrough Tabs (Contract lib.rs vs Client SDK) -->
+<div class="rounded-xl bg-surface-container-low p-space-md shadow-md">
+<div class="flex items-center gap-space-md mb-space-sm pb-space-xs">
+<button class="px-3 py-1 rounded bg-surface-container-high text-primary font-code-sm text-code-sm font-semibold" id="tab-btn-rust" onclick="document.getElementById('code-rust').classList.remove('hidden'); document.getElementById('code-ts').classList.add('hidden'); this.className='px-3 py-1 rounded bg-surface-container-high text-primary font-code-sm text-code-sm font-semibold'; document.getElementById('tab-btn-ts').className='px-3 py-1 rounded bg-surface-container text-on-surface-variant font-code-sm text-code-sm';">
+                src/lib.rs (Soroban Invocation)
+              </button>
+<button class="px-3 py-1 rounded bg-surface-container text-on-surface-variant font-code-sm text-code-sm" id="tab-btn-ts" onclick="document.getElementById('code-ts').classList.remove('hidden'); document.getElementById('code-rust').classList.add('hidden'); this.className='px-3 py-1 rounded bg-surface-container-high text-primary font-code-sm text-code-sm font-semibold'; document.getElementById('tab-btn-rust').className='px-3 py-1 rounded bg-surface-container text-on-surface-variant font-code-sm text-code-sm';">
+                WebAuthn Challenge Flow (TS/Swift)
+              </button>
+</div>
+<!-- Rust Tab Content -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg font-code-sm text-code-sm overflow-x-auto text-on-surface leading-relaxed" id="code-rust">
+<pre><code><span class="text-tertiary-fixed-dim">#[contractimpl]</span>
+<span class="text-secondary-fixed">impl</span> <span class="text-primary-container">PasskeyVault</span> {
+    <span class="text-secondary-fixed">pub fn</span> <span class="text-tertiary-fixed">verify_and_execute</span>(
+        env: Env,
+        signature: BytesN&lt;<span class="text-primary-fixed">64</span>&gt;,
+        client_data_hash: BytesN&lt;<span class="text-primary-fixed">32</span>&gt;,
+        action: VaultAction,
+    ) -&gt; Result&lt;Val, VaultError&gt; {
+        <span class="text-outline">// Load stored public key from instance storage</span>
+        <span class="text-secondary-fixed">let</span> state: VaultState = env.storage().instance().get(&amp;DataKey::VaultState).unwrap();
+        
+        <span class="text-outline">// Protocol 21 Native Host Syscall: 0.12ms execution</span>
+        env.crypto().secp256r1_verify(&amp;client_data_hash, &amp;signature, &amp;state.secp256r1_pubkey);
+        
+        <span class="text-outline">// Extend state TTL automatically (+31 days)</span>
+        env.storage().instance().extend_ttl(<span class="text-primary-fixed">535_679</span>, <span class="text-primary-fixed">535_679</span>);
+        <span class="text-primary-container">Self</span>::dispatch(env, action)
+    }
+}</code></pre>
+</div>
+<!-- Client SDK Tab Content -->
+<div class="hidden bg-surface-container-lowest p-space-md rounded-lg font-code-sm text-code-sm overflow-x-auto text-on-surface leading-relaxed" id="code-ts">
+<pre><code><span class="text-outline">// TypeScript / WebAuthn Hardware Assertion Dispatch</span>
+<span class="text-secondary-fixed">const</span> assertion = <span class="text-secondary-fixed">await</span> navigator.credentials.get({
+  publicKey: {
+    challenge: transactionHash32Bytes,
+    rpId: <span class="text-tertiary-fixed">"vault.passkeyvault.stellar.org"</span>,
+    userVerification: <span class="text-tertiary-fixed">"required"</span>,
+    allowCredentials: [{ id: credentialId, type: <span class="text-tertiary-fixed">"public-key"</span> }]
+  }
+});
+<span class="text-secondary-fixed">const</span> rawSig64 = parseDerToP1363(assertion.response.signature);
+<span class="text-secondary-fixed">await</span> stellarRpc.sendTransaction(vaultContract.invoke(rawSig64));</code></pre>
+</div>
+</div>
+</section>
+<!-- 5. Performance & Gas Benchmarks Matrix -->
+<section class="flex flex-col gap-space-md" id="benchmark-table">
+<div class="flex items-center gap-space-xs">
+<span class="font-code-sm text-code-sm text-primary-container px-2 py-0.5 rounded bg-surface-container-high">04 // BENCHMARKS</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Soroban Host vs WASM Execution Matrix</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Direct telemetry comparing Protocol 20 software-emulated secp256r1 (compiled in Rust bytecode) versus Protocol 21 Native Host Syscalls:
+          </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-1 shadow-sm">
+<span class="font-label-md text-label-md text-outline">Compute Instruction Cut</span>
+<span class="font-headline-xl text-headline-xl text-primary-container font-bold">-87.1%</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">3,200,000 → 412,000 gas units</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-1 shadow-sm">
+<span class="font-label-md text-label-md text-outline">Elliptic Curve Latency</span>
+<span class="font-headline-xl text-headline-xl text-tertiary-fixed font-bold">0.12 ms</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Down from 42.10 ms in WASM VM</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-1 shadow-sm">
+<span class="font-label-md text-label-md text-outline">Network Base Fee</span>
+<span class="font-headline-xl text-headline-xl text-secondary-fixed-dim font-bold">840 Stroops</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">&lt; $0.00009 USD per signature</span>
+</div>
+</div>
+<!-- Multi-Guardian Threshold Gas Comparison -->
+<div class="overflow-x-auto rounded-xl bg-surface-container-low shadow-sm">
+<table class="w-full text-left font-body-sm text-body-sm border-collapse">
+<thead>
+<tr class="bg-surface-container-high text-on-surface font-label-md text-label-md">
+<th class="p-space-md">Guardian Quorum Policy</th>
+<th class="p-space-md">Signatures Verified</th>
+<th class="p-space-md">CPU Instructions</th>
+<th class="p-space-md">Total Gas Fee (Stroops)</th>
+<th class="p-space-md">Block Finality SLA</th>
+</tr>
+</thead>
+<tbody class="text-on-surface-variant divide-y-0">
+<tr class="hover:bg-surface-container/60 transition-colors">
+<td class="p-space-md font-label-md text-label-md text-on-surface">1-of-1 Native Passkey</td>
+<td class="p-space-md font-code-sm text-code-sm text-primary">1 WebAuthn Enclave</td>
+<td class="p-space-md font-code-sm text-code-sm">412,410</td>
+<td class="p-space-md font-code-sm text-code-sm text-tertiary-fixed">840 Stroops</td>
+<td class="p-space-md font-code-sm text-code-sm">~4.2 sec (1 ledger)</td>
+</tr>
+<tr class="bg-surface-container/30 hover:bg-surface-container/60 transition-colors">
+<td class="p-space-md font-label-md text-label-md text-on-surface">2-of-3 Multi-Guardian</td>
+<td class="p-space-md font-code-sm text-code-sm text-primary">2 Secp256r1 Keys</td>
+<td class="p-space-md font-code-sm text-code-sm">865,120</td>
+<td class="p-space-md font-code-sm text-code-sm text-tertiary-fixed">1,620 Stroops</td>
+<td class="p-space-md font-code-sm text-code-sm">~4.2 sec (1 ledger)</td>
+</tr>
+<tr class="hover:bg-surface-container/60 transition-colors">
+<td class="p-space-md font-label-md text-label-md text-on-surface">3-of-5 Institutional Recovery</td>
+<td class="p-space-md font-code-sm text-code-sm text-primary">3 Peer Signers</td>
+<td class="p-space-md font-code-sm text-code-sm">1,318,900</td>
+<td class="p-space-md font-code-sm text-code-sm text-tertiary-fixed">2,410 Stroops</td>
+<td class="p-space-md font-code-sm text-code-sm">~4.2 sec (1 ledger)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- 6. Security Disclosure & Circuit Breakers -->
+<section class="flex flex-col gap-space-md" id="security-sla">
+<div class="flex items-center gap-space-xs">
+<span class="font-code-sm text-code-sm text-primary-container px-2 py-0.5 rounded bg-surface-container-high">05 // SECURITY</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Security Disclosure &amp; Circuit Breakers</h3>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container flex flex-col gap-space-md shadow-md">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[28px]">lock_clock</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Emergency Freeze Protocol SLA</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Instant freeze execution in a single atomic transaction</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-container-highest text-tertiary-fixed font-code-sm text-code-sm">
+                Max Finality: 1 Ledger (~4.2s)
+              </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface">Freeze Trigger Condition</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Callable by any designated guardian or by the primary passkey using a secondary pre-signed offline revocation nonce. Halts all outbound asset dispersals immediately.
+                </p>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface">Unfreeze Custody Quorum</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Requires Enclave Master PIN challenge along with YubiKey hardware dual-custody approval or a 3-of-5 Guardian quorum consensus after a 48-hour challenge timelock.
+                </p>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest flex items-center justify-between text-on-surface-variant font-code-sm text-code-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">verified</span>
+                Audited by Veridise &amp; Zellic (Nov 2024, Zero High/Critical)
+              </span>
+<a class="text-primary hover:underline" href="#">View Audit PDF →</a>
+</div>
+</div>
+</section>
+<!-- 7. Open Source Maintainer Application & Contribution Roadmap -->
+<section class="flex flex-col gap-space-md mb-space-xl" id="maintainer-matrix">
+<div class="flex items-center gap-space-xs">
+<span class="font-code-sm text-code-sm text-primary-container px-2 py-0.5 rounded bg-surface-container-high">06 // GOVERNANCE</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Maintainer Roadmap &amp; Good First Issues</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            The PasskeyVault Soroban Core is maintained under the Stellar Community Fund ecosystem stewardship. We are accepting applications for contract co-maintainers.
+          </p>
+<!-- Issues & Roadmap Grid -->
+<div class="flex flex-col gap-space-sm">
+<!-- Issue 1 -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors gap-space-sm shadow-sm">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[20px] mt-0.5">adjust</span>
+<div class="flex flex-col">
+<a class="font-label-lg text-label-lg text-on-surface hover:text-primary transition-colors" href="#">
+                    #84: Implement WebAuthn PRF (Pseudo-Random Function) extension for client-side deterministic key derivation
+                  </a>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Opened 2 days ago by @stellar-sec • 4 comments</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-secondary-container/40 text-secondary font-code-sm text-code-sm">RFC: Spec</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-container/30 text-tertiary font-code-sm text-code-sm">good first issue</span>
+</div>
+</div>
+<!-- Issue 2 -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors gap-space-sm shadow-sm">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[20px] mt-0.5">adjust</span>
+<div class="flex flex-col">
+<a class="font-label-lg text-label-lg text-on-surface hover:text-primary transition-colors" href="#">
+                    #91: Add SEP-0044 multi-asset allowance vault adapter with automatic SAC token wrapping
+                  </a>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Opened 5 days ago by @orbit-core • 8 comments</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary-fixed-dim font-code-sm text-code-sm">SEP-0044</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-container/30 text-tertiary font-code-sm text-code-sm">help wanted</span>
+</div>
+</div>
+<!-- Issue 3 -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors gap-space-sm shadow-sm">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[20px] mt-0.5">adjust</span>
+<div class="flex flex-col">
+<a class="font-label-lg text-label-lg text-on-surface hover:text-primary transition-colors" href="#">
+                    #97: Benchmark Merkle AirDrop tree proofs up to 100,000 addresses on Soroban testnet ledger limits
+                  </a>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Opened 1 week ago by @calm-dev • 12 comments</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary-fixed font-code-sm text-code-sm">Benchmarks</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-container/30 text-tertiary font-code-sm text-code-sm">good first issue</span>
+</div>
+</div>
+</div>
+<!-- Application Form Callout Box -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col md:flex-row items-center justify-between gap-space-md shadow-inner">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center text-on-primary-fixed shadow-md">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Become an Authorized Soroban Core Reviewer</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Grant allocation, commit privileges, and review stipend supported by SDF ecosystem programs.</p>
+</div>
+</div>
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md transition-colors whitespace-nowrap shadow-sm">
+              Apply via Stellar GitGuild
+            </button>
+</div>
+</section>
+</article>
+<!-- RIGHT 4 COLUMNS: Repository GitHub-Style Metadata Sidebar -->
+<aside class="lg:col-span-4 flex flex-col gap-space-xl">
+<!-- About Card -->
+<div class="flex flex-col gap-space-sm p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<h4 class="font-label-lg text-label-lg text-on-surface">About</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Native Secp256r1 WebAuthn account abstraction vault contract written for Stellar Soroban (Protocol 21). Implements zero-gas paymaster envelopes and Merkle claim distribution.
+          </p>
+<div class="flex flex-col gap-2 pt-space-xs font-body-sm text-body-sm">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed-dim">link</span>
+<a class="text-primary hover:underline truncate" href="#">https://stellar.org/soroban/passkeys</a>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed-dim">menu_book</span>
+<a class="text-on-surface hover:text-primary" href="#">SEP-0043 Architecture Spec</a>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed-dim">local_police</span>
+<a class="text-on-surface hover:text-primary" href="#">Apache-2.0 • MIT Dual License</a>
+</div>
+</div>
+</div>
+<!-- Release Widget -->
+<div class="flex flex-col gap-space-xs p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex items-center justify-between">
+<h4 class="font-label-lg text-label-lg text-on-surface">Releases</h4>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-tertiary-fixed font-code-sm text-code-sm">Latest</span>
+</div>
+<div class="flex items-center gap-space-xs pt-1">
+<span class="material-symbols-outlined text-primary-container text-[18px]">sell</span>
+<span class="font-headline-md text-headline-md text-on-surface">v0.2.1-stellar-p21</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Merged Protocol 21 Native secp256r1 Host Syscalls with 87% gas reduction. Full backward compatibility preserved.
+          </p>
+<div class="pt-2 flex items-center justify-between text-on-surface-variant font-code-sm text-code-sm">
+<span>Published 4 days ago</span>
+<a class="text-primary hover:underline" href="#">+ 18 releases</a>
+</div>
+</div>
+<!-- Packages & Artifacts -->
+<div class="flex flex-col gap-space-sm p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<h4 class="font-label-lg text-label-lg text-on-surface">Packages &amp; Registries</h4>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between p-2 rounded bg-surface-container text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary-container">inventory_2</span>
+<span class="font-code-sm text-code-sm">crates.io/passkeyvault-core</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant">v0.2.1</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">javascript</span>
+<span class="font-code-sm text-code-sm">@passkeyvault/core-sdk</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant">v1.0.4</span>
+</div>
+</div>
+</div>
+<!-- Language Distribution Matrix -->
+<div class="flex flex-col gap-space-sm p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<h4 class="font-label-lg text-label-lg text-on-surface">Languages</h4>
+<!-- Progress bar -->
+<div class="w-full h-2 rounded-full overflow-hidden flex bg-surface-container-highest">
+<div class="bg-primary-container" style="width: 82%;" title="Rust 82%"></div>
+<div class="bg-secondary-fixed" style="width: 14%;" title="TypeScript 14%"></div>
+<div class="bg-tertiary-fixed" style="width: 4%;" title="Swift 4%"></div>
+</div>
+<!-- Legend -->
+<div class="grid grid-cols-3 gap-2 font-code-sm text-code-sm pt-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="text-on-surface">Rust 82%</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed"></span>
+<span class="text-on-surface">TS 14%</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed"></span>
+<span class="text-on-surface">Swift 4%</span>
+</div>
+</div>
+</div>
+<!-- Contributors Widget -->
+<div class="flex flex-col gap-space-sm p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex items-center justify-between">
+<h4 class="font-label-lg text-label-lg text-on-surface">Core Contributors</h4>
+<span class="font-code-sm text-code-sm text-outline">14 engineers</span>
+</div>
+<div class="flex items-center gap-2 flex-wrap">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center font-code-sm text-code-sm text-primary font-bold shadow-inner" title="Maintainer @jed-core">
+              JD
+            </div>
+<div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center font-code-sm text-code-sm text-tertiary-fixed font-bold shadow-inner" title="Maintainer @orbit-crypto">
+              OC
+            </div>
+<div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center font-code-sm text-code-sm text-secondary font-bold shadow-inner" title="Maintainer @stellar-sec">
+              SS
+            </div>
+<div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center font-code-sm text-code-sm text-primary-container font-bold shadow-inner" title="Maintainer @enclave-lab">
+              EL
+            </div>
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center font-code-sm text-code-sm text-on-surface-variant font-bold">
+              +10
+            </div>
+</div>
+</div>
+<!-- Testnet Faucet Endpoints Quick-Card -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center gap-2 text-tertiary-fixed">
+<span class="material-symbols-outlined text-[18px]">water_drop</span>
+<span class="font-label-md text-label-md">Soroban Testnet Faucet</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Fund testnet passkey accounts directly via Friendbot RPC API.
+          </p>
+<div class="p-2 rounded bg-surface-container-lowest font-code-sm text-code-sm text-primary-fixed truncate">
+            https://friendbot.stellar.org?addr={VAULT_ID}
+          </div>
+</div>
+</aside>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-lowest py-space-lg shadow-[0_-1px_6px_rgba(0,0,0,0.3)]"><div class="w-full px-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm text-on-surface-variant font-body-sm text-body-sm"><span class="material-symbols-outlined text-[16px] text-primary-fixed-dim">terminal</span><span>PasskeyVault Soroban Cryptographic Core • Protocol 21 Compliant</span></div><div class="flex items-center gap-space-lg text-on-surface-variant font-label-md text-label-md"><span class="text-outline hover:text-on-surface cursor-pointer">Docs</span><span class="text-outline hover:text-on-surface cursor-pointer">API Reference</span><span class="text-outline hover:text-on-surface cursor-pointer">Security Audits</span><span class="text-outline hover:text-on-surface cursor-pointer">Terms</span></div></div></footer></body></html>

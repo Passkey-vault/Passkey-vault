@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "inverse-primary": "#00696f", "on-tertiary-fixed": "#00201a", "on-primary": "#00373a", "surface-tint": "#00dce6", "error": "#ffb4ab", "primary": "#e0fdff", "inverse-surface": "#e1e2ec", "secondary-fixed": "#e1e0ff", "inverse-on-surface": "#2d3038", "surface-container-highest": "#32353d", "on-surface": "#e1e2ec", "on-secondary": "#1000a9", "on-background": "#e1e2ec", "surface-container-low": "#191b23", "on-primary-container": "#006a70", "error-container": "#93000a", "secondary-fixed-dim": "#c0c1ff", "tertiary-container": "#4bf4d5", "on-tertiary": "#00382e", "background": "#10131a", "primary-fixed-dim": "#00dce6", "surface-bright": "#363941", "surface-container-lowest": "#0b0e15", "on-secondary-fixed": "#07006c", "tertiary-fixed": "#55fbdc", "outline": "#849495", "on-primary-fixed": "#002022", "secondary-container": "#3131c0", "primary-fixed": "#6ff6ff", "on-tertiary-fixed-variant": "#005144", "surface-dim": "#10131a", "on-secondary-fixed-variant": "#2f2ebe", "on-tertiary-container": "#006d5c", "surface-container-high": "#272a32", "surface": "#10131a", "primary-container": "#00f2fe", "on-error": "#690005", "on-secondary-container": "#b0b2ff", "surface-variant": "#32353d", "on-surface-variant": "#b9cacb", "tertiary": "#ddfff4", "outline-variant": "#3a494b", "surface-container": "#1d1f27", "on-primary-fixed-variant": "#004f53", "tertiary-fixed-dim": "#26dec0", "secondary": "#c0c1ff", "on-error-container": "#ffdad6" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "1.5rem", "gutter": "1rem", "space-xl": "2rem", "margin-mobile": "1rem", "space-md": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "gutter-mobile": "0.75rem" }, fontFamily: { "headline-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "code-sm": ["JetBrains Mono"], "label-lg": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "code-md": ["JetBrains Mono"], "label-md": ["Plus Jakarta Sans"], "code-lg": ["JetBrains Mono"], "body-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"] }, fontSize: { "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }], "headline-lg-mobile": ["22px", { lineHeight: "30px", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-xl-mobile": ["30px", { lineHeight: "38px", fontWeight: "700" }], "code-sm": ["11px", { lineHeight: "14px", fontWeight: "400" }], "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", fontWeight: "600" }], "code-md": ["13px", { lineHeight: "18px", fontWeight: "400" }], "label-md": ["12px", { lineHeight: "16px", fontWeight: "500" }], "code-lg": ["16px", { lineHeight: "24px", fontWeight: "500" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "headline-xl": ["38px", { lineHeight: "46px", fontWeight: "700" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#10131a;color:#e1e2ec;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom, 0px) + 0.5rem);}.pt-safe{padding-top:env(safe-area-inset-top, 0px);}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.12)]"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="PasskeyVault Shield Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1WlR0JsDNbFUYDy670XymprQ_3j6qUVgamB8yEnGsCLwqqKDupYqLyWCnFEhh_7-4NwHZx4anO8itTqmV69WX7GSDfp4LlbyU2aOeUh1lX5XGqORwTXcmTdJKDZAeDQ9053y62cgLSVYgeyyW36NXzWf6S342EKLZ-AsDb7QMz4qz06SSBeHrfPorCSD8W0BidxBCK-u0cOQQM1TtH9ACIlxKrCmEXbuAWM-aRnRXPJ"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-label-lg text-label-lg text-primary tracking-tight truncate">PasskeyVault</span><span class="h-1.5 w-1.5 rounded-full bg-primary-container animate-pulse"></span></div><span class="font-body-sm text-body-sm text-on-surface-variant truncate">Passkeys</span></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><div class="hidden xs:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed shadow-[0_0_8px_#26dec0]"></span><span class="font-code-sm text-code-sm text-tertiary-fixed">Mainnet 3/5</span></div><button aria-label="Account Switcher" class="w-11 h-11 flex items-center justify-center rounded-full hover:bg-surface-container-highest transition-colors" type="button"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full px-margin-mobile pb-8 space-y-space-md">
+<!-- Cryptographic Hardware Security Health Card -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container p-space-md shadow-xl">
+<div class="absolute -right-12 -top-12 w-48 h-48 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -left-10 bottom-0 w-32 h-32 bg-secondary-container/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high">
+<span class="w-2 h-2 rounded-full bg-primary-container shadow-[0_0_10px_#00f2fe] animate-pulse"></span>
+<span class="font-code-sm text-code-sm text-primary uppercase tracking-wider">Hardware-Backed Vault</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="font-label-md text-label-md text-tertiary-fixed">FIDO2 L3 Verified</span>
+</div>
+</div>
+<div class="flex items-center justify-between gap-space-md pt-space-xs">
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-xl-mobile text-headline-xl-mobile text-primary tracking-tight font-bold">94</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant font-medium">/100</span>
+</div>
+<p class="font-label-lg text-label-lg text-on-surface font-semibold mt-0.5">Security Rating</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">
+            Zero seed phrases stored on disk or cloud. Sovereign asymmetric keys reside inside native Secure Enclave.
+          </p>
+</div>
+<!-- Radial Shield Meter -->
+<div class="relative w-20 h-20 flex-shrink-0 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 72 72">
+<circle class="text-surface-container-highest" cx="36" cy="36" fill="transparent" r="30" stroke="currentColor" stroke-width="5"></circle>
+<circle class="text-primary-container" cx="36" cy="36" fill="transparent" r="30" stroke="currentColor" stroke-dasharray="188.5" stroke-dashoffset="11.3" stroke-linecap="round" stroke-width="5.5"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-[24px]">key</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">PASSKEY</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary Authenticator Plate -->
+<div class="flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-semibold">Active Hardware Signer</span>
+<span class="font-code-sm text-code-sm text-tertiary-fixed">Curve secp256r1</span>
+</div>
+<div class="rounded-xl bg-surface-container-high p-space-md shadow-md space-y-space-sm relative overflow-hidden">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary-container flex-shrink-0 shadow-inner">
+<span class="material-symbols-outlined text-[26px]">smartphone</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-lg text-label-lg text-on-surface truncate font-semibold">iPhone 15 Pro Max</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-primary-container/15 text-primary-container font-code-sm text-code-sm font-medium">Enclave</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Apple Secure Enclave A17 Pro</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest text-primary-container font-label-md text-label-md shadow-sm flex-shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-ping"></span>
+          Primary
+        </span>
+</div>
+<!-- Signer Specs Grid -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="rounded-lg bg-surface-container p-2.5 flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-tertiary-fixed">
+<span class="material-symbols-outlined text-[18px]">face</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-code-sm text-code-sm text-on-surface-variant">Biometrics</span>
+<span class="font-label-md text-label-md text-on-surface truncate font-medium">Face ID Active</span>
+</div>
+</div>
+<div class="rounded-lg bg-surface-container p-2.5 flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-code-sm text-code-sm text-on-surface-variant">Standard</span>
+<span class="font-label-md text-label-md text-on-surface truncate font-medium">FIDO2 L3 Sec</span>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">check_circle</span>
+<span class="font-code-sm text-code-sm">Signed 14tx this week</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-primary font-label-md text-label-md hover:bg-surface-bright active:scale-95 transition-all" type="button">
+          Attestation Info
+        </button>
+</div>
+</div>
+</div>
+<!-- End-to-End Synced Passkey -->
+<div class="flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-semibold">Synced Mesh Keystore</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">E2E Encrypted</span>
+</div>
+<div class="rounded-xl bg-surface-container p-space-md shadow-md space-y-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-secondary-fixed flex-shrink-0">
+<span class="material-symbols-outlined text-[26px]">cloud_sync</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">iCloud Keychain</span>
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Zero-knowledge Apple HSM escrow</span>
+</div>
+</div>
+<div class="px-2 py-1 rounded-full bg-secondary-container/40 text-secondary-fixed font-code-sm text-code-sm flex-shrink-0">
+          Ready
+        </div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-low p-2.5 rounded-lg">
+        Enables seamless authorization across paired MacBook and iPad devices without manual QR camera handoffs.
+      </p>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">devices</span>
+<span class="font-label-md text-label-md text-on-surface">3 devices synced</span>
+</div>
+<button class="text-primary-container font-label-md text-label-md hover:underline flex items-center gap-1" type="button">
+          Manage Synced Peers
+          <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Security Policies & Threshold Controls -->
+<div class="flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-semibold">Enclave Signing Policies</span>
+<span class="font-code-sm text-code-sm text-primary-container">Smart Quorum</span>
+</div>
+<div class="rounded-xl bg-surface-container p-space-md shadow-md space-y-space-md">
+<!-- Spending Limit Dynamic Slider -->
+<div class="flex flex-col space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Daily Biometric Limit</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Instant single-tap transactions</span>
+</div>
+<span class="font-code-lg text-code-lg text-primary-container font-semibold" id="limit-label">$2,000 / day</span>
+</div>
+<div class="relative py-1 flex items-center">
+<input class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary-container focus:outline-none" id="biometric-limit-slider" max="10000" min="500" step="250" type="range" value="2000"/>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-code-sm text-code-sm">
+<span>Min: $500</span>
+<span class="text-tertiary-fixed font-medium">Above limit triggers 3/5 Guardian Quorum</span>
+<span>Max: $10,000</span>
+</div>
+</div>
+<!-- Divider Space -->
+<div class="h-[1px] bg-surface-container-highest"></div>
+<!-- Strict Origin Binding Toggle -->
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">domain_verification</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">WebAuthn Origin Binding</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Rejects dApp payloads from unverified phishing domains.</span>
+</div>
+</div>
+<button aria-checked="true" class="w-12 h-7 rounded-full bg-primary-container flex items-center p-1 cursor-pointer transition-colors duration-200 focus:outline-none" id="origin-toggle" role="switch" type="button">
+<div class="w-5 h-5 rounded-full bg-on-primary-container transform translate-x-5 transition-transform duration-200" id="origin-toggle-thumb"></div>
+</button>
+</div>
+<!-- Guardian Co-sign Rule Policy -->
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">shield_lock</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Guardian Hook Threshold</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mandate 3 of 5 peer signatures for transfers &gt; $5,000 USDC or protocol contract additions.</span>
+</div>
+</div>
+<button aria-checked="true" class="w-12 h-7 rounded-full bg-primary-container flex items-center p-1 cursor-pointer transition-colors duration-200 focus:outline-none" id="guardian-toggle" role="switch" type="button">
+<div class="w-5 h-5 rounded-full bg-on-primary-container transform translate-x-5 transition-transform duration-200" id="guardian-toggle-thumb"></div>
+</button>
+</div>
+</div>
+</div>
+<!-- Backup & Hardware Credentials Registry -->
+<div class="flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-semibold">Secondary Credentials</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Redundancy: Safe</span>
+</div>
+<!-- MacBook Pro Touch ID Card -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-md flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-11 h-11 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">laptop_mac</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">MacBook Pro 16"</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Touch ID • Apple T2/M3 Chip</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-code-sm text-code-sm">Paired</span>
+<button class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Hardware FIDO2 NFC / USB Security Key Action -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-11 h-11 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary-fixed-dim flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">usb</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Hardware Key (NFC/USB-C)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">YubiKey 5 / Nitrokey physical airgap</span>
+</div>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Unregistered</span>
+</div>
+<button class="w-full py-3 px-4 rounded-xl bg-surface-container-high text-primary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 hover:bg-surface-bright active:scale-[0.98] transition-all" id="enroll-hardware-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+        Enroll FIDO2 Hardware Key
+      </button>
+</div>
+</div>
+<!-- Primary Security Action Trigger -->
+<div class="pt-2">
+<button class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-primary-container to-tertiary-fixed-dim text-on-primary-container font-headline-md text-headline-md font-bold flex items-center justify-center gap-2 shadow-[0_0_24px_rgba(0,242,254,0.3)] hover:brightness-110 active:scale-[0.99] transition-all" id="biometric-challenge-btn" type="button">
+<span class="material-symbols-outlined text-[22px]">fingerprint</span>
+      Verify Authenticator State
+    </button>
+<p class="text-center font-body-sm text-body-sm text-on-surface-variant mt-2">
+      Hardware challenge signs nonce using local enclave key pair.
+    </p>
+</div>
+<!-- Interactive Feedback Drawer / Toast Container -->
+<div class="fixed bottom-20 left-4 right-4 z-50 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none" id="security-alert-toast">
+<div class="rounded-xl bg-surface-bright p-space-md shadow-2xl flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container flex-shrink-0" id="toast-icon-bg">
+<span class="material-symbols-outlined text-[22px]" id="toast-icon">check_circle</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold" id="toast-title">WebAuthn Assertion Valid</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant" id="toast-desc">Signature Verified with Apple Secure Enclave.</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    // Spending Limit Slider
+    const slider = document.getElementById('biometric-limit-slider');
+    const label = document.getElementById('limit-label');
+    if (slider && label) {
+      slider.addEventListener('input', (e) => {
+        const val = Number(e.target.value).toLocaleString('en-US');
+        label.textContent = '$' + val + ' / day';
+      });
+    }
+
+    // Toggle Handler Helper
+    function setupToggle(toggleId, thumbId) {
+      const toggle = document.getElementById(toggleId);
+      const thumb = document.getElementById(thumbId);
+      if (!toggle || !thumb) return;
+
+      let active = toggle.getAttribute('aria-checked') === 'true';
+
+      toggle.addEventListener('click', () => {
+        active = !active;
+        toggle.setAttribute('aria-checked', active ? 'true' : 'false');
+        if (active) {
+          toggle.classList.remove('bg-surface-container-highest');
+          toggle.classList.add('bg-primary-container');
+          thumb.classList.remove('translate-x-0', 'bg-on-surface-variant');
+          thumb.classList.add('translate-x-5', 'bg-on-primary-container');
+          showToast('Policy Updated', 'Security threshold rule is now active.');
+        } else {
+          toggle.classList.remove('bg-primary-container');
+          toggle.classList.add('bg-surface-container-highest');
+          thumb.classList.remove('translate-x-5', 'bg-on-primary-container');
+          thumb.classList.add('translate-x-0', 'bg-on-surface-variant');
+          showToast('Policy Relaxed', 'Security restriction lowered temporarily.');
+        }
+      });
+    }
+
+    setupToggle('origin-toggle', 'origin-toggle-thumb');
+    setupToggle('guardian-toggle', 'guardian-toggle-thumb');
+
+    // Toast Feedback System
+    const toast = document.getElementById('security-alert-toast');
+    const toastTitle = document.getElementById('toast-title');
+    const toastDesc = document.getElementById('toast-desc');
+    let toastTimeout;
+
+    function showToast(title, desc) {
+      if (!toast) return;
+      clearTimeout(toastTimeout);
+      toastTitle.textContent = title;
+      toastDesc.textContent = desc;
+      toast.classList.remove('translate-y-32', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-32', 'opacity-0');
+      }, 2800);
+    }
+
+    // Biometric Verification Button Micro-interaction
+    const verifyBtn = document.getElementById('biometric-challenge-btn');
+    if (verifyBtn) {
+      verifyBtn.addEventListener('click', () => {
+        verifyBtn.innerHTML = `
+          <span class="w-5 h-5 rounded-full border-2 border-on-primary-container border-t-transparent animate-spin inline-block"></span>
+          Signing Enclave Nonce...
+        `;
+        verifyBtn.disabled = true;
+
+        setTimeout(() => {
+          verifyBtn.innerHTML = `
+            <span class="material-symbols-outlined text-[22px]">fingerprint</span>
+            Verify Authenticator State
+          `;
+          verifyBtn.disabled = false;
+          showToast('Enclave Signed: 0x8f2d...3a9c', 'Touch ID / Face ID cryptographic handshake verified.');
+        }, 1200);
+      });
+    }
+
+    // Enroll Hardware Key Trigger
+    const enrollBtn = document.getElementById('enroll-hardware-btn');
+    if (enrollBtn) {
+      enrollBtn.addEventListener('click', () => {
+        showToast('NFC Beacon Active', 'Hold your YubiKey or FIDO2 hardware card to the top of your device.');
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.35)]" data-active-classes="text-primary-container bg-surface-container-high/60"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center gap-0.5 w-16 h-12 rounded-xl text-on-surface-variant hover:text-on-surface transition-all" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">account_balance_wallet</span><span class="font-label-md text-label-md">Wallet</span></a><a class="flex flex-col items-center justify-center gap-0.5 w-16 h-12 rounded-xl text-on-surface-variant hover:text-on-surface transition-all" data-path="guardians" href="#"><span class="material-symbols-outlined text-[22px]">shield_person</span><span class="font-label-md text-label-md">Guardians</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 w-16 h-12 rounded-xl transition-all text-primary-container bg-surface-container-high/60" data-path="passkeys" href="#"><span class="material-symbols-outlined text-[22px]">fingerprint</span><span class="font-label-md text-label-md">Security</span></a><a class="flex flex-col items-center justify-center gap-0.5 w-16 h-12 rounded-xl text-on-surface-variant hover:text-on-surface transition-all" data-path="activity" href="#"><span class="material-symbols-outlined text-[22px]">history</span><span class="font-label-md text-label-md">Activity</span></a></div></nav></body></html>
