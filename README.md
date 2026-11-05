@@ -44,7 +44,7 @@ A Stellar smart wallet secured by **passkeys** (Face ID, Touch ID, Windows Hello
 | [`app`](app) | Web app (Vite + React + TypeScript + Tailwind) |
 | [`app/e2e`](app/e2e) | End-to-end tests against testnet, using a software P-256 "passkey" |
 | [`design/stitch`](design/stitch) | Original screen designs (Google Stitch exports, `screen.png` + `code.html`). Many aren't implemented yet; see the issues. |
-| [`docs`](docs) | Roadmap, architecture notes, issue backlog |
+| [`docs`](docs) | [Architecture and threat model](docs/ARCHITECTURE.md), [roadmap](docs/ROADMAP.md), brand assets |
 
 ## Contract API
 
@@ -71,7 +71,8 @@ stellar contract build
 cd app
 pnpm install
 pnpm dev          # http://localhost:5173
-pnpm test         # unit tests
+pnpm typecheck
+pnpm test         # unit tests (pnpm test:coverage for a report)
 pnpm test:e2e     # deploys a real vault on testnet; needs network access
 ```
 
@@ -88,14 +89,14 @@ stellar contract upload --wasm target/wasm32v1-none/release/passkey_vault.wasm \
 
 ## Contributing
 
-Contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md), then pick an issue labeled `good first issue`. Larger items are listed in [docs/ROADMAP.md](docs/ROADMAP.md).
+Contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md), then pick an issue labeled `good first issue`. Larger items are listed in [docs/ROADMAP.md](docs/ROADMAP.md), and [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) explains how the pieces fit together and what the threat model is.
+
+Questions and ideas go in [Discussions](https://github.com/Passkey-vault/Passkey-vault/discussions).
 
 **Live demo (testnet):** https://passkey-vault-orpin.vercel.app
-
 
 Found a security problem? Please follow [SECURITY.md](SECURITY.md). Don't open a public issue for it.
 
 ## License
 
 Dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your option.
-# Passkey-vault
