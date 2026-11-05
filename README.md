@@ -1,5 +1,10 @@
 # PasskeyVault
 
+[![CI](https://github.com/Passkey-vault/Passkey-vault/actions/workflows/ci.yml/badge.svg)](https://github.com/Passkey-vault/Passkey-vault/actions/workflows/ci.yml)
+[![License: MIT OR Apache-2.0](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue)](#license)
+[![Network: Stellar testnet](https://img.shields.io/badge/network-Stellar%20testnet-7d00ff)](https://stellar.expert/explorer/testnet)
+[![Good first issues](https://img.shields.io/github/issues/Passkey-vault/Passkey-vault/good%20first%20issue?label=good%20first%20issues&color=7057ff)](https://github.com/Passkey-vault/Passkey-vault/labels/good%20first%20issue)
+
 A Stellar smart wallet secured by **passkeys** (Face ID, Touch ID, Windows Hello, YubiKey) instead of seed phrases, with **guardians** who can freeze it in an emergency and recover it if you lose your device.
 
 > **Status: testnet preview.** The contract has **not been audited**. Do not use it with real funds.
