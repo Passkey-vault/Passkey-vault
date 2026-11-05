@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "inverse-primary": "#00696f", "on-tertiary-fixed": "#00201a", "on-primary": "#00373a", "surface-tint": "#00dce6", "error": "#ffb4ab", "primary": "#e0fdff", "inverse-surface": "#e1e2ec", "secondary-fixed": "#e1e0ff", "inverse-on-surface": "#2d3038", "surface-container-highest": "#32353d", "on-surface": "#e1e2ec", "on-secondary": "#1000a9", "on-background": "#e1e2ec", "surface-container-low": "#191b23", "on-primary-container": "#006a70", "error-container": "#93000a", "secondary-fixed-dim": "#c0c1ff", "tertiary-container": "#4bf4d5", "on-tertiary": "#00382e", "background": "#10131a", "primary-fixed-dim": "#00dce6", "surface-bright": "#363941", "surface-container-lowest": "#0b0e15", "on-secondary-fixed": "#07006c", "tertiary-fixed": "#55fbdc", "outline": "#849495", "on-primary-fixed": "#002022", "secondary-container": "#3131c0", "primary-fixed": "#6ff6ff", "on-tertiary-fixed-variant": "#005144", "surface-dim": "#10131a", "on-secondary-fixed-variant": "#2f2ebe", "on-tertiary-container": "#006d5c", "surface-container-high": "#272a32", "surface": "#10131a", "primary-container": "#00f2fe", "on-error": "#690005", "on-secondary-container": "#b0b2ff", "surface-variant": "#32353d", "on-surface-variant": "#b9cacb", "tertiary": "#ddfff4", "outline-variant": "#3a494b", "surface-container": "#1d1f27", "on-primary-fixed-variant": "#004f53", "tertiary-fixed-dim": "#26dec0", "secondary": "#c0c1ff", "on-error-container": "#ffdad6" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "1.5rem", "gutter": "1rem", "space-xl": "2rem", "margin-mobile": "1rem", "space-md": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "gutter-mobile": "0.75rem" }, fontFamily: { "headline-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "code-sm": ["JetBrains Mono"], "label-lg": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "code-md": ["JetBrains Mono"], "label-md": ["Plus Jakarta Sans"], "code-lg": ["JetBrains Mono"], "body-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"] }, fontSize: { "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }], "headline-lg-mobile": ["22px", { lineHeight: "30px", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-xl-mobile": ["30px", { lineHeight: "38px", fontWeight: "700" }], "code-sm": ["11px", { lineHeight: "14px", fontWeight: "400" }], "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", fontWeight: "600" }], "code-md": ["13px", { lineHeight: "18px", fontWeight: "400" }], "label-md": ["12px", { lineHeight: "16px", fontWeight: "500" }], "code-lg": ["16px", { lineHeight: "24px", fontWeight: "500" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "headline-xl": ["38px", { lineHeight: "46px", fontWeight: "700" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#10131a;color:#e1e2ec;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom, 0px);}.pt-safe{padding-top:env(safe-area-inset-top, 0px);}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.12)]"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Go Back" class="w-11 h-11 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[20px] text-on-surface">arrow_back_ios_new</span></button><img alt="PasskeyVault Shield Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1WlR0JsDNbFUYDy670XymprQ_3j6qUVgamB8yEnGsCLwqqKDupYqLyWCnFEhh_7-4NwHZx4anO8itTqmV69WX7GSDfp4LlbyU2aOeUh1lX5XGqORwTXcmTdJKDZAeDQ9053y62cgLSVYgeyyW36NXzWf6S342EKLZ-AsDb7QMz4qz06SSBeHrfPorCSD8W0BidxBCK-u0cOQQM1TtH9ACIlxKrCmEXbuAWM-aRnRXPJ"/><div class="flex flex-col min-w-0"><span class="font-label-lg text-label-lg text-primary tracking-tight truncate">PasskeyVault</span><h1 class="font-body-sm text-body-sm text-on-surface-variant truncate">Passkeyvault   Recovery Quorum</h1></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-8">
+<div class="px-margin-mobile pt-space-md flex flex-col gap-space-lg">
+<!-- Modal Title Bar & Session Descriptor -->
+<div class="flex items-center justify-between">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[18px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">Cryptographic Receipt</h2>
+</div>
+<p class="font-code-sm text-code-sm text-on-surface-variant mt-0.5">Session #REC-8842 • Stellar Protocol 20</p>
+</div>
+<button aria-label="Close Audit Sheet" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors active:scale-95" onclick="history.back()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Verified On-Chain State Glowing Shield Banner -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-md shadow-lg">
+<div class="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-tertiary-container/10 blur-2xl pointer-events-none"></div>
+<div class="flex items-start gap-space-md relative z-10">
+<div class="relative flex-shrink-0 mt-0.5">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/20 flex items-center justify-center text-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">gite</span>
+</div>
+<span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-tertiary-fixed-dim flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-on-tertiary text-[10px] font-bold">check</span>
+</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-md text-label-md text-tertiary-fixed-dim font-semibold uppercase tracking-wider">Verified on Stellar Ledger</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-code-sm text-code-sm">Seq #52,891,402</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Confirmed with finality across 28 tier-1 validators.</p>
+<div class="flex items-center gap-space-xs mt-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span class="font-code-sm text-code-sm">Oct 24, 2024, 14:32:18 UTC</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tx Hash & Explorer Bridge Card -->
+<div class="rounded-xl bg-surface-container p-space-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant font-label-md text-label-md">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed-dim">tag</span>
+          Transaction Identifier
+        </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary-fixed-dim font-code-sm text-code-sm">Soroban Smart Contract</span>
+</div>
+<div class="flex items-center justify-between gap-space-sm bg-surface-container-lowest p-space-sm rounded-lg">
+<code class="font-code-md text-code-md text-primary font-medium truncate select-all">0x7b4a92f8a192c7104be9f830d12e831c0</code>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface active:scale-95 transition-all" id="copyTxBtn" onclick="copySnippet('0x7b4a92f8a192c7104be9f830d12e831c0', this)" title="Copy Hash">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+<a class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary-fixed-dim active:scale-95 transition-all flex items-center" href="#" rel="noopener noreferrer" target="_blank" title="View on StellarExpert">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-1">
+<span class="font-body-sm text-body-sm">Consensus Gas Fee: <strong class="text-on-surface font-code-sm">0.00018 XLM</strong></span>
+<span class="font-code-sm text-code-sm text-tertiary-fixed-dim flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+          Irreversible
+        </span>
+</div>
+</div>
+<!-- Quorum Attestation Shards (3/3 Verified) -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[18px]">hub</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Quorum Shards</h3>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-tertiary-fixed-dim font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+          3 of 3 Verified
+        </div>
+</div>
+<!-- Shard 1 -->
+<div class="rounded-xl bg-surface-container p-space-md flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-secondary-container text-secondary flex items-center justify-center font-label-lg text-label-lg">
+              AC
+            </div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Alice Chen</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Guardian Peer • Sister</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-tertiary-fixed-dim font-code-sm text-code-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+            secp256r1
+          </span>
+</div>
+<div class="mt-2 bg-surface-container-lowest p-space-sm rounded-lg flex items-center justify-between text-on-surface-variant font-code-sm text-code-sm">
+<div class="flex flex-col truncate">
+<span class="text-on-surface-variant">ECDSA PRF Signature:</span>
+<span class="text-primary truncate">0x3045022100e4c892...8b2a9f02201b</span>
+</div>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors ml-2" onclick="copySnippet('0x3045022100e4c892b1f8902847c928471b028491823904812093840912838b2a', this)">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Shard 2 -->
+<div class="rounded-xl bg-surface-container p-space-md flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-primary-fixed-dim flex items-center justify-center font-label-lg text-label-lg">
+              DK
+            </div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">David K. (@dk-core)</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Guardian Peer • Tech Co-founder</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-tertiary-fixed-dim font-code-sm text-code-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+            ed25519
+          </span>
+</div>
+<div class="mt-2 bg-surface-container-lowest p-space-sm rounded-lg flex items-center justify-between text-on-surface-variant font-code-sm text-code-sm">
+<div class="flex flex-col truncate">
+<span class="text-on-surface-variant">WebAuthn PRF Curve:</span>
+<span class="text-primary truncate">0x9f1c778401ee02...4d8eb3109a14</span>
+</div>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors ml-2" onclick="copySnippet('0x9f1c778401ee0294719283749102837491827394817293847192837494d8eb31', this)">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Shard 3 -->
+<div class="rounded-xl bg-surface-container p-space-md flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">key</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Backup YubiKey 5C</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant">FIDO2 Hardware • NFC Attestation</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-tertiary-fixed-dim font-code-sm text-code-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+            CTAP2 Authenticator
+          </span>
+</div>
+<div class="mt-2 bg-surface-container-lowest p-space-sm rounded-lg flex items-center justify-between text-on-surface-variant font-code-sm text-code-sm">
+<div class="flex flex-col truncate">
+<span class="text-on-surface-variant">Hardware Key Credential ID:</span>
+<span class="text-primary truncate">0x4a12ec9103...77f0a991c28</span>
+</div>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors ml-2" onclick="copySnippet('0x4a12ec9103009481729384719283749102837491827394817293847177f0a991', this)">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Key Migration Cryptographic Audit -->
+<div class="rounded-xl bg-surface-container p-space-md flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]">swap_horizontal_circle</span>
+          Key Weight Reassignment
+        </h3>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-code-sm text-code-sm">SEP-0043</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Account Identifier -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Target Account Federated ID</span>
+<span class="font-label-lg text-label-lg text-on-surface">alexander*stellar.org</span>
+</div>
+<span class="font-code-sm text-code-sm text-primary-fixed-dim bg-surface-container px-2 py-1 rounded">0x71C0...49A2</span>
+</div>
+<!-- Revoked Master Key -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+              Previous Key Nullified (Revoked)
+            </span>
+<span class="px-1.5 py-0.2 rounded bg-error-container text-error font-code-sm text-code-sm">Weight: 0</span>
+</div>
+<div class="flex items-center justify-between">
+<code class="font-code-md text-code-md text-on-surface-variant select-all">GABX37XN264K8U19L0P5ZQ29B72...389Z</code>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Threshold cleared</span>
+</div>
+</div>
+<!-- New Master Key -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-tertiary-fixed-dim flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+              New Active Passkey (Enclave)
+            </span>
+<span class="px-1.5 py-0.2 rounded bg-tertiary-container text-on-tertiary font-code-sm text-code-sm font-semibold">Weight: 3 (Master)</span>
+</div>
+<div class="flex items-center justify-between">
+<code class="font-code-md text-code-md text-primary select-all">GDK2LL93847KLS9201948JDJ281...99WP</code>
+<span class="font-code-sm text-code-sm text-tertiary-fixed-dim">Bio-Protected</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Raw JSON Preview & Inspection Terminal -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md flex flex-col gap-space-sm shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">terminal</span>
+<span class="font-label-lg text-label-lg text-on-surface">Audit Proof Schema</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary-fixed-dim font-code-sm text-code-sm flex items-center gap-1 transition-all active:scale-95" id="copyJsonBtn" onclick="copyJsonPayload(this)">
+<span class="material-symbols-outlined text-[14px]">file_copy</span>
+            Copy JSON
+          </button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-all active:scale-95" onclick="shareProof()" title="Share Proof">
+<span class="material-symbols-outlined text-[16px]">ios_share</span>
+</button>
+</div>
+</div>
+<!-- JSON Code Window -->
+<div class="relative bg-surface-container-low p-space-md rounded-lg overflow-x-auto">
+<pre class="font-code-sm text-code-sm leading-relaxed text-on-surface-variant font-mono"><code>{
+  <span class="text-secondary-fixed">"protocol"</span>: <span class="text-tertiary-fixed-dim">"SEP-0043/Soroban"</span>,
+  <span class="text-secondary-fixed">"recovery_id"</span>: <span class="text-tertiary-fixed-dim">"REC-8842"</span>,
+  <span class="text-secondary-fixed">"ledger_seq"</span>: <span class="text-primary-fixed-dim">52891402</span>,
+  <span class="text-secondary-fixed">"network_passphrase"</span>: <span class="text-tertiary-fixed-dim">"Public Global Stellar Network ; September 2015"</span>,
+  <span class="text-secondary-fixed">"quorum_satisfied"</span>: <span class="text-primary-container">true</span>,
+  <span class="text-secondary-fixed">"shards_threshold"</span>: <span class="text-tertiary-fixed-dim">"3/3"</span>,
+  <span class="text-secondary-fixed">"signatures"</span>: [
+    {
+      <span class="text-secondary-fixed">"signer"</span>: <span class="text-on-surface">"alice_chen_guardian"</span>,
+      <span class="text-secondary-fixed">"type"</span>: <span class="text-on-surface">"p256_ecdsa"</span>,
+      <span class="text-secondary-fixed">"sig"</span>: <span class="text-tertiary-fixed-dim">"0x3045022100e4c8928b2a..."</span>
+    },
+    {
+      <span class="text-secondary-fixed">"signer"</span>: <span class="text-on-surface">"david_k_core"</span>,
+      <span class="text-secondary-fixed">"type"</span>: <span class="text-on-surface">"ed25519_webauthn"</span>,
+      <span class="text-secondary-fixed">"sig"</span>: <span class="text-tertiary-fixed-dim">"0x9f1c778401ee024d8e..."</span>
+    },
+    {
+      <span class="text-secondary-fixed">"signer"</span>: <span class="text-on-surface">"yubikey_ctap2_nfc"</span>,
+      <span class="text-secondary-fixed">"type"</span>: <span class="text-on-surface">"fido2_hardware"</span>,
+      <span class="text-secondary-fixed">"key_id"</span>: <span class="text-tertiary-fixed-dim">"0x4a12ec910377f0..."</span>
+    }
+  ],
+  <span class="text-secondary-fixed">"state_mutation"</span>: {
+    <span class="text-secondary-fixed">"revoked_master"</span>: <span class="text-error">"GABX...389Z"</span>,
+    <span class="text-secondary-fixed">"active_enclave"</span>: <span class="text-tertiary-fixed-dim">"GDK2...99WP"</span>,
+    <span class="text-secondary-fixed">"weight"</span>: <span class="text-primary-fixed-dim">3</span>
+  },
+  <span class="text-secondary-fixed">"hash"</span>: <span class="text-primary">"0x7b4a92f8a192c7104be9f830d12e831c0"</span>
+}</code></pre>
+</div>
+</div>
+<!-- Action Sticky/Bottom Buttons -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<button class="w-full h-13 py-3.5 px-space-md rounded-xl bg-gradient-to-r from-primary-container to-tertiary-container text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-lg active:scale-[0.99] transition-transform" onclick="downloadJsonReceipt()">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">file_download</span>
+        Export &amp; AirDrop Receipt (.json)
+      </button>
+<button class="w-full h-12 py-3 px-space-md rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-2 transition-colors active:scale-[0.99]" onclick="history.back()">
+        Done / Return to Vault
+      </button>
+</div>
+</div>
+</div>
+<script>
+  function copySnippet(text, buttonElement) {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(() => {
+        showTemporaryFeedback(buttonElement, 'check');
+      }).catch(() => {
+        fallbackCopy(text, buttonElement);
+      });
+    } else {
+      fallbackCopy(text, buttonElement);
+    }
+  }
+
+  function fallbackCopy(text, buttonElement) {
+    const el = document.createElement('textarea');
+    el.value = text;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    showTemporaryFeedback(buttonElement, 'check');
+  }
+
+  function showTemporaryFeedback(btn, iconName) {
+    const icon = btn.querySelector('.material-symbols-outlined');
+    if (icon) {
+      const orig = icon.textContent;
+      icon.textContent = iconName;
+      btn.classList.add('text-tertiary-fixed-dim');
+      setTimeout(() => {
+        icon.textContent = orig;
+        btn.classList.remove('text-tertiary-fixed-dim');
+      }, 1800);
+    }
+  }
+
+  function copyJsonPayload(btn) {
+    const rawPayload = JSON.stringify({
+      protocol: "SEP-0043/Soroban",
+      recovery_id: "REC-8842",
+      ledger_seq: 52891402,
+      network_passphrase: "Public Global Stellar Network ; September 2015",
+      quorum_satisfied: true,
+      shards_threshold: "3/3",
+      signatures: [
+        { signer: "alice_chen_guardian", type: "p256_ecdsa", sig: "0x3045022100e4c8928b2a..." },
+        { signer: "david_k_core", type: "ed25519_webauthn", sig: "0x9f1c778401ee024d8e..." },
+        { signer: "yubikey_ctap2_nfc", type: "fido2_hardware", key_id: "0x4a12ec910377f0..." }
+      ],
+      state_mutation: {
+        revoked_master: "GABX...389Z",
+        active_enclave: "GDK2...99WP",
+        weight: 3
+      },
+      hash: "0x7b4a92f8a192c7104be9f830d12e831c0"
+    }, null, 2);
+
+    copySnippet(rawPayload, btn);
+  }
+
+  function downloadJsonReceipt() {
+    const receiptData = {
+      protocol: "SEP-0043/Soroban",
+      recovery_id: "REC-8842",
+      ledger_seq: 52891402,
+      timestamp: "2024-10-24T14:32:18Z",
+      account_id: "alexander*stellar.org",
+      public_hash: "0x71C049A2",
+      signatures_verified: 3,
+      threshold: "3/3",
+      active_enclave_key: "GDK2LL93847KLS9201948JDJ28199WP",
+      revoked_key: "GABX37XN264K8U19L0P5ZQ29B72389Z",
+      tx_hash: "0x7b4a92f8a192c7104be9f830d12e831c0"
+    };
+
+    const blob = new Blob([JSON.stringify(receiptData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = "passkeyvault-receipt-REC-8842.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function shareProof() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'PasskeyVault Stellar Recovery Proof #REC-8842',
+        text: 'Verified On-Chain Quorum Audit Proof (Tx: 0x7b4a92f8a192c7104be9f830d12e831c0)',
+        url: window.location.href
+      }).catch(() => {});
+    } else {
+      const btn = document.getElementById('copyJsonBtn');
+      if (btn) copyJsonPayload(btn);
+    }
+  }
+</script></main></body></html>
